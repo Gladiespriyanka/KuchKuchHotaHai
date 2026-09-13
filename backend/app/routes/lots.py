@@ -6,7 +6,7 @@ from sqlalchemy.orm import Session
 from ..database import get_db
 from ..models import Collector, Lot, Recycler, Transaction, User
 from ..schemas.schemas import LotCreateIn, SelectRecyclerIn, SyncLotsIn
-from ..services import anomaly, auction, grouping, matching, pricing
+from ..services import anomaly, auction, grouping, matching, pricing, reliability
 from ..services.common import lot_dict, log_event, next_lot_id, recycler_dict
 from ..services.security import collector_for, current_user, require_role
 
@@ -158,6 +158,11 @@ def matches(lot_id: str, user: User = Depends(require_role("collector")),
 
     ranked = matching.match_recyclers(db, lot)
     informal = pricing.informal_benchmark(lot.estimated_max)
+    # Fetch reliability for unique recyclers to avoid N+1
+    unique_recycler_ids = list(set(m["recycler"].recycler_id for m in ranked))
+    reliability_map = {}
+    for recycler_id in unique_recycler_ids:
+        reliability_map[recycler_id] = reliability.get_recycler_reliability_stats(db, recycler_id)
     return {
         "lot_id": lot.lot_id,
         "weights": matching.WEIGHTS,
@@ -173,6 +178,7 @@ def matches(lot_id: str, user: User = Depends(require_role("collector")),
                 "out_of_service_area": m.get("out_of_service_area", False),
                 "distance_basis": m.get("distance_basis", "gps"),
                 "extra_vs_informal": round(m["offer_value"] - informal),
+                "reliability": reliability_map.get(m["recycler"].recycler_id)
             }
             for m in ranked
         ],

@@ -15,9 +15,9 @@ from fastapi import APIRouter, Depends, HTTPException, status
 from sqlalchemy.orm import Session
 
 from ..database import get_db
-from ..models import Lot, Offer, Recycler, User
+from ..models import Lot, Offer, Recycler, Transaction, User
 from ..schemas.schemas import OfferIn, OfferOut
-from ..services import auction, matching, premium
+from ..services import auction, matching, premium, reliability
 from ..services.common import lot_dict, log_event
 from ..services.security import collector_for, current_user, recycler_for, require_role
 
@@ -25,15 +25,14 @@ router = APIRouter(prefix="/api", tags=["offers"])
 
 OPEN_STATUSES = ("LOT_CREATED", "PRICE_ESTIMATED")
 
-
-def _offer_out(db: Session, offer: Offer, lot: Lot | None = None) -> dict:
+def _offer_out(db: Session, offer: Offer, lot: Lot | None = None, reliability: dict | None = None) -> dict:
     rec = db.get(Recycler, offer.recycler_id)
     lot = lot or db.query(Lot).filter(Lot.lot_id == offer.lot_id).first()
     distance = (
         matching.haversine_km(lot.latitude, lot.longitude, rec.latitude, rec.longitude)
         if lot and rec else None
     )
-    return {
+    result = {
         "offer_id": offer.offer_id,
         "lot_id": offer.lot_id,
         "recycler_id": offer.recycler_id,
@@ -48,6 +47,9 @@ def _offer_out(db: Session, offer: Offer, lot: Lot | None = None) -> dict:
         "status": offer.status,
         "created_at": offer.created_at,
     }
+    if reliability is not None:
+        result["reliability"] = reliability
+    return result
 
 
 @router.get("/recyclers/me/open-lots")
@@ -179,12 +181,22 @@ def offers_for_lot(lot_id: str, user: User = Depends(current_user),
         rec = recycler_for(db, user)
         rows = db.query(Offer).filter(Offer.lot_id == lot_id,
                                       Offer.recycler_id == rec.recycler_id).all()
-        return [_offer_out(db, o, lot) for o in rows]
+        # Fetch reliability for unique recyclers to avoid N+1
+        unique_recycler_ids = list(set(o.recycler_id for o in rows))
+        reliability_map = {}
+        for recycler_id in unique_recycler_ids:
+            reliability_map[recycler_id] = reliability.get_recycler_reliability_stats(db, recycler_id)
+        return [_offer_out(db, o, lot, reliability_map.get(o.recycler_id)) for o in rows]
     rows = (
         db.query(Offer).filter(Offer.lot_id == lot_id)
         .order_by(Offer.rate_per_kg.desc()).all()
     )
-    return [_offer_out(db, o, lot) for o in rows]
+    # Fetch reliability for unique recyclers to avoid N+1
+    unique_recycler_ids = list(set(o.recycler_id for o in rows))
+    reliability_map = {}
+    for recycler_id in unique_recycler_ids:
+        reliability_map[recycler_id] = reliability.get_recycler_reliability_stats(db, recycler_id)
+    return [_offer_out(db, o, lot, reliability_map.get(o.recycler_id)) for o in rows]
 
 
 @router.get("/offers")
@@ -197,7 +209,12 @@ def my_offers(user: User = Depends(current_user), db: Session = Depends(get_db))
             db.query(Offer).filter(Offer.recycler_id == rec.recycler_id)
             .order_by(Offer.created_at.desc()).limit(100).all()
         )
-        return [_offer_out(db, o) for o in rows]
+        # Fetch reliability for unique recyclers to avoid N+1
+        unique_recycler_ids = list(set(o.recycler_id for o in rows))
+        reliability_map = {}
+        for recycler_id in unique_recycler_ids:
+            reliability_map[recycler_id] = reliability.get_recycler_reliability_stats(db, recycler_id)
+        return [_offer_out(db, o, None, reliability_map.get(o.recycler_id)) for o in rows]
     collector = collector_for(db, user)
     lot_ids = [
         l.lot_id for l in db.query(Lot).filter(Lot.collector_id == collector.collector_id).all()
@@ -207,7 +224,12 @@ def my_offers(user: User = Depends(current_user), db: Session = Depends(get_db))
         .filter(Offer.lot_id.in_(lot_ids), Offer.status == "PENDING")
         .order_by(Offer.created_at.desc()).all()
     )
-    return [_offer_out(db, o) for o in rows]
+    # Fetch reliability for unique recyclers to avoid N+1
+    unique_recycler_ids = list(set(o.recycler_id for o in rows))
+    reliability_map = {}
+    for recycler_id in unique_recycler_ids:
+        reliability_map[recycler_id] = reliability.get_recycler_reliability_stats(db, recycler_id)
+    return [_offer_out(db, o, None, reliability_map.get(o.recycler_id)) for o in rows]
 
 
 @router.post("/offers/{offer_id}/accept")
