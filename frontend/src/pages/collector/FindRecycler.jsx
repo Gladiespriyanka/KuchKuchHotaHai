@@ -87,6 +87,7 @@ export default function FindRecycler() {
             </span>
             <span className="chip bg-brass"><BadgeCheck size={12} /> {t('authorised')}</span>
           </div>
+          <ReliabilityMeta reliability={best.reliability} />
 
           <button className="btn-primary mt-4 w-full text-lg" disabled={busy}
                   onClick={() => choose(best.recycler_id)}>
@@ -136,6 +137,7 @@ export default function FindRecycler() {
                 <span>{m.pickup_available ? '🚚' : '—'}</span>
                 <span className="num ml-auto font-bold text-ink">{rupee(m.offer_value)}</span>
               </div>
+              <ReliabilityMeta reliability={m.reliability} />
               <div className="mt-2 flex gap-2">
                 <button className="btn-ghost flex-1 justify-center py-2" disabled={busy}
                         onClick={() => choose(m.recycler_id)}>
@@ -153,6 +155,30 @@ export default function FindRecycler() {
       </div>
 
       <p className="pb-2 text-center text-[11px] text-slate2">{t('onlyAuthorised')}</p>
+    </div>
+  )
+}
+
+function ReliabilityMeta({ reliability }) {
+  if (!reliability) return null
+  if (reliability.status === 'insufficient') {
+    return (
+      <div className="mt-2 flex flex-wrap items-center gap-2 text-xs text-slate2">
+        <span className="chip bg-white"><BadgeCheck size={12} /> Reliability: Insufficient history</span>
+      </div>
+    )
+  }
+  if (
+    reliability.status !== 'sufficient' ||
+    !Number.isFinite(reliability.score) ||
+    !Number.isFinite(reliability.transaction_count) ||
+    !Number.isFinite(reliability.avg_deviation)
+  ) return null
+
+  return (
+    <div className="mt-2 flex flex-wrap items-center gap-x-3 gap-y-1 text-xs text-slate2">
+      <span className="chip bg-mint"><BadgeCheck size={12} /> Reliability: {reliability.score.toFixed(0)}/100</span>
+      <span className="num">{reliability.transaction_count} completed deals · Avg quote→final difference: {reliability.avg_deviation.toFixed(1)}%</span>
     </div>
   )
 }

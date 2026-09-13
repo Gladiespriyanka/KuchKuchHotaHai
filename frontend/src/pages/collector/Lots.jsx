@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import { Link, useNavigate, useParams } from 'react-router-dom'
-import { ChevronRight, Crown, Download, Package, Users2 } from 'lucide-react'
+import { BadgeCheck, ChevronRight, Crown, Download, Package, Users2 } from 'lucide-react'
 import { useI18n } from '../../i18n'
 import { lots as lotsApi, offers as offersApi } from '../../services/api'
 import QRBlock from '../../components/QRBlock'
@@ -204,6 +204,7 @@ export function LotDetail() {
                     {o.pickup_offered && <span>🚚 {t('pickupAvailable')}</span>}
                     <span className="num">✅ {o.authorization_id}</span>
                   </div>
+                  <ReliabilityMeta reliability={o.reliability} />
                   {o.note && <p className="mt-1 text-sm">{o.note}</p>}
                   <button className="btn-primary mt-3 w-full" disabled={busy === o.offer_id}
                           onClick={() => accept(o.offer_id)}>
@@ -293,6 +294,30 @@ export function LotDetail() {
         <div className="eyebrow mb-3">{t('timeline')}</div>
         <Timeline events={lot.timeline || []} />
       </div>
+    </div>
+  )
+}
+
+function ReliabilityMeta({ reliability }) {
+  if (!reliability) return null
+  if (reliability.status === 'insufficient') {
+    return (
+      <div className="mt-2 flex flex-wrap items-center gap-2 text-xs text-slate2">
+        <span className="chip bg-white"><BadgeCheck size={12} /> Reliability: Insufficient history</span>
+      </div>
+    )
+  }
+  if (
+    reliability.status !== 'sufficient' ||
+    !Number.isFinite(reliability.score) ||
+    !Number.isFinite(reliability.transaction_count) ||
+    !Number.isFinite(reliability.avg_deviation)
+  ) return null
+
+  return (
+    <div className="mt-2 flex flex-wrap items-center gap-x-3 gap-y-1 text-xs text-slate2">
+      <span className="chip bg-mint"><BadgeCheck size={12} /> Reliability: {reliability.score.toFixed(0)}/100</span>
+      <span className="num">{reliability.transaction_count} completed deals · Avg quote→final difference: {reliability.avg_deviation.toFixed(1)}%</span>
     </div>
   )
 }
