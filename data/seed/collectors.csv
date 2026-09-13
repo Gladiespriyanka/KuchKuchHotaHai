@@ -1,0 +1,401 @@
+collector_id,display_name,preferred_language,home_city,operating_areas,device_tier,literacy_tier,active_days_per_month,joined_on,onboarded_by,pii_minimised
+COL2000,Suresh Shinde,mr,Mumbai,Andheri East|Malad West,entry,numerals_only,20,2025-05-17,ngo_partner,True
+COL2001,Arjun Sawant,mr,Nagpur,Manish Nagar,entry,numerals_only,28,2025-09-20,field_camp,True
+COL2002,Sanjay Dhage,hi,Pimpri-Chinchwad,Moshi,entry,functional,16,2025-05-24,peer_referral,True
+COL2003,Vikas Chavan,mr,Nashik,Ambad|Cidco|Deolali,entry,functional,23,2025-09-07,field_camp,True
+COL2004,Bhaskar Kamble,mr,Aurangabad,Chikalthana,entry,numerals_only,18,2025-04-24,ngo_partner,True
+COL2005,Sagar Ansari,mr,Pune,Dhankawadi|Kothrud|Wagholi,entry,numerals_only,19,2026-07-18,peer_referral,True
+COL2006,Shobha Khan,mr,Pune,Bhosari|Hadapsar,entry,non_reader,28,2026-06-04,field_camp,True
+COL2007,Ravi Yadav,mr,Nashik,Cidco|Satpur,entry,non_reader,7,2026-03-27,peer_referral,True
+COL2008,Rakesh Pawar,mr,Pune,Wagholi|Yerawada,entry,functional,20,2025-03-29,peer_referral,True
+COL2009,Sindhu Sawant,mr,Mumbai,Andheri East|Malad West,feature_android,non_reader,28,2026-03-10,field_camp,True
+COL2010,Sunita Salunkhe,mr,Nashik,Cidco,entry,functional,15,2025-05-06,peer_referral,True
+COL2011,Vaishali Lokhande,mr,Nagpur,Hingna|Manish Nagar|Sitabuldi,entry,functional,15,2025-10-02,field_camp,True
+COL2012,Shobha Ghorpade,mr,Pune,Kothrud|Wagholi,entry,numerals_only,20,2025-11-08,ngo_partner,True
+COL2013,Deepak Qureshi,mr,Nagpur,Sitabuldi,entry,functional,16,2026-01-24,peer_referral,True
+COL2014,Suresh Sonawane,mr,Nashik,Nashik Road|Satpur,mid,numerals_only,19,2025-11-10,peer_referral,True
+COL2015,Bhaskar Sawant,mr,Pimpri-Chinchwad,Akurdi|Chinchwad|Moshi,feature_android,non_reader,27,2025-11-20,peer_referral,True
+COL2016,Nitin Nikam,hi,Pune,Hadapsar,entry,functional,26,2026-02-03,ngo_partner,True
+COL2017,Ashok More,mr,Pimpri-Chinchwad,Akurdi|Moshi,entry,functional,15,2025-04-21,field_camp,True
+COL2018,Shabana Nikam,mr,Pune,Kothrud|Yerawada,mid,non_reader,19,2025-10-30,peer_referral,True
+COL2019,Arjun Mane,mr,Mumbai,Bhandup|Dharavi|Govandi,entry,functional,17,2026-03-08,recycler_referral,True
+COL2020,Firoz Nikam,mr,Mumbai,Govandi|Mankhurd|Vikhroli,mid,numerals_only,11,2026-07-30,ngo_partner,True
+COL2021,Rakesh Bansode,hi,Nagpur,Wadi,entry,numerals_only,24,2025-06-08,ngo_partner,True
+COL2022,Sindhu More,other,Pune,Dhankawadi|Hadapsar,entry,functional,19,2026-02-15,field_camp,True
+COL2023,Sunil Khan,mr,Mumbai,Dharavi|Vikhroli,entry,numerals_only,18,2025-04-25,recycler_referral,True
+COL2024,Rakesh Kumar,hi,Mumbai,Bhandup|Kurla|Vikhroli,mid,numerals_only,21,2025-05-03,field_camp,True
+COL2025,Balu Jadhav,hi,Nagpur,Butibori|Hingna|Manish Nagar,entry,non_reader,20,2025-09-14,field_camp,True
+COL2026,Rekha Yadav,mr,Pimpri-Chinchwad,Akurdi,entry,numerals_only,17,2025-07-12,recycler_referral,True
+COL2027,Vikas Sawant,hi,Mumbai,Govandi,entry,non_reader,14,2026-06-15,recycler_referral,True
+COL2028,Prakash Nikam,other,Nagpur,Butibori|Kamptee Road|Manish Nagar,mid,numerals_only,15,2025-12-23,field_camp,True
+COL2029,Nitin Bansode,mr,Aurangabad,Cidco N-7,entry,numerals_only,11,2026-01-11,recycler_referral,True
+COL2030,Manoj Qureshi,mr,Pune,Hadapsar|Kothrud,entry,numerals_only,16,2025-11-05,peer_referral,True
+COL2031,Sagar Waghmare,hi,Pune,Bhosari|Hadapsar,entry,non_reader,20,2025-10-23,field_camp,True
+COL2032,Anita Yadav,hi,Pune,Kothrud,entry,non_reader,25,2025-12-11,field_camp,True
+COL2033,Sunil Bansode,mr,Mumbai,Mankhurd|Vikhroli,entry,numerals_only,25,2025-11-17,recycler_referral,True
+COL2034,Dattatray Shinde,mr,Nashik,Deolali|Nashik Road|Panchavati,entry,non_reader,18,2025-10-09,field_camp,True
+COL2035,Manoj Khan,mr,Pune,Dhankawadi|Wagholi,entry,numerals_only,18,2025-11-18,peer_referral,True
+COL2036,Salim Tambe,hi,Nashik,Panchavati,entry,functional,12,2026-05-14,peer_referral,True
+COL2037,Sanjay Sawant,mr,Nagpur,Hingna|Manish Nagar,entry,functional,28,2025-09-19,field_camp,True
+COL2038,Sagar Lokhande,mr,Nagpur,Butibori|Hingna|Manish Nagar,entry,non_reader,18,2026-04-20,field_camp,True
+COL2039,Imran Pawar,mr,Mumbai,Andheri East|Bhandup|Dharavi,entry,numerals_only,19,2026-04-17,peer_referral,True
+COL2040,Sunil Ansari,other,Nashik,Panchavati,entry,numerals_only,21,2025-06-11,recycler_referral,True
+COL2041,Firoz Deshmukh,other,Pune,Dhankawadi|Hadapsar|Yerawada,entry,functional,18,2025-10-26,field_camp,True
+COL2042,Ujwala Rathod,hi,Nagpur,Hingna|Wadi,entry,numerals_only,17,2025-08-04,peer_referral,True
+COL2043,Munna More,mr,Pune,Dhankawadi|Kothrud|Wagholi,entry,functional,14,2026-02-13,field_camp,True
+COL2044,Munna Chavan,hi,Pimpri-Chinchwad,Chinchwad|Moshi,entry,functional,14,2025-10-05,recycler_referral,True
+COL2045,Sanjay Ghorpade,hi,Pune,Katraj,mid,numerals_only,16,2026-06-24,field_camp,True
+COL2046,Vaishali Shinde,mr,Nagpur,Butibori|Sitabuldi|Wadi,entry,numerals_only,22,2025-03-20,peer_referral,True
+COL2047,Sagar Nikam,mr,Pune,Hadapsar|Wagholi,entry,numerals_only,28,2025-09-03,peer_referral,True
+COL2048,Sanjay Bhosale,mr,Mumbai,Andheri East,entry,non_reader,22,2026-06-07,ngo_partner,True
+COL2049,Deepak Gaikwad,other,Pune,Bhosari|Wagholi,entry,functional,20,2026-02-17,peer_referral,True
+COL2050,Suresh Salunkhe,mr,Aurangabad,Cidco N-7|Garkheda,entry,non_reader,26,2026-01-10,field_camp,True
+COL2051,Firoz Rathod,mr,Mumbai,Andheri East|Malad West|Mankhurd,entry,functional,23,2026-05-05,peer_referral,True
+COL2052,Kavita Kamble,mr,Pune,Katraj|Vishrantwadi|Yerawada,entry,numerals_only,18,2025-03-27,recycler_referral,True
+COL2053,Rahul More,mr,Pimpri-Chinchwad,Akurdi|Chinchwad,entry,numerals_only,17,2025-06-30,peer_referral,True
+COL2054,Bhaskar Jadhav,hi,Mumbai,Bhandup|Dharavi|Malad West,entry,functional,12,2026-04-16,field_camp,True
+COL2055,Imran Nikam,mr,Mumbai,Govandi,feature_android,functional,22,2026-07-07,field_camp,True
+COL2056,Suresh Qureshi,mr,Pune,Wagholi,entry,numerals_only,15,2025-05-31,recycler_referral,True
+COL2057,Rakesh Bhosale,mr,Pune,Bhosari|Katraj,entry,functional,23,2026-07-24,ngo_partner,True
+COL2058,Rakesh More,hi,Nashik,Ambad,entry,non_reader,17,2025-08-28,field_camp,True
+COL2059,Manoj Qureshi,hi,Mumbai,Mankhurd|Vikhroli,entry,non_reader,15,2025-09-07,peer_referral,True
+COL2060,Rukhsana Lokhande,other,Mumbai,Andheri East,entry,numerals_only,12,2025-11-15,peer_referral,True
+COL2061,Anita Ghorpade,mr,Mumbai,Dharavi|Mankhurd,entry,functional,15,2026-04-26,ngo_partner,True
+COL2062,Sandeep Sawant,mr,Mumbai,Malad West,mid,functional,13,2025-11-20,field_camp,True
+COL2063,Rahul Yadav,mr,Nashik,Ambad|Nashik Road,entry,numerals_only,24,2025-09-11,recycler_referral,True
+COL2064,Rakesh Dhage,mr,Mumbai,Govandi|Kurla|Mankhurd,entry,non_reader,19,2026-01-10,recycler_referral,True
+COL2065,Rahul Ingle,hi,Pune,Wagholi,entry,functional,22,2025-07-27,field_camp,True
+COL2066,Kavita Nikam,mr,Mumbai,Andheri East|Dharavi|Malad West,entry,non_reader,25,2025-03-10,peer_referral,True
+COL2067,Nitin Ingle,mr,Pune,Dhankawadi|Vishrantwadi,mid,numerals_only,19,2025-08-07,field_camp,True
+COL2068,Vikas Rathod,mr,Nashik,Cidco|Satpur,mid,numerals_only,20,2026-05-22,field_camp,True
+COL2069,Salim Gaikwad,hi,Pimpri-Chinchwad,Akurdi|Nigdi|Pimpri,entry,numerals_only,10,2026-07-17,field_camp,True
+COL2070,Laxmi Deshmukh,mr,Pune,Vishrantwadi|Yerawada,feature_android,numerals_only,17,2025-06-01,ngo_partner,True
+COL2071,Tukaram More,hi,Pune,Hadapsar|Katraj|Wagholi,entry,functional,26,2026-03-14,ngo_partner,True
+COL2072,Rahul Gaikwad,hi,Nashik,Cidco|Nashik Road|Panchavati,mid,functional,23,2026-06-27,ngo_partner,True
+COL2073,Sanjay Waghmare,mr,Nagpur,Butibori|Kamptee Road|Manish Nagar,entry,non_reader,21,2025-12-27,field_camp,True
+COL2074,Kailas Jadhav,mr,Mumbai,Bhandup|Govandi|Vikhroli,entry,non_reader,25,2026-07-23,peer_referral,True
+COL2075,Sarika Jadhav,mr,Mumbai,Bhandup|Govandi|Vikhroli,entry,non_reader,17,2025-08-23,ngo_partner,True
+COL2076,Deepak Shaikh,hi,Mumbai,Dharavi|Vikhroli,entry,functional,23,2025-05-06,field_camp,True
+COL2077,Ashok Pawar,hi,Mumbai,Bhandup|Dharavi|Govandi,entry,numerals_only,18,2025-05-26,ngo_partner,True
+COL2078,Rakesh Qureshi,mr,Mumbai,Bhandup|Govandi,entry,functional,10,2026-06-14,field_camp,True
+COL2079,Sunita Pawar,mr,Aurangabad,Shendra,entry,numerals_only,23,2025-05-21,peer_referral,True
+COL2080,Pandurang Dhage,other,Pimpri-Chinchwad,Akurdi|Moshi|Talawade,entry,non_reader,21,2026-02-25,ngo_partner,True
+COL2081,Rahul Dhage,hi,Nashik,Ambad|Panchavati,entry,non_reader,13,2025-09-30,peer_referral,True
+COL2082,Sanjay Deshmukh,other,Pimpri-Chinchwad,Chinchwad|Nigdi|Talawade,entry,numerals_only,17,2025-09-24,field_camp,True
+COL2083,Sarika Khan,mr,Pune,Yerawada,entry,functional,24,2025-04-07,peer_referral,True
+COL2084,Kailas Shinde,hi,Aurangabad,Chikalthana|Shendra,entry,numerals_only,21,2026-04-14,ngo_partner,True
+COL2085,Pandurang Lokhande,mr,Mumbai,Kurla|Mankhurd,entry,non_reader,20,2025-07-08,ngo_partner,True
+COL2086,Prakash Ansari,mr,Aurangabad,Chikalthana,entry,non_reader,17,2026-05-06,field_camp,True
+COL2087,Manoj Gaikwad,mr,Nashik,Ambad|Cidco|Satpur,entry,numerals_only,19,2025-12-22,field_camp,True
+COL2088,Sunil Sonawane,other,Nagpur,Kamptee Road,entry,numerals_only,20,2026-05-18,field_camp,True
+COL2089,Vaishali Ansari,mr,Nagpur,Wadi,entry,functional,16,2025-07-04,field_camp,True
+COL2090,Ramesh Shaikh,mr,Pune,Bhosari|Yerawada,entry,numerals_only,27,2026-04-28,field_camp,True
+COL2091,Prakash Salunkhe,mr,Mumbai,Bhandup|Kurla|Mankhurd,entry,functional,17,2026-02-03,ngo_partner,True
+COL2092,Rahul Salunkhe,mr,Pimpri-Chinchwad,Talawade,entry,non_reader,26,2025-09-28,peer_referral,True
+COL2093,Prakash Bansode,hi,Pune,Dhankawadi|Wagholi,entry,non_reader,21,2026-03-02,field_camp,True
+COL2094,Prakash Shinde,hi,Mumbai,Bhandup,entry,functional,17,2026-06-15,recycler_referral,True
+COL2095,Rakesh Ingle,mr,Nashik,Satpur,entry,numerals_only,11,2025-03-15,peer_referral,True
+COL2096,Sandeep Yadav,hi,Mumbai,Bhandup|Govandi,entry,functional,21,2026-07-08,ngo_partner,True
+COL2097,Rahul Shinde,mr,Nashik,Cidco,entry,numerals_only,14,2025-12-23,recycler_referral,True
+COL2098,Rahul Kamble,mr,Pune,Bhosari|Katraj|Wagholi,entry,non_reader,23,2025-08-21,peer_referral,True
+COL2099,Manoj Sonawane,mr,Pimpri-Chinchwad,Chinchwad|Moshi|Nigdi,entry,non_reader,19,2026-06-29,recycler_referral,True
+COL2100,Pandurang Mane,mr,Mumbai,Andheri East,mid,non_reader,24,2025-10-17,field_camp,True
+COL2101,Vaishali Kamble,hi,Nagpur,Butibori|Wadi,entry,numerals_only,28,2025-04-07,recycler_referral,True
+COL2102,Prakash Mane,hi,Mumbai,Dharavi,entry,functional,12,2025-03-11,recycler_referral,True
+COL2103,Salim Salunkhe,other,Nagpur,Butibori|Hingna|Kamptee Road,entry,numerals_only,15,2026-05-25,recycler_referral,True
+COL2104,Mahesh Sawant,hi,Pune,Bhosari|Hadapsar|Wagholi,entry,numerals_only,21,2025-08-27,field_camp,True
+COL2105,Ujwala Bansode,hi,Pune,Kothrud,entry,numerals_only,19,2025-07-19,peer_referral,True
+COL2106,Sarika Tambe,mr,Nashik,Nashik Road|Panchavati|Satpur,entry,numerals_only,19,2025-12-18,field_camp,True
+COL2107,Tukaram Jadhav,other,Mumbai,Dharavi|Govandi,entry,functional,28,2025-05-05,peer_referral,True
+COL2108,Bhaskar Nikam,mr,Mumbai,Dharavi|Vikhroli,entry,functional,16,2026-03-11,ngo_partner,True
+COL2109,Bhaskar Shinde,other,Mumbai,Dharavi|Mankhurd,mid,numerals_only,26,2025-11-21,recycler_referral,True
+COL2110,Shankar Bhosale,mr,Pune,Bhosari,entry,non_reader,22,2026-01-16,field_camp,True
+COL2111,Imran Lokhande,hi,Pimpri-Chinchwad,Chinchwad|Nigdi|Pimpri,entry,functional,12,2025-05-11,ngo_partner,True
+COL2112,Dattatray Kamble,hi,Nashik,Cidco|Nashik Road|Panchavati,mid,numerals_only,14,2025-10-10,field_camp,True
+COL2113,Ravi Dhage,mr,Nashik,Cidco|Satpur,entry,functional,17,2025-11-14,peer_referral,True
+COL2114,Rahul Ansari,mr,Pune,Bhosari|Wagholi,entry,non_reader,17,2025-03-26,field_camp,True
+COL2115,Tukaram Jadhav,mr,Aurangabad,Chikalthana|Cidco N-7|Garkheda,entry,numerals_only,23,2025-11-10,ngo_partner,True
+COL2116,Bhaskar More,hi,Pune,Hadapsar|Katraj,entry,non_reader,22,2025-08-17,field_camp,True
+COL2117,Tukaram Waghmare,hi,Nagpur,Manish Nagar,entry,numerals_only,26,2026-03-21,recycler_referral,True
+COL2118,Vikas Khan,mr,Mumbai,Dharavi|Govandi,entry,functional,17,2026-02-28,field_camp,True
+COL2119,Salim Kamble,mr,Pune,Bhosari|Dhankawadi|Hadapsar,mid,functional,24,2026-04-10,field_camp,True
+COL2120,Vikas Bansode,hi,Mumbai,Bhandup|Kurla,feature_android,non_reader,16,2026-01-28,field_camp,True
+COL2121,Prakash Mane,mr,Pune,Kothrud|Vishrantwadi|Yerawada,mid,functional,16,2025-06-08,peer_referral,True
+COL2122,Rakesh Pawar,mr,Mumbai,Andheri East|Govandi|Malad West,entry,numerals_only,12,2026-04-23,ngo_partner,True
+COL2123,Dattatray Jadhav,other,Pune,Bhosari,entry,non_reader,12,2026-07-19,peer_referral,True
+COL2124,Ravi Yadav,mr,Pune,Hadapsar,entry,functional,18,2026-03-03,field_camp,True
+COL2125,Ganesh Mane,mr,Nagpur,Wadi,entry,functional,22,2026-06-12,recycler_referral,True
+COL2126,Rakesh Gaikwad,mr,Nashik,Cidco|Deolali|Panchavati,mid,numerals_only,15,2025-11-21,peer_referral,True
+COL2127,Dattatray Rathod,other,Nashik,Cidco|Deolali|Panchavati,entry,numerals_only,22,2025-12-18,peer_referral,True
+COL2128,Ravi Ansari,mr,Pune,Bhosari|Dhankawadi|Yerawada,feature_android,non_reader,9,2026-04-01,peer_referral,True
+COL2129,Nanda Kumar,mr,Pune,Yerawada,mid,numerals_only,27,2026-08-10,peer_referral,True
+COL2130,Ramesh Deshmukh,hi,Nashik,Cidco,entry,non_reader,25,2025-07-13,recycler_referral,True
+COL2131,Sunil Lokhande,mr,Pune,Kothrud,mid,non_reader,18,2025-05-13,peer_referral,True
+COL2132,Mahesh Ingle,mr,Nashik,Deolali,entry,functional,15,2025-04-10,recycler_referral,True
+COL2133,Anita Ghorpade,mr,Mumbai,Kurla|Malad West,entry,numerals_only,13,2025-06-16,field_camp,True
+COL2134,Ravi Tambe,hi,Aurangabad,Chikalthana|Cidco N-7|Waluj,mid,numerals_only,19,2025-03-25,ngo_partner,True
+COL2135,Sagar Tambe,hi,Mumbai,Dharavi|Govandi|Kurla,mid,non_reader,17,2025-07-02,peer_referral,True
+COL2136,Mahesh Shinde,hi,Mumbai,Andheri East|Govandi,entry,functional,11,2026-05-20,recycler_referral,True
+COL2137,Rahul Salunkhe,mr,Nashik,Ambad|Cidco|Deolali,mid,non_reader,5,2026-05-21,field_camp,True
+COL2138,Nitin Dhage,hi,Pune,Vishrantwadi|Yerawada,entry,non_reader,19,2026-04-04,field_camp,True
+COL2139,Arjun Deshmukh,mr,Mumbai,Dharavi|Malad West,entry,functional,14,2025-03-22,recycler_referral,True
+COL2140,Sagar Sawant,mr,Pune,Katraj|Vishrantwadi,entry,functional,14,2025-06-10,peer_referral,True
+COL2141,Shankar Deshmukh,mr,Aurangabad,Chikalthana|Garkheda|Waluj,entry,functional,10,2025-08-27,field_camp,True
+COL2142,Sindhu Mane,hi,Pimpri-Chinchwad,Akurdi,entry,functional,16,2026-03-22,recycler_referral,True
+COL2143,Munna Shaikh,mr,Pune,Kothrud|Vishrantwadi|Wagholi,mid,numerals_only,18,2026-04-06,field_camp,True
+COL2144,Shabana Pawar,mr,Nashik,Ambad|Cidco|Nashik Road,mid,non_reader,18,2026-06-15,field_camp,True
+COL2145,Nanda Sawant,hi,Mumbai,Bhandup,entry,non_reader,10,2026-05-03,field_camp,True
+COL2146,Ashok Salunkhe,mr,Pimpri-Chinchwad,Chinchwad|Pimpri,entry,numerals_only,17,2026-02-11,peer_referral,True
+COL2147,Bhaskar Rathod,hi,Pune,Yerawada,entry,numerals_only,23,2026-04-05,recycler_referral,True
+COL2148,Jyoti Kamble,mr,Nagpur,Kamptee Road|Sitabuldi,entry,numerals_only,22,2026-07-27,peer_referral,True
+COL2149,Mahesh Waghmare,mr,Nashik,Cidco|Nashik Road,mid,numerals_only,22,2026-06-23,field_camp,True
+COL2150,Munna Khan,mr,Aurangabad,Garkheda|Shendra|Waluj,mid,numerals_only,20,2026-05-07,peer_referral,True
+COL2151,Sindhu Khan,hi,Nagpur,Butibori|Hingna|Manish Nagar,entry,numerals_only,24,2025-12-09,peer_referral,True
+COL2152,Suresh Mane,hi,Nashik,Deolali|Panchavati|Satpur,entry,functional,18,2025-11-24,peer_referral,True
+COL2153,Arjun Lokhande,mr,Aurangabad,Garkheda,entry,functional,22,2026-06-10,field_camp,True
+COL2154,Ramesh Pawar,mr,Nashik,Deolali|Nashik Road|Satpur,entry,numerals_only,27,2026-03-12,peer_referral,True
+COL2155,Sindhu Ansari,hi,Nagpur,Butibori|Hingna|Wadi,entry,non_reader,24,2025-04-07,ngo_partner,True
+COL2156,Jyoti Dhage,mr,Pune,Hadapsar|Kothrud,entry,non_reader,19,2025-06-16,recycler_referral,True
+COL2157,Nitin Rathod,mr,Nashik,Ambad,entry,numerals_only,15,2026-04-04,field_camp,True
+COL2158,Rahul More,hi,Pune,Bhosari|Kothrud|Vishrantwadi,entry,non_reader,19,2026-01-26,peer_referral,True
+COL2159,Shabana Gaikwad,hi,Aurangabad,Garkheda,entry,non_reader,24,2025-08-16,field_camp,True
+COL2160,Deepak Salunkhe,mr,Nagpur,Kamptee Road,entry,numerals_only,15,2025-06-12,field_camp,True
+COL2161,Sarika Sawant,other,Pimpri-Chinchwad,Chinchwad,entry,numerals_only,19,2025-06-10,peer_referral,True
+COL2162,Rekha Rathod,mr,Nashik,Ambad,mid,non_reader,28,2026-01-13,field_camp,True
+COL2163,Sarika Shinde,mr,Aurangabad,Cidco N-7|Garkheda,entry,numerals_only,24,2025-07-28,ngo_partner,True
+COL2164,Sunita Kamble,other,Mumbai,Dharavi|Kurla|Vikhroli,feature_android,numerals_only,20,2025-11-01,field_camp,True
+COL2165,Nitin Shinde,mr,Pimpri-Chinchwad,Akurdi|Nigdi|Pimpri,feature_android,numerals_only,14,2025-09-05,recycler_referral,True
+COL2166,Rakesh Kamble,mr,Mumbai,Bhandup|Malad West|Vikhroli,entry,numerals_only,20,2025-08-04,field_camp,True
+COL2167,Arjun Shinde,hi,Mumbai,Kurla,entry,non_reader,18,2025-08-08,field_camp,True
+COL2168,Manoj Lokhande,mr,Pimpri-Chinchwad,Chinchwad|Nigdi,entry,numerals_only,18,2025-12-19,ngo_partner,True
+COL2169,Suresh Waghmare,hi,Mumbai,Malad West,entry,numerals_only,21,2026-05-24,field_camp,True
+COL2170,Vikas Lokhande,mr,Nagpur,Hingna|Wadi,feature_android,numerals_only,28,2025-04-03,field_camp,True
+COL2171,Firoz Tambe,hi,Mumbai,Vikhroli,entry,numerals_only,19,2025-11-05,ngo_partner,True
+COL2172,Ravi Deshmukh,mr,Mumbai,Govandi|Malad West|Vikhroli,entry,numerals_only,20,2025-05-28,field_camp,True
+COL2173,Vitthal Bhosale,hi,Mumbai,Malad West|Vikhroli,entry,numerals_only,25,2026-03-18,field_camp,True
+COL2174,Nitin Lokhande,mr,Mumbai,Kurla,mid,functional,18,2025-08-01,recycler_referral,True
+COL2175,Kailas Qureshi,hi,Pimpri-Chinchwad,Akurdi|Moshi|Talawade,mid,numerals_only,28,2026-01-17,peer_referral,True
+COL2176,Vitthal Mane,mr,Mumbai,Vikhroli,entry,numerals_only,22,2025-06-15,ngo_partner,True
+COL2177,Rukhsana Nikam,mr,Nashik,Ambad|Cidco,mid,functional,20,2025-07-18,peer_referral,True
+COL2178,Tukaram Gaikwad,mr,Pune,Bhosari|Vishrantwadi,mid,numerals_only,15,2025-07-28,field_camp,True
+COL2179,Salim Dhage,other,Pune,Dhankawadi|Kothrud|Vishrantwadi,entry,numerals_only,16,2025-06-12,recycler_referral,True
+COL2180,Salim Yadav,hi,Nashik,Cidco|Nashik Road|Panchavati,feature_android,non_reader,8,2025-10-10,field_camp,True
+COL2181,Ramesh Yadav,mr,Nashik,Cidco|Deolali|Nashik Road,entry,numerals_only,16,2025-05-12,peer_referral,True
+COL2182,Bhaskar Tambe,mr,Pune,Wagholi,mid,numerals_only,23,2025-06-23,field_camp,True
+COL2183,Laxmi Pawar,mr,Nashik,Ambad|Deolali|Satpur,entry,functional,22,2026-03-25,peer_referral,True
+COL2184,Anita Ingle,hi,Mumbai,Andheri East|Dharavi|Govandi,feature_android,numerals_only,11,2025-03-26,peer_referral,True
+COL2185,Tukaram Ansari,mr,Nashik,Deolali,entry,functional,18,2026-06-24,field_camp,True
+COL2186,Kailas Kamble,mr,Nashik,Deolali|Satpur,entry,numerals_only,19,2026-07-16,field_camp,True
+COL2187,Mahesh Khan,mr,Pune,Hadapsar,entry,numerals_only,25,2026-02-11,field_camp,True
+COL2188,Anita Mane,mr,Mumbai,Bhandup|Dharavi|Mankhurd,entry,numerals_only,15,2025-12-10,ngo_partner,True
+COL2189,Salim Jadhav,hi,Aurangabad,Chikalthana|Shendra,entry,non_reader,20,2025-12-08,peer_referral,True
+COL2190,Pandurang Pawar,mr,Mumbai,Malad West,mid,non_reader,14,2026-06-14,field_camp,True
+COL2191,Rakesh Qureshi,mr,Pimpri-Chinchwad,Akurdi|Chinchwad|Talawade,entry,numerals_only,28,2025-09-02,field_camp,True
+COL2192,Manoj Kamble,hi,Pune,Katraj|Wagholi,entry,numerals_only,26,2026-07-29,ngo_partner,True
+COL2193,Tukaram Pawar,mr,Mumbai,Andheri East|Kurla,entry,functional,20,2026-01-03,field_camp,True
+COL2194,Mahesh Deshmukh,hi,Nagpur,Butibori|Kamptee Road|Manish Nagar,entry,non_reader,22,2026-02-21,peer_referral,True
+COL2195,Balu Nikam,mr,Pimpri-Chinchwad,Moshi,entry,non_reader,24,2026-08-11,field_camp,True
+COL2196,Ravi Gaikwad,other,Mumbai,Dharavi|Malad West|Mankhurd,entry,numerals_only,23,2026-01-09,field_camp,True
+COL2197,Shankar Shinde,mr,Pimpri-Chinchwad,Akurdi|Chinchwad|Pimpri,entry,non_reader,8,2025-10-29,recycler_referral,True
+COL2198,Munna Shaikh,mr,Mumbai,Dharavi|Govandi|Mankhurd,entry,non_reader,11,2026-07-08,recycler_referral,True
+COL2199,Deepak Waghmare,mr,Nagpur,Manish Nagar,entry,functional,28,2025-06-25,field_camp,True
+COL2200,Ashok Waghmare,mr,Mumbai,Dharavi|Govandi|Kurla,entry,functional,20,2025-07-04,field_camp,True
+COL2201,Bhaskar Waghmare,mr,Pune,Katraj,entry,numerals_only,11,2026-06-08,peer_referral,True
+COL2202,Rahul Nikam,mr,Aurangabad,Chikalthana|Waluj,entry,numerals_only,15,2025-04-27,field_camp,True
+COL2203,Sagar Sonawane,hi,Pimpri-Chinchwad,Talawade,entry,numerals_only,28,2026-05-03,peer_referral,True
+COL2204,Rahul Sawant,mr,Pune,Katraj|Vishrantwadi,entry,numerals_only,19,2025-04-24,ngo_partner,True
+COL2205,Rakesh Mane,mr,Pune,Hadapsar|Kothrud,entry,functional,22,2026-01-06,field_camp,True
+COL2206,Ashok Salunkhe,hi,Mumbai,Kurla,feature_android,functional,27,2026-05-29,ngo_partner,True
+COL2207,Ravi Pawar,other,Pune,Bhosari|Katraj|Vishrantwadi,entry,numerals_only,12,2025-04-06,field_camp,True
+COL2208,Salim Dhage,hi,Pimpri-Chinchwad,Chinchwad|Moshi|Nigdi,entry,non_reader,26,2025-07-12,recycler_referral,True
+COL2209,Anita Jadhav,hi,Pune,Vishrantwadi|Wagholi|Yerawada,entry,functional,17,2025-06-11,field_camp,True
+COL2210,Nitin Lokhande,mr,Nashik,Deolali,entry,non_reader,13,2025-04-09,peer_referral,True
+COL2211,Prakash Salunkhe,mr,Mumbai,Andheri East|Malad West|Mankhurd,entry,numerals_only,24,2025-03-15,field_camp,True
+COL2212,Deepak Lokhande,mr,Nagpur,Hingna|Kamptee Road|Wadi,entry,non_reader,17,2025-04-10,recycler_referral,True
+COL2213,Sarika Kamble,mr,Nashik,Ambad|Cidco|Satpur,entry,numerals_only,25,2026-06-09,peer_referral,True
+COL2214,Nitin Mane,mr,Mumbai,Bhandup|Kurla,entry,functional,18,2025-10-02,field_camp,True
+COL2215,Ravi Tambe,mr,Mumbai,Dharavi|Vikhroli,entry,functional,27,2025-04-12,field_camp,True
+COL2216,Sarika Gaikwad,mr,Pune,Katraj|Vishrantwadi|Yerawada,entry,non_reader,15,2026-06-18,field_camp,True
+COL2217,Munna Sawant,mr,Aurangabad,Garkheda|Waluj,entry,numerals_only,20,2025-05-04,recycler_referral,True
+COL2218,Dattatray Deshmukh,other,Pune,Bhosari|Kothrud|Yerawada,entry,functional,23,2025-11-13,field_camp,True
+COL2219,Kavita Ingle,hi,Pimpri-Chinchwad,Chinchwad|Moshi|Pimpri,entry,functional,25,2025-10-05,peer_referral,True
+COL2220,Firoz Dhage,mr,Nashik,Cidco|Nashik Road|Panchavati,mid,numerals_only,13,2026-03-14,recycler_referral,True
+COL2221,Manoj Khan,hi,Pune,Yerawada,entry,numerals_only,19,2025-03-18,field_camp,True
+COL2222,Ravi Sonawane,mr,Nashik,Ambad|Nashik Road|Satpur,entry,non_reader,21,2025-10-03,peer_referral,True
+COL2223,Vitthal Waghmare,other,Nagpur,Hingna|Manish Nagar|Wadi,entry,numerals_only,5,2025-09-27,field_camp,True
+COL2224,Sanjay Qureshi,other,Pune,Dhankawadi|Hadapsar,entry,numerals_only,20,2026-07-14,peer_referral,True
+COL2225,Shankar Dhage,hi,Pune,Katraj|Vishrantwadi|Yerawada,entry,functional,24,2025-06-17,field_camp,True
+COL2226,Rahul Bhosale,other,Pune,Yerawada,mid,functional,15,2025-11-09,ngo_partner,True
+COL2227,Manoj Kamble,mr,Aurangabad,Chikalthana|Shendra,entry,numerals_only,24,2025-08-14,peer_referral,True
+COL2228,Kailas Deshmukh,mr,Nagpur,Butibori|Sitabuldi|Wadi,entry,numerals_only,20,2025-12-20,field_camp,True
+COL2229,Shankar Shaikh,hi,Nagpur,Butibori|Hingna|Kamptee Road,mid,numerals_only,16,2026-05-08,field_camp,True
+COL2230,Vikas Tambe,mr,Pune,Bhosari,entry,functional,14,2025-05-09,field_camp,True
+COL2231,Sandeep Mane,mr,Nagpur,Butibori|Kamptee Road|Wadi,entry,numerals_only,22,2025-07-09,recycler_referral,True
+COL2232,Ganesh Dhage,other,Mumbai,Vikhroli,entry,functional,27,2025-03-12,field_camp,True
+COL2233,Pandurang Shaikh,mr,Mumbai,Govandi,entry,numerals_only,15,2026-01-08,field_camp,True
+COL2234,Pandurang Rathod,mr,Pimpri-Chinchwad,Nigdi,entry,numerals_only,20,2025-06-16,field_camp,True
+COL2235,Ganesh Pawar,hi,Aurangabad,Cidco N-7|Shendra,entry,functional,14,2025-09-18,recycler_referral,True
+COL2236,Nanda Dhage,mr,Nashik,Panchavati,entry,numerals_only,18,2025-12-04,field_camp,True
+COL2237,Ujwala Shinde,mr,Mumbai,Andheri East,entry,functional,20,2025-05-04,field_camp,True
+COL2238,Shobha Dhage,mr,Mumbai,Mankhurd,entry,numerals_only,20,2025-06-29,field_camp,True
+COL2239,Sunita Nikam,mr,Nagpur,Kamptee Road|Sitabuldi,mid,numerals_only,20,2025-05-13,field_camp,True
+COL2240,Nitin Yadav,mr,Pune,Bhosari|Hadapsar,mid,non_reader,20,2025-12-16,peer_referral,True
+COL2241,Sagar Rathod,mr,Mumbai,Bhandup|Malad West|Mankhurd,entry,non_reader,25,2026-07-03,field_camp,True
+COL2242,Kailas Bansode,mr,Nagpur,Butibori|Sitabuldi|Wadi,entry,non_reader,28,2025-08-05,field_camp,True
+COL2243,Ramesh Dhage,hi,Nashik,Nashik Road|Panchavati|Satpur,mid,numerals_only,25,2026-04-12,ngo_partner,True
+COL2244,Munna Tambe,hi,Mumbai,Govandi,feature_android,numerals_only,21,2025-11-06,ngo_partner,True
+COL2245,Shobha Ghorpade,hi,Pune,Bhosari|Hadapsar,entry,functional,24,2026-06-07,peer_referral,True
+COL2246,Arjun Chavan,mr,Pimpri-Chinchwad,Moshi|Nigdi|Talawade,entry,numerals_only,22,2026-05-06,field_camp,True
+COL2247,Vikas Sawant,mr,Pimpri-Chinchwad,Chinchwad|Moshi|Pimpri,mid,non_reader,26,2025-11-28,ngo_partner,True
+COL2248,Munna Deshmukh,mr,Pimpri-Chinchwad,Pimpri|Talawade,entry,non_reader,23,2026-07-06,peer_referral,True
+COL2249,Arjun Pawar,hi,Mumbai,Andheri East|Govandi|Mankhurd,entry,functional,23,2026-01-22,ngo_partner,True
+COL2250,Rahul Dhage,mr,Mumbai,Dharavi,entry,functional,24,2025-04-18,ngo_partner,True
+COL2251,Pandurang Waghmare,hi,Mumbai,Andheri East|Malad West,entry,functional,28,2026-02-12,peer_referral,True
+COL2252,Mangala Shaikh,hi,Mumbai,Andheri East,entry,numerals_only,14,2026-04-10,peer_referral,True
+COL2253,Munna Tambe,mr,Pimpri-Chinchwad,Talawade,entry,functional,23,2025-10-11,field_camp,True
+COL2254,Anita Kumar,mr,Pimpri-Chinchwad,Akurdi|Chinchwad,entry,numerals_only,16,2025-10-12,recycler_referral,True
+COL2255,Sunil More,mr,Aurangabad,Cidco N-7|Garkheda|Shendra,mid,functional,15,2026-08-11,peer_referral,True
+COL2256,Ravi Mane,mr,Nagpur,Sitabuldi|Wadi,entry,numerals_only,17,2026-07-10,field_camp,True
+COL2257,Vitthal Shinde,mr,Pune,Hadapsar,feature_android,non_reader,9,2025-11-30,peer_referral,True
+COL2258,Rekha Dhage,mr,Mumbai,Dharavi|Govandi,entry,numerals_only,22,2026-02-24,peer_referral,True
+COL2259,Kailas Bansode,hi,Pune,Bhosari|Katraj|Kothrud,entry,numerals_only,17,2026-01-10,field_camp,True
+COL2260,Sandeep Sawant,mr,Mumbai,Andheri East|Bhandup|Govandi,entry,functional,22,2026-01-16,peer_referral,True
+COL2261,Arjun Shinde,hi,Mumbai,Mankhurd|Vikhroli,entry,functional,24,2026-01-08,field_camp,True
+COL2262,Pandurang Nikam,mr,Nashik,Deolali|Nashik Road,entry,numerals_only,22,2025-06-24,field_camp,True
+COL2263,Dattatray Rathod,mr,Nagpur,Hingna|Manish Nagar|Sitabuldi,entry,numerals_only,19,2025-03-10,ngo_partner,True
+COL2264,Sindhu Tambe,mr,Pune,Dhankawadi|Hadapsar|Katraj,entry,non_reader,17,2026-03-08,recycler_referral,True
+COL2265,Deepak Ingle,mr,Pune,Bhosari|Hadapsar|Wagholi,entry,functional,16,2026-04-05,peer_referral,True
+COL2266,Salim Yadav,mr,Mumbai,Andheri East|Dharavi|Vikhroli,entry,numerals_only,13,2026-06-30,peer_referral,True
+COL2267,Shankar Kamble,mr,Nashik,Ambad,feature_android,numerals_only,28,2025-10-24,recycler_referral,True
+COL2268,Sanjay Ghorpade,mr,Pune,Hadapsar,feature_android,numerals_only,21,2025-12-30,peer_referral,True
+COL2269,Arjun Rathod,mr,Mumbai,Malad West|Mankhurd,entry,numerals_only,12,2025-03-18,peer_referral,True
+COL2270,Sunil More,mr,Pimpri-Chinchwad,Akurdi|Moshi,entry,non_reader,9,2026-04-02,recycler_referral,True
+COL2271,Jyoti Gaikwad,hi,Pimpri-Chinchwad,Akurdi|Moshi,mid,non_reader,25,2025-03-24,field_camp,True
+COL2272,Dattatray More,mr,Aurangabad,Chikalthana|Cidco N-7,entry,numerals_only,18,2025-03-21,field_camp,True
+COL2273,Sagar Kamble,mr,Nagpur,Butibori|Manish Nagar|Wadi,entry,numerals_only,21,2025-05-22,peer_referral,True
+COL2274,Ganesh Dhage,hi,Nagpur,Kamptee Road,mid,non_reader,18,2025-09-15,field_camp,True
+COL2275,Rahul Nikam,mr,Mumbai,Andheri East|Dharavi|Govandi,entry,numerals_only,20,2026-06-18,recycler_referral,True
+COL2276,Sunita Shaikh,mr,Pune,Hadapsar|Katraj|Yerawada,entry,functional,11,2025-08-15,field_camp,True
+COL2277,Balu Kumar,mr,Pune,Vishrantwadi|Wagholi,entry,non_reader,10,2025-12-14,field_camp,True
+COL2278,Imran Pawar,hi,Nagpur,Butibori|Kamptee Road|Wadi,entry,non_reader,28,2026-03-25,peer_referral,True
+COL2279,Mangala Kumar,hi,Nagpur,Butibori|Hingna|Wadi,entry,numerals_only,19,2025-05-03,peer_referral,True
+COL2280,Nitin Lokhande,hi,Pune,Wagholi|Yerawada,entry,numerals_only,20,2025-11-16,recycler_referral,True
+COL2281,Ashok Lokhande,mr,Nashik,Ambad|Cidco|Panchavati,feature_android,non_reader,22,2025-11-04,field_camp,True
+COL2282,Sandeep Dhage,mr,Pune,Dhankawadi|Katraj|Vishrantwadi,entry,non_reader,17,2026-05-24,field_camp,True
+COL2283,Bhaskar Pawar,mr,Pune,Dhankawadi|Katraj|Vishrantwadi,entry,non_reader,19,2025-04-08,peer_referral,True
+COL2284,Sunil Dhage,mr,Mumbai,Dharavi|Kurla,entry,numerals_only,18,2025-05-23,field_camp,True
+COL2285,Rakesh Lokhande,other,Pune,Hadapsar|Kothrud,entry,functional,25,2026-07-22,peer_referral,True
+COL2286,Firoz Khan,hi,Pune,Bhosari,entry,numerals_only,13,2025-12-25,recycler_referral,True
+COL2287,Dattatray Shinde,mr,Pimpri-Chinchwad,Akurdi|Nigdi,entry,non_reader,24,2026-01-31,field_camp,True
+COL2288,Deepak Kamble,hi,Nashik,Deolali|Panchavati|Satpur,entry,functional,22,2025-06-24,field_camp,True
+COL2289,Vaishali Nikam,mr,Pune,Vishrantwadi|Yerawada,entry,numerals_only,18,2026-05-28,field_camp,True
+COL2290,Mangala Ingle,hi,Pune,Kothrud,mid,functional,17,2026-05-10,field_camp,True
+COL2291,Firoz Yadav,other,Pimpri-Chinchwad,Nigdi|Pimpri,entry,non_reader,18,2025-07-12,recycler_referral,True
+COL2292,Suresh Nikam,hi,Nagpur,Butibori|Kamptee Road|Wadi,mid,functional,20,2025-05-22,peer_referral,True
+COL2293,Rahul Ghorpade,mr,Mumbai,Andheri East|Bhandup,entry,numerals_only,17,2025-07-07,field_camp,True
+COL2294,Shabana Ingle,mr,Pune,Katraj,entry,non_reader,20,2026-04-12,peer_referral,True
+COL2295,Nitin Waghmare,hi,Pimpri-Chinchwad,Akurdi|Nigdi,entry,functional,23,2025-05-14,peer_referral,True
+COL2296,Sunil Waghmare,hi,Nagpur,Wadi,mid,numerals_only,21,2026-03-28,recycler_referral,True
+COL2297,Sarika Nikam,hi,Mumbai,Andheri East|Dharavi,entry,numerals_only,13,2026-01-12,peer_referral,True
+COL2298,Vaishali Ghorpade,mr,Pune,Katraj,entry,functional,18,2025-10-23,field_camp,True
+COL2299,Rukhsana Dhage,mr,Pimpri-Chinchwad,Chinchwad|Nigdi|Talawade,mid,numerals_only,24,2025-07-19,ngo_partner,True
+COL2300,Bhaskar Sawant,mr,Mumbai,Kurla,entry,functional,19,2025-10-01,peer_referral,True
+COL2301,Suresh Pawar,hi,Pune,Kothrud|Wagholi|Yerawada,entry,numerals_only,17,2025-08-25,recycler_referral,True
+COL2302,Imran Pawar,mr,Aurangabad,Chikalthana|Waluj,entry,non_reader,14,2025-08-22,field_camp,True
+COL2303,Sindhu Ingle,hi,Pimpri-Chinchwad,Akurdi|Chinchwad|Nigdi,entry,numerals_only,16,2025-05-03,field_camp,True
+COL2304,Manoj Kamble,mr,Nagpur,Hingna|Sitabuldi|Wadi,entry,numerals_only,15,2026-05-02,recycler_referral,True
+COL2305,Rukhsana Nikam,mr,Pune,Wagholi,mid,numerals_only,19,2025-04-16,ngo_partner,True
+COL2306,Tukaram Tambe,mr,Mumbai,Bhandup|Kurla|Vikhroli,entry,non_reader,11,2026-04-25,recycler_referral,True
+COL2307,Munna Bansode,hi,Nagpur,Hingna|Sitabuldi,entry,numerals_only,24,2025-12-31,field_camp,True
+COL2308,Nitin Mane,mr,Nashik,Satpur,entry,numerals_only,27,2026-04-30,peer_referral,True
+COL2309,Deepak Sawant,mr,Aurangabad,Cidco N-7|Garkheda,entry,non_reader,18,2025-05-08,recycler_referral,True
+COL2310,Vikas Ghorpade,mr,Nagpur,Manish Nagar|Sitabuldi|Wadi,entry,non_reader,22,2025-10-27,field_camp,True
+COL2311,Sunita Shaikh,hi,Pune,Dhankawadi|Kothrud,entry,numerals_only,12,2025-05-07,peer_referral,True
+COL2312,Sunita More,hi,Mumbai,Dharavi|Kurla|Vikhroli,entry,numerals_only,24,2025-09-26,peer_referral,True
+COL2313,Ramesh Dhage,other,Pimpri-Chinchwad,Moshi|Talawade,entry,numerals_only,20,2026-04-19,recycler_referral,True
+COL2314,Bhaskar Lokhande,mr,Mumbai,Bhandup|Dharavi|Govandi,entry,functional,18,2025-08-09,field_camp,True
+COL2315,Sagar Ansari,mr,Nashik,Cidco|Nashik Road|Satpur,entry,numerals_only,15,2026-04-03,peer_referral,True
+COL2316,Vitthal More,hi,Pune,Hadapsar,entry,non_reader,15,2025-04-09,field_camp,True
+COL2317,Rakesh Waghmare,mr,Aurangabad,Cidco N-7|Garkheda|Shendra,entry,numerals_only,20,2025-08-18,peer_referral,True
+COL2318,Sunita Bansode,hi,Pimpri-Chinchwad,Akurdi|Chinchwad|Nigdi,entry,numerals_only,9,2026-04-15,field_camp,True
+COL2319,Anita Chavan,mr,Nashik,Ambad|Nashik Road,entry,functional,21,2026-05-08,peer_referral,True
+COL2320,Sunil Ghorpade,hi,Nashik,Cidco|Panchavati|Satpur,entry,non_reader,18,2026-01-06,peer_referral,True
+COL2321,Rakesh Nikam,mr,Nashik,Ambad|Panchavati,entry,functional,13,2025-07-14,recycler_referral,True
+COL2322,Rakesh Qureshi,hi,Pune,Wagholi,feature_android,functional,21,2026-04-13,peer_referral,True
+COL2323,Sunita Rathod,mr,Pune,Vishrantwadi,mid,non_reader,26,2025-05-15,field_camp,True
+COL2324,Prakash Waghmare,other,Nashik,Nashik Road|Satpur,feature_android,non_reader,22,2026-07-13,field_camp,True
+COL2325,Bhaskar Nikam,mr,Mumbai,Malad West,entry,functional,22,2025-07-10,recycler_referral,True
+COL2326,Ramesh Sawant,mr,Nashik,Ambad|Nashik Road|Satpur,entry,functional,16,2025-10-01,field_camp,True
+COL2327,Firoz Gaikwad,hi,Mumbai,Bhandup|Govandi,entry,non_reader,17,2025-03-12,ngo_partner,True
+COL2328,Prakash Bhosale,hi,Pimpri-Chinchwad,Talawade,entry,numerals_only,24,2026-05-09,recycler_referral,True
+COL2329,Arjun Bhosale,hi,Aurangabad,Garkheda|Shendra,feature_android,non_reader,17,2026-01-31,ngo_partner,True
+COL2330,Deepak Pawar,mr,Mumbai,Andheri East,entry,numerals_only,22,2025-09-28,peer_referral,True
+COL2331,Ramesh Kumar,hi,Pimpri-Chinchwad,Akurdi|Moshi,entry,non_reader,17,2026-01-25,field_camp,True
+COL2332,Salim Ansari,other,Nagpur,Wadi,entry,numerals_only,20,2025-07-19,ngo_partner,True
+COL2333,Munna Ansari,mr,Mumbai,Govandi|Kurla|Mankhurd,mid,numerals_only,18,2026-02-16,field_camp,True
+COL2334,Mahesh Kumar,mr,Nashik,Ambad|Panchavati,entry,non_reader,19,2026-01-20,field_camp,True
+COL2335,Sandeep Rathod,hi,Pune,Katraj|Yerawada,entry,non_reader,26,2026-07-06,recycler_referral,True
+COL2336,Jyoti Mane,mr,Pune,Katraj|Vishrantwadi|Wagholi,feature_android,non_reader,18,2026-05-01,field_camp,True
+COL2337,Ujwala Waghmare,mr,Aurangabad,Cidco N-7|Garkheda|Shendra,entry,functional,22,2026-05-10,field_camp,True
+COL2338,Ashok Sonawane,hi,Mumbai,Vikhroli,entry,numerals_only,21,2025-10-21,peer_referral,True
+COL2339,Shabana Dhage,hi,Aurangabad,Garkheda|Shendra|Waluj,entry,functional,26,2025-07-25,peer_referral,True
+COL2340,Kailas Rathod,mr,Pune,Bhosari|Wagholi|Yerawada,entry,numerals_only,27,2025-06-15,peer_referral,True
+COL2341,Laxmi Khan,mr,Pune,Hadapsar|Vishrantwadi,entry,non_reader,15,2025-03-31,recycler_referral,True
+COL2342,Pandurang Ingle,mr,Mumbai,Malad West|Mankhurd,mid,numerals_only,19,2026-06-26,peer_referral,True
+COL2343,Nanda Nikam,hi,Aurangabad,Chikalthana|Garkheda,entry,numerals_only,13,2025-08-24,peer_referral,True
+COL2344,Vikas Gaikwad,mr,Pune,Katraj|Yerawada,entry,functional,15,2026-02-23,peer_referral,True
+COL2345,Sanjay Kumar,other,Nashik,Ambad|Cidco,entry,numerals_only,23,2025-08-08,recycler_referral,True
+COL2346,Rakesh Lokhande,mr,Mumbai,Dharavi,entry,numerals_only,13,2026-01-05,recycler_referral,True
+COL2347,Vikas Ansari,mr,Aurangabad,Waluj,entry,numerals_only,24,2025-10-21,field_camp,True
+COL2348,Dattatray Sonawane,mr,Nagpur,Hingna|Manish Nagar,mid,functional,18,2026-02-12,field_camp,True
+COL2349,Mahesh More,mr,Pune,Kothrud,entry,numerals_only,21,2026-03-11,field_camp,True
+COL2350,Vaishali Nikam,mr,Aurangabad,Waluj,entry,numerals_only,19,2026-08-08,peer_referral,True
+COL2351,Nitin Tambe,mr,Pune,Yerawada,mid,functional,16,2026-08-03,peer_referral,True
+COL2352,Ramesh Gaikwad,hi,Pune,Dhankawadi|Vishrantwadi,feature_android,functional,14,2025-04-24,field_camp,True
+COL2353,Rakesh Dhage,hi,Aurangabad,Chikalthana|Cidco N-7,entry,functional,21,2025-07-23,ngo_partner,True
+COL2354,Shankar Nikam,mr,Mumbai,Bhandup|Dharavi|Govandi,feature_android,numerals_only,21,2025-05-22,field_camp,True
+COL2355,Rahul Ingle,mr,Pimpri-Chinchwad,Akurdi|Moshi|Talawade,feature_android,non_reader,18,2025-09-03,field_camp,True
+COL2356,Dattatray Khan,mr,Nashik,Deolali|Nashik Road|Satpur,entry,numerals_only,27,2025-06-26,peer_referral,True
+COL2357,Mangala Chavan,hi,Pune,Yerawada,mid,functional,18,2025-07-08,recycler_referral,True
+COL2358,Vikas Yadav,hi,Nagpur,Hingna,entry,non_reader,20,2026-05-02,field_camp,True
+COL2359,Anita Kumar,mr,Mumbai,Andheri East|Kurla|Vikhroli,entry,numerals_only,21,2026-06-29,field_camp,True
+COL2360,Sandeep Nikam,hi,Nagpur,Hingna,entry,functional,16,2026-04-21,field_camp,True
+COL2361,Firoz Waghmare,mr,Mumbai,Andheri East|Vikhroli,entry,non_reader,13,2025-06-01,ngo_partner,True
+COL2362,Vitthal Rathod,mr,Pune,Vishrantwadi,mid,numerals_only,16,2026-06-16,ngo_partner,True
+COL2363,Ujwala Kumar,mr,Pimpri-Chinchwad,Akurdi|Talawade,entry,non_reader,20,2025-03-17,field_camp,True
+COL2364,Vaishali Bansode,other,Pimpri-Chinchwad,Akurdi,mid,non_reader,26,2026-02-23,peer_referral,True
+COL2365,Dattatray Sonawane,mr,Nashik,Nashik Road|Satpur,entry,numerals_only,17,2026-01-12,peer_referral,True
+COL2366,Ravi Tambe,hi,Pune,Hadapsar|Katraj,mid,non_reader,25,2025-12-04,recycler_referral,True
+COL2367,Ramesh Sawant,mr,Pune,Katraj|Wagholi,entry,numerals_only,13,2026-01-25,field_camp,True
+COL2368,Sindhu Jadhav,mr,Nagpur,Sitabuldi,entry,numerals_only,13,2025-11-20,peer_referral,True
+COL2369,Imran Sonawane,hi,Pimpri-Chinchwad,Chinchwad|Nigdi|Talawade,entry,non_reader,27,2026-01-23,field_camp,True
+COL2370,Nanda Waghmare,hi,Mumbai,Govandi,mid,non_reader,27,2026-04-13,field_camp,True
+COL2371,Jyoti Rathod,mr,Aurangabad,Chikalthana|Cidco N-7|Garkheda,entry,non_reader,17,2026-06-12,ngo_partner,True
+COL2372,Ashok Dhage,hi,Pune,Dhankawadi|Hadapsar|Kothrud,entry,numerals_only,23,2025-12-04,field_camp,True
+COL2373,Sanjay Nikam,mr,Pimpri-Chinchwad,Akurdi|Chinchwad|Talawade,entry,functional,9,2025-08-22,field_camp,True
+COL2374,Sunita Waghmare,mr,Nagpur,Butibori|Kamptee Road|Manish Nagar,entry,numerals_only,12,2025-08-10,field_camp,True
+COL2375,Sarika Ansari,mr,Pune,Vishrantwadi,mid,functional,20,2026-01-05,field_camp,True
+COL2376,Shobha Sonawane,mr,Pune,Bhosari|Hadapsar|Kothrud,entry,numerals_only,27,2025-08-23,peer_referral,True
+COL2377,Tukaram Kamble,hi,Nagpur,Butibori|Manish Nagar|Wadi,entry,numerals_only,15,2026-08-09,peer_referral,True
+COL2378,Rakesh Pawar,mr,Pimpri-Chinchwad,Chinchwad|Nigdi|Pimpri,feature_android,numerals_only,12,2026-05-08,field_camp,True
+COL2379,Jyoti Rathod,hi,Pune,Bhosari|Dhankawadi,mid,numerals_only,6,2025-12-02,field_camp,True
+COL2380,Pandurang Kamble,hi,Pimpri-Chinchwad,Chinchwad|Nigdi|Pimpri,entry,non_reader,13,2025-03-19,ngo_partner,True
+COL2381,Vitthal Dhage,hi,Mumbai,Andheri East,entry,functional,18,2025-11-25,ngo_partner,True
+COL2382,Vitthal Gaikwad,mr,Pimpri-Chinchwad,Chinchwad|Talawade,mid,numerals_only,17,2025-12-13,peer_referral,True
+COL2383,Ujwala Ingle,hi,Pimpri-Chinchwad,Nigdi,feature_android,numerals_only,24,2025-03-14,field_camp,True
+COL2384,Balu Shaikh,mr,Pune,Dhankawadi|Katraj,entry,numerals_only,23,2026-03-14,field_camp,True
+COL2385,Vikas Jadhav,hi,Aurangabad,Garkheda,entry,numerals_only,24,2025-08-02,field_camp,True
+COL2386,Manoj Shinde,mr,Mumbai,Andheri East|Bhandup|Vikhroli,mid,numerals_only,14,2026-06-27,field_camp,True
+COL2387,Imran Deshmukh,mr,Nashik,Nashik Road,entry,non_reader,22,2025-10-01,recycler_referral,True
+COL2388,Vaishali Shinde,mr,Nashik,Nashik Road|Satpur,entry,functional,16,2026-05-16,field_camp,True
+COL2389,Pandurang Sonawane,hi,Pune,Hadapsar|Yerawada,entry,numerals_only,12,2026-05-31,peer_referral,True
+COL2390,Arjun Kamble,mr,Pune,Katraj|Vishrantwadi|Wagholi,entry,non_reader,23,2026-06-28,field_camp,True
+COL2391,Prakash Ghorpade,other,Nagpur,Hingna|Kamptee Road,entry,functional,25,2025-10-16,recycler_referral,True
+COL2392,Anita Chavan,mr,Nashik,Cidco,entry,numerals_only,17,2025-05-09,recycler_referral,True
+COL2393,Rukhsana Kumar,hi,Pimpri-Chinchwad,Moshi|Talawade,entry,functional,20,2026-06-21,field_camp,True
+COL2394,Munna Mane,mr,Aurangabad,Chikalthana|Garkheda|Waluj,entry,numerals_only,18,2026-07-13,field_camp,True
+COL2395,Kailas Qureshi,mr,Pune,Bhosari|Kothrud|Yerawada,entry,non_reader,22,2025-07-15,ngo_partner,True
+COL2396,Rekha Shinde,mr,Nashik,Nashik Road|Panchavati|Satpur,entry,numerals_only,21,2026-06-28,peer_referral,True
+COL2397,Mahesh Pawar,hi,Nagpur,Manish Nagar,mid,functional,20,2026-06-13,recycler_referral,True
+COL2398,Manoj Ghorpade,mr,Pune,Dhankawadi|Hadapsar|Vishrantwadi,entry,non_reader,17,2026-05-12,field_camp,True
+COL2399,Ravi Jadhav,mr,Mumbai,Mankhurd,entry,functional,28,2026-05-13,peer_referral,True

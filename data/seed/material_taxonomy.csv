@@ -1,0 +1,29 @@
+material_code,material_category,sub_category,unit,base_informal_rate_inr_per_kg,formal_premium_pct,price_volatility,price_family,primary_hazard,informal_processing_risk,lithium_g_per_kg,cobalt_g_per_kg,neodymium_g_per_kg,tantalum_g_per_kg,gallium_g_per_kg,indium_g_per_kg,critical_materials_lost_informal
+CRT-CTV,CRT,Colour TV tube,kg,14,31.0,0.05,glass,leaded_glass,CRT implosion + lead dust when tube is broken open,0.0,0.0,0.0,0.0,0.0,0.0,none
+CRT-MON,CRT,Monochrome monitor tube,kg,10,29.0,0.05,glass,leaded_glass,CRT implosion + lead dust when tube is broken open,0.0,0.0,0.0,0.0,0.0,0.0,none
+CRT-YOK,CRT,Deflection yoke,kg,46,14.0,0.09,glass,none,low direct hazard,0.0,0.0,0.0,0.0,0.0,0.0,none
+LCD-LAP,LCD/LED panel,Laptop panel,kg,36,21.0,0.07,indium,mercury_backlight,mercury vapour when CCFL backlight is snapped,0.0,0.0,0.0,0.0,0.04,0.28,indium;gallium
+LCD-MON,LCD/LED panel,Monitor panel,kg,30,20.0,0.07,indium,mercury_backlight,mercury vapour when CCFL backlight is snapped,0.0,0.0,0.0,0.0,0.03,0.24,indium;gallium
+LCD-TV,LCD/LED panel,TV panel,kg,25,19.0,0.07,indium,mercury_backlight,mercury vapour when CCFL backlight is snapped,0.0,0.0,0.0,0.0,0.03,0.19,indium;gallium
+LCD-BLA,LCD/LED panel,Backlight assembly,kg,41,17.0,0.08,indium,mercury_backlight,mercury vapour when CCFL backlight is snapped,0.0,0.0,0.0,0.0,0.0,0.06,indium
+PCB-MBH,PCB,Motherboard (high grade),kg,545,26.0,0.12,precious,solder_lead,lead fume from open desoldering; acid leaching of gold,0.0,0.0,0.0,1.6,0.05,0.0,tantalum;gallium
+PCB-RAM,PCB,RAM / gold-finger,kg,1780,24.0,0.14,precious,solder_lead,lead fume from open desoldering; acid leaching of gold,0.0,0.0,0.0,0.9,0.04,0.0,tantalum;gallium
+PCB-GPU,PCB,GPU / add-on card,kg,690,25.0,0.13,precious,solder_lead,lead fume from open desoldering; acid leaching of gold,0.0,0.0,0.0,1.4,0.07,0.0,tantalum;gallium
+PCB-LOW,PCB,TV / appliance board (low grade),kg,118,28.0,0.11,precious,solder_lead,lead fume from open desoldering; acid leaching of gold,0.0,0.0,0.0,0.4,0.0,0.0,tantalum
+PCB-MIX,PCB,Mixed populated board,kg,298,27.0,0.12,precious,solder_lead,lead fume from open desoldering; acid leaching of gold,0.0,0.0,0.0,1.0,0.03,0.0,tantalum;gallium
+CBL-CU,Cable,Copper household wire,kg,252,5.0,0.1,copper,pvc_burn_risk,dioxins from open-air cable burning,0.0,0.0,0.0,0.0,0.0,0.0,none
+CBL-ARM,Cable,Armoured / data cable,kg,121,7.0,0.09,copper,pvc_burn_risk,dioxins from open-air cable burning,0.0,0.0,0.0,0.0,0.0,0.0,none
+CBL-AL,Cable,Aluminium cable,kg,96,6.0,0.08,copper,pvc_burn_risk,dioxins from open-air cable burning,0.0,0.0,0.0,0.0,0.0,0.0,none
+CBL-MIX,Cable,Mixed insulated,kg,71,9.0,0.09,copper,pvc_burn_risk,dioxins from open-air cable burning,0.0,0.0,0.0,0.0,0.0,0.0,none
+BAT-LI,Battery,Li-ion laptop / phone pack,kg,92,27.0,0.13,battery,fire_puncture,thermal runaway / fire when pack is punctured,21.0,58.0,0.0,0.0,0.0,0.0,lithium;cobalt
+BAT-PB,Battery,Lead-acid,kg,78,12.0,0.08,battery,acid_lead,"sulphuric acid burns, lead exposure",0.0,0.0,0.0,0.0,0.0,0.0,none
+BAT-NIMH,Battery,Ni-MH,kg,61,18.0,0.1,battery,fire_puncture,thermal runaway / fire when pack is punctured,0.0,0.0,0.0,0.0,0.0,0.0,none
+BAT-BTN,Battery,Button / coin cell,kg,33,22.0,0.11,battery,fire_puncture,thermal runaway / fire when pack is punctured,8.0,0.0,0.0,0.0,0.0,0.0,lithium
+MTR-HDD,Motor & magnet-bearing,HDD assembly,kg,132,24.0,0.09,copper,none,low direct hazard,0.0,0.0,14.5,0.0,0.0,0.0,neodymium
+MTR-SPK,Motor & magnet-bearing,Speaker magnet,kg,89,23.0,0.09,copper,none,low direct hazard,0.0,0.0,24.0,0.0,0.0,0.0,neodymium
+MTR-SML,Motor & magnet-bearing,Small AC/DC motor,kg,66,19.0,0.08,copper,none,low direct hazard,0.0,0.0,3.2,0.0,0.0,0.0,neodymium
+MTR-CMP,Motor & magnet-bearing,Compressor motor,kg,55,17.0,0.08,copper,none,low direct hazard,0.0,0.0,1.1,0.0,0.0,0.0,neodymium
+PLA-ABS,Mixed plastic,ABS casing,kg,33,11.0,0.06,polymer,brominated_fr,brominated flame retardant fumes when melted,0.0,0.0,0.0,0.0,0.0,0.0,none
+PLA-HIPS,Mixed plastic,HIPS,kg,26,10.0,0.06,polymer,brominated_fr,brominated flame retardant fumes when melted,0.0,0.0,0.0,0.0,0.0,0.0,none
+PLA-PCABS,Mixed plastic,PC/ABS blend,kg,36,12.0,0.06,polymer,brominated_fr,brominated flame retardant fumes when melted,0.0,0.0,0.0,0.0,0.0,0.0,none
+PLA-MIX,Mixed plastic,Mixed dirty,kg,12,9.0,0.07,polymer,brominated_fr,brominated flame retardant fumes when melted,0.0,0.0,0.0,0.0,0.0,0.0,none

@@ -1,0 +1,14 @@
+node_modules/
+dist/
+dist-single/
+__pycache__/
+*.pyc
+.venv/
+
+.env
+.env.*
+!.env.example
+
+kabadiwala.db
+uploads/
+.claude/

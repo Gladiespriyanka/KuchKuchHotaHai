@@ -1,0 +1,107 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+  Visual identity: a scrap-yard rate board. Painted metal green, brass
+  numerals, thick ink rules and hard offset shadows — the enamel signboards
+  and chalk price boards that already hang in every kabadi shop. Deliberately
+  not a rounded SaaS dashboard.
+*/
+
+:root {
+  --ink: #12211c;
+  --board: #0f4d38;
+  --board-dark: #08281d;
+  --brass: #e0a526;
+  --copper: #c4561e;
+  --mint: #f1f6f0;
+}
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--mint);
+  color: var(--ink);
+  font-family: 'Inter', 'Noto Sans Devanagari', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Faint hatched paper texture, like a ruled ledger page. */
+.paper-grid {
+  background-image: linear-gradient(rgba(18, 33, 28, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(18, 33, 28, 0.045) 1px, transparent 1px);
+  background-size: 22px 22px;
+}
+
+@layer components {
+  .plate {
+    @apply border-2 border-ink bg-white shadow-plateSm;
+  }
+  .plate-lg {
+    @apply border-[3px] border-ink bg-white shadow-plate;
+  }
+  .eyebrow {
+    @apply font-display tracking-[0.14em] uppercase text-[11px] text-slate2;
+  }
+  .num {
+    font-family: 'JetBrains Mono', ui-monospace, monospace;
+    font-variant-numeric: tabular-nums;
+    letter-spacing: -0.01em;
+  }
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 border-2 border-ink font-semibold
+           transition-transform active:translate-x-[2px] active:translate-y-[2px]
+           active:shadow-none disabled:opacity-45 disabled:pointer-events-none;
+  }
+  .btn-primary {
+    @apply btn bg-board text-white shadow-plateSm px-5 py-3;
+  }
+  .btn-brass {
+    @apply btn bg-brass text-ink shadow-plateSm px-5 py-3;
+  }
+  .btn-ghost {
+    @apply btn bg-white text-ink shadow-plateSm px-4 py-2.5;
+  }
+  .btn-xl {
+    @apply btn bg-white text-ink shadow-plate px-5 py-4 text-lg;
+  }
+  .field {
+    @apply w-full border-2 border-ink bg-white px-3 py-3 text-base outline-none
+           focus:ring-4 focus:ring-brass/40;
+  }
+  .chip {
+    @apply inline-flex items-center gap-1 border-2 border-ink px-2 py-0.5 text-[11px] font-bold uppercase tracking-wide;
+  }
+  .tile {
+    @apply plate-lg flex flex-col justify-between p-4 text-left;
+  }
+}
+
+/* Keyboard focus stays visible everywhere. */
+:focus-visible {
+  outline: 3px solid var(--brass);
+  outline-offset: 2px;
+}
+
+.leaflet-container {
+  background: #e7eee8;
+  font-family: 'Inter', sans-serif;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+@keyframes sweep {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(100%); }
+}
+.scan-sweep { animation: sweep 2.4s ease-in-out infinite; }
+
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-thumb { background: #c3d0c7; border: 2px solid var(--mint); }

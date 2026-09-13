@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#0F4D38" />
+    <meta name="description" content="KabaadE — fair prices, authorised recyclers and traceable handovers for informal e-waste collectors." />
+    <title>KabaadE</title>
+    <link rel="manifest" href="./manifest.webmanifest" />
+    <link rel="apple-touch-icon" href="./icon-192.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&family=Noto+Sans+Devanagari:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+    <script>
+      // Register the service worker ONLY in a production build.
+      // In `npm run dev` a cache-first shell serves stale modules, so code
+      // changes appear not to take effect. Any worker registered by an
+      // earlier visit is unregistered and its caches cleared.
+      const isDevServer = ['localhost', '127.0.0.1'].includes(location.hostname)
+        && ['5173', '4173'].includes(location.port)
+      if ('serviceWorker' in navigator) {
+        if (isDevServer) {
+          navigator.serviceWorker.getRegistrations()
+            .then((rs) => rs.forEach((r) => r.unregister()))
+            .catch(() => {})
+          if (window.caches) caches.keys().then((ks) => ks.forEach((k) => caches.delete(k))).catch(() => {})
+        } else if (location.protocol.startsWith('http')) {
+          window.addEventListener('load', () => {
+            navigator.serviceWorker.register('./sw.js').catch(() => {})
+          })
+        }
+      }
+    </script>
+  </body>
+</html>
