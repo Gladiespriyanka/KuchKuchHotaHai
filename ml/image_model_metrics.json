@@ -1,0 +1,247 @@
+{
+  "model": "PCA+SVC-rbf",
+  "feature_extractor": "HOG(9 orientations, 8px cells) + RGB histogram(24 bins) + LBP(uniform, P=8) + 4x4 colour grid",
+  "input_size": "128x128 RGB",
+  "classes": [
+    "Battery",
+    "Keyboard",
+    "Microwave",
+    "Mobile",
+    "Mouse",
+    "PCB",
+    "Player",
+    "Printer",
+    "Television",
+    "Washing Machine"
+  ],
+  "dataset": {
+    "source": "supplied archive.zip / modified-dataset",
+    "train": 2400,
+    "val": 300,
+    "test": 300,
+    "per_class_train": 240,
+    "image_size_native": "150x150 RGB"
+  },
+  "validation_accuracy": {
+    "PCA+LogisticRegression": 0.5833,
+    "LogisticRegression": 0.7167,
+    "PCA+SVC-rbf": 0.7433
+  },
+  "test_accuracy": 0.6533,
+  "per_class_test": {
+    "Battery": {
+      "support": 30,
+      "correct": 15,
+      "recall": 0.5,
+      "most_confused_with": "PCB"
+    },
+    "Keyboard": {
+      "support": 30,
+      "correct": 24,
+      "recall": 0.8,
+      "most_confused_with": "PCB"
+    },
+    "Microwave": {
+      "support": 30,
+      "correct": 20,
+      "recall": 0.667,
+      "most_confused_with": "Printer"
+    },
+    "Mobile": {
+      "support": 30,
+      "correct": 21,
+      "recall": 0.7,
+      "most_confused_with": "PCB"
+    },
+    "Mouse": {
+      "support": 30,
+      "correct": 14,
+      "recall": 0.467,
+      "most_confused_with": "Mobile"
+    },
+    "PCB": {
+      "support": 30,
+      "correct": 26,
+      "recall": 0.867,
+      "most_confused_with": "Mobile"
+    },
+    "Player": {
+      "support": 30,
+      "correct": 13,
+      "recall": 0.433,
+      "most_confused_with": "Printer"
+    },
+    "Printer": {
+      "support": 30,
+      "correct": 23,
+      "recall": 0.767,
+      "most_confused_with": "Television"
+    },
+    "Television": {
+      "support": 30,
+      "correct": 18,
+      "recall": 0.6,
+      "most_confused_with": "Microwave"
+    },
+    "Washing Machine": {
+      "support": 30,
+      "correct": 22,
+      "recall": 0.733,
+      "most_confused_with": "Printer"
+    }
+  },
+  "confusion_matrix": {
+    "labels": [
+      "Battery",
+      "Keyboard",
+      "Microwave",
+      "Mobile",
+      "Mouse",
+      "PCB",
+      "Player",
+      "Printer",
+      "Television",
+      "Washing Machine"
+    ],
+    "matrix": [
+      [
+        15,
+        2,
+        0,
+        1,
+        2,
+        4,
+        2,
+        2,
+        1,
+        1
+      ],
+      [
+        2,
+        24,
+        0,
+        2,
+        0,
+        2,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        0,
+        2,
+        20,
+        0,
+        0,
+        0,
+        0,
+        4,
+        2,
+        2
+      ],
+      [
+        0,
+        0,
+        0,
+        21,
+        1,
+        5,
+        0,
+        2,
+        1,
+        0
+      ],
+      [
+        1,
+        2,
+        0,
+        5,
+        14,
+        1,
+        2,
+        0,
+        2,
+        3
+      ],
+      [
+        0,
+        2,
+        0,
+        2,
+        0,
+        26,
+        0,
+        0,
+        0,
+        0
+      ],
+      [
+        3,
+        3,
+        1,
+        0,
+        1,
+        1,
+        13,
+        7,
+        0,
+        1
+      ],
+      [
+        2,
+        1,
+        1,
+        0,
+        0,
+        0,
+        1,
+        23,
+        2,
+        0
+      ],
+      [
+        0,
+        2,
+        5,
+        1,
+        0,
+        1,
+        0,
+        1,
+        18,
+        2
+      ],
+      [
+        2,
+        1,
+        2,
+        0,
+        0,
+        0,
+        0,
+        3,
+        0,
+        22
+      ]
+    ]
+  },
+  "training_seconds": 41.1,
+  "what_it_predicts": "The DEVICE shown in the photo (the dataset's own labels). Mapping a device to a scrap material category is a separate explicit step that the collector confirms \u2014 see ml/device_map.py.",
+  "limitations": [
+    "Classical features (HOG + colour), not a fine-tuned CNN. A MobileNetV2 would likely score higher; this was chosen for a ~1 MB model, fast CPU inference and reproducible training.",
+    "Trained on 150x150 catalogue-style images. Real scrapyard photos are cluttered, poorly lit and taken at odd angles \u2014 expect accuracy to drop in the field.",
+    "Television cannot be resolved into CRT vs LCD/LED from the image alone; the app asks the collector instead of guessing.",
+    "10 device classes do not cover all 7 material categories: Cable and Mixed plastic have no class in this dataset, so photo classification cannot propose them.",
+    "Accuracy below is measured on this dataset's own test split, not on field photographs."
+  ],
+  "ood_gate": {
+    "method": "mean distance to 5 nearest training images in PCA space",
+    "threshold": 79.217,
+    "calibrated_on": "p97 of validation distances",
+    "false_rejection_rate_on_test": 0.0267,
+    "structure_floor_edge_density": 0.0311,
+    "structure_floor_calibrated_on": "p2 of training edge density",
+    "why": "The classifier has no non-e-waste class, so a high softmax score only means 'closest of the ten'. The gate rejects images unlike anything in the training set."
+  }
+}

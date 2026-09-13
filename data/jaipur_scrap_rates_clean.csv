@@ -1,0 +1,40 @@
+material,category,item_type,price,unit,city,locality,source,source_url,collection_date,synthetic,is_priced
+Mix Plastic,Plastic,mixed,7,kg,Jaipur,Jaipur (all localities),thekabadiwala.com published rate card,https://www.thekabadiwala.com/scrap-rates/Jaipur,2026-08-31,False,True
+Soft Plastic,Plastic,soft,10,kg,Jaipur,Jaipur (all localities),thekabadiwala.com published rate card,https://www.thekabadiwala.com/scrap-rates/Jaipur,2026-08-31,False,True
+Hard Plastic,Plastic,hard,5,kg,Jaipur,Jaipur (all localities),thekabadiwala.com published rate card,https://www.thekabadiwala.com/scrap-rates/Jaipur,2026-08-31,False,True
+PET Bottle,Plastic,bottle,20,kg,Jaipur,Jaipur (all localities),thekabadiwala.com published rate card,https://www.thekabadiwala.com/scrap-rates/Jaipur,2026-08-31,False,True
+Plastic Jar (5 Litre),Plastic,jar,10,kg,Jaipur,Jaipur (all localities),thekabadiwala.com published rate card,https://www.thekabadiwala.com/scrap-rates/Jaipur,2026-08-31,False,True
+Plastic Jar (15 Litre),Plastic,jar,10,kg,Jaipur,Jaipur (all localities),thekabadiwala.com published rate card,https://www.thekabadiwala.com/scrap-rates/Jaipur,2026-08-31,False,True
+Plastic Can (20 Litre),Plastic,can,10,kg,Jaipur,Jaipur (all localities),thekabadiwala.com published rate card,https://www.thekabadiwala.com/scrap-rates/Jaipur,2026-08-31,False,True
+Plastic Can (25 Litre),Plastic,can,15,kg,Jaipur,Jaipur (all localities),thekabadiwala.com published rate card,https://www.thekabadiwala.com/scrap-rates/Jaipur,2026-08-31,False,True
+Plastic Can (50 Litre),Plastic,can,14,kg,Jaipur,Jaipur (all localities),thekabadiwala.com published rate card,https://www.thekabadiwala.com/scrap-rates/Jaipur,2026-08-31,False,True
+Plastic Drum (200 Litre),Plastic,drum,10,kg,Jaipur,Jaipur (all localities),thekabadiwala.com published rate card,https://www.thekabadiwala.com/scrap-rates/Jaipur,2026-08-31,False,True
+PVC Pipe,Plastic,pipe,10,kg,Jaipur,Jaipur (all localities),thekabadiwala.com published rate card,https://www.thekabadiwala.com/scrap-rates/Jaipur,2026-08-31,False,True
+Polythene Bags (LD),Plastic,film,10,kg,Jaipur,Jaipur (all localities),thekabadiwala.com published rate card,https://www.thekabadiwala.com/scrap-rates/Jaipur,2026-08-31,False,True
+Polythene Bags (HM),Plastic,film,10,kg,Jaipur,Jaipur (all localities),thekabadiwala.com published rate card,https://www.thekabadiwala.com/scrap-rates/Jaipur,2026-08-31,False,True
+Plastic (PP) Bags,Plastic,film,10,kg,Jaipur,Jaipur (all localities),thekabadiwala.com published rate card,https://www.thekabadiwala.com/scrap-rates/Jaipur,2026-08-31,False,True
+Water Tank (Sintex),Plastic,tank,15,kg,Jaipur,Jaipur (all localities),thekabadiwala.com published rate card,https://www.thekabadiwala.com/scrap-rates/Jaipur,2026-08-31,False,True
+Cooler (Plastic/Fibre),Plastic,appliance body,8,kg,Jaipur,Jaipur (all localities),thekabadiwala.com published rate card,https://www.thekabadiwala.com/scrap-rates/Jaipur,2026-08-31,False,True
+Fibre,Plastic,fibre,5,kg,Jaipur,Jaipur (all localities),thekabadiwala.com published rate card,https://www.thekabadiwala.com/scrap-rates/Jaipur,2026-08-31,False,True
+Packaging Film,Plastic,film,0,kg,Jaipur,Jaipur (all localities),thekabadiwala.com published rate card,https://www.thekabadiwala.com/scrap-rates/Jaipur,2026-08-31,False,False
+Milk Covers,Plastic,film,0,kg,Jaipur,Jaipur (all localities),thekabadiwala.com published rate card,https://www.thekabadiwala.com/scrap-rates/Jaipur,2026-08-31,False,False
+E-waste,E-waste,mixed,10,kg,Jaipur,Jaipur (all localities),thekabadiwala.com published rate card,https://www.thekabadiwala.com/scrap-rates/Jaipur,2026-08-31,False,True
+CPU,E-waste,computer,250,kg,Jaipur,Jaipur (all localities),thekabadiwala.com published rate card,https://www.thekabadiwala.com/scrap-rates/Jaipur,2026-08-31,False,True
+Printer,E-waste,peripheral,10,kg,Jaipur,Jaipur (all localities),thekabadiwala.com published rate card,https://www.thekabadiwala.com/scrap-rates/Jaipur,2026-08-31,False,True
+Microwave,E-waste,appliance,15,kg,Jaipur,Jaipur (all localities),thekabadiwala.com published rate card,https://www.thekabadiwala.com/scrap-rates/Jaipur,2026-08-31,False,True
+Geyser,E-waste,appliance,15,kg,Jaipur,Jaipur (all localities),thekabadiwala.com published rate card,https://www.thekabadiwala.com/scrap-rates/Jaipur,2026-08-31,False,True
+Alkaline Battery (Cell),E-waste,battery,2,kg,Jaipur,Jaipur (all localities),thekabadiwala.com published rate card,https://www.thekabadiwala.com/scrap-rates/Jaipur,2026-08-31,False,True
+Inverter Battery,E-waste,battery,90,kg,Jaipur,Jaipur (all localities),thekabadiwala.com published rate card,https://www.thekabadiwala.com/scrap-rates/Jaipur,2026-08-31,False,True
+Laptop,E-waste,computer,200,piece,Jaipur,Jaipur (all localities),thekabadiwala.com published rate card,https://www.thekabadiwala.com/scrap-rates/Jaipur,2026-08-31,False,True
+Television (LCD/LED),E-waste,display,100,piece,Jaipur,Jaipur (all localities),thekabadiwala.com published rate card,https://www.thekabadiwala.com/scrap-rates/Jaipur,2026-08-31,False,True
+Television (CRT),E-waste,display,150,piece,Jaipur,Jaipur (all localities),thekabadiwala.com published rate card,https://www.thekabadiwala.com/scrap-rates/Jaipur,2026-08-31,False,True
+Monitor (LCD/LED),E-waste,display,100,piece,Jaipur,Jaipur (all localities),thekabadiwala.com published rate card,https://www.thekabadiwala.com/scrap-rates/Jaipur,2026-08-31,False,True
+Monitor (CRT),E-waste,display,100,piece,Jaipur,Jaipur (all localities),thekabadiwala.com published rate card,https://www.thekabadiwala.com/scrap-rates/Jaipur,2026-08-31,False,True
+UPS (with battery),E-waste,power,300,piece,Jaipur,Jaipur (all localities),thekabadiwala.com published rate card,https://www.thekabadiwala.com/scrap-rates/Jaipur,2026-08-31,False,True
+UPS (without battery),E-waste,power,150,piece,Jaipur,Jaipur (all localities),thekabadiwala.com published rate card,https://www.thekabadiwala.com/scrap-rates/Jaipur,2026-08-31,False,True
+Washing machine,E-waste,appliance,500,piece,Jaipur,Jaipur (all localities),thekabadiwala.com published rate card,https://www.thekabadiwala.com/scrap-rates/Jaipur,2026-08-31,False,True
+Refrigerator (Single Door),E-waste,appliance,800,piece,Jaipur,Jaipur (all localities),thekabadiwala.com published rate card,https://www.thekabadiwala.com/scrap-rates/Jaipur,2026-08-31,False,True
+Refrigerator (Double Door),E-waste,appliance,1200,piece,Jaipur,Jaipur (all localities),thekabadiwala.com published rate card,https://www.thekabadiwala.com/scrap-rates/Jaipur,2026-08-31,False,True
+AC (1 ton),E-waste,appliance,3000,piece,Jaipur,Jaipur (all localities),thekabadiwala.com published rate card,https://www.thekabadiwala.com/scrap-rates/Jaipur,2026-08-31,False,True
+AC (1.5 ton),E-waste,appliance,3200,piece,Jaipur,Jaipur (all localities),thekabadiwala.com published rate card,https://www.thekabadiwala.com/scrap-rates/Jaipur,2026-08-31,False,True
+AC (2 Ton),E-waste,appliance,3500,piece,Jaipur,Jaipur (all localities),thekabadiwala.com published rate card,https://www.thekabadiwala.com/scrap-rates/Jaipur,2026-08-31,False,True

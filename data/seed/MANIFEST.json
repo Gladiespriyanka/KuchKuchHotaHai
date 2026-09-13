@@ -1,0 +1,69 @@
+{
+  "seed": 26229,
+  "generated_window": [
+    "2024-08-31",
+    "2026-08-31"
+  ],
+  "files": {
+    "collector_earnings.csv": {
+      "rows": 400,
+      "bytes": 43263,
+      "sha256_16": "b90d06f9900971fe"
+    },
+    "collectors.csv": {
+      "rows": 400,
+      "bytes": 41063,
+      "sha256_16": "68f91fdc82419cfa"
+    },
+    "impact_summary.csv": {
+      "rows": 28,
+      "bytes": 2237,
+      "sha256_16": "1bb98f7d7d718b43"
+    },
+    "lots.csv": {
+      "rows": 20000,
+      "bytes": 4953785,
+      "sha256_16": "fe67478b54d2da26"
+    },
+    "material_taxonomy.csv": {
+      "rows": 28,
+      "bytes": 4391,
+      "sha256_16": "5c70cce8fdb3f4cd"
+    },
+    "ml_image_index.csv": {
+      "rows": 2400,
+      "bytes": 358847,
+      "sha256_16": "f84029e06e5fa171"
+    },
+    "price_board_current.csv": {
+      "rows": 168,
+      "bytes": 17526,
+      "sha256_16": "b7ffd6341ca633b1"
+    },
+    "price_history.csv": {
+      "rows": 122808,
+      "bytes": 15834449,
+      "sha256_16": "ef7c279bfa4c0284"
+    },
+    "recyclers.csv": {
+      "rows": 75,
+      "bytes": 18635,
+      "sha256_16": "b03fe8bf8aa4f0ab"
+    },
+    "traceability.csv": {
+      "rows": 14226,
+      "bytes": 3769713,
+      "sha256_16": "3db14476d091c08e"
+    },
+    "transactions.csv": {
+      "rows": 16500,
+      "bytes": 4334555,
+      "sha256_16": "f8f85c22b7ca8da5"
+    },
+    "unit_economics.csv": {
+      "rows": 7,
+      "bytes": 856,
+      "sha256_16": "2f50463e3cfcddab"
+    }
+  }
+}
