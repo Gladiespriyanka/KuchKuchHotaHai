@@ -1,0 +1,16 @@
+from .models import (  # noqa: F401
+    Collector,
+    Handover,
+    Lot,
+    LotEvent,
+    LotGroup,
+    Material,
+    Offer,
+    Payment,
+    PickupBooking,
+    PickupSchedule,
+    Price,
+    Recycler,
+    Transaction,
+    User,
+)

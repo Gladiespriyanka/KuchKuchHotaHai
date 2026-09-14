@@ -1,0 +1,7 @@
+transaction_id,date,material,category,locality,quantity,unit,offered_price,final_price,quality,collector_type,source
+39,2026-08-31T20:12:01,PCB,E-waste,"Malviya Nagar, Jaipur",8.4,kg,1658.0,1638.0,good,informal_collector,kabadiwala-connect-platform
+16454,2026-09-13T13:02:55,Cable,E-waste,Aurangabad,28.9,kg,3665.32,3665.32,intact,informal_collector,kabadiwala-connect-platform
+39,2026-09-13T19:45:36,PCB,E-waste,Delhi,16.0,kg,3200.0,3200.0,mixed,informal_collector,kabadiwala-connect-platform
+38,2026-09-13T19:45:52,PCB,E-waste,"Malviya Nagar, Jaipur",5.0,kg,1000.0,1000.0,good,informal_collector,kabadiwala-connect-platform
+41,2026-09-13T19:46:40,Cable,E-waste,Delhi,10.0,kg,6020.0,6020.0,good,informal_collector,kabadiwala-connect-platform
+37,2026-09-14T15:27:47,PCB,E-waste,"Malviya Nagar, Jaipur",9.1,kg,1774.0,1774.0,good,informal_collector,kabadiwala-connect-platform

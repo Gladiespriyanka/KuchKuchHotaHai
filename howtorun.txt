@@ -1,0 +1,15 @@
+cd backend
+python -m venv .venv
+.venv\Scripts\Activate.ps1
+python -c "import sys; print(sys.executable)"
+python -m pip install --upgrade pip
+python -m pip install -r requirements.txt
+python -c "import sqlalchemy; print('SQLAlchemy:', sqlalchemy.__version__)"
+python -m app.seed.import_datasets
+python -m uvicorn app.main:app --reload --port 8000
+
+cd frontend
+npm install
+npm run dev
+
+http://localhost:5173/#/welcome

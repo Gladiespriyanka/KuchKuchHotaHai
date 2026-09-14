@@ -1,0 +1,169 @@
+material_code,city,material_category,sub_category,unit,buying_price_informal,quoted_price_formal,spread_pct,market_range_low,market_range_high,chg_7d_pct,chg_30d_pct,trend_7d,as_of_date
+BAT-BTN,Aurangabad,Battery,Button / coin cell,kg,29.07,35.94,23.63,26.16,38.82,7.47,2.54,up,2026-08-31
+BAT-BTN,Mumbai,Battery,Button / coin cell,kg,31.27,38.66,23.63,28.14,41.75,3.13,-1.64,up,2026-08-31
+BAT-BTN,Nagpur,Battery,Button / coin cell,kg,28.35,35.05,23.63,25.52,37.85,10.01,2.38,up,2026-08-31
+BAT-BTN,Nashik,Battery,Button / coin cell,kg,27.05,33.44,23.62,24.35,36.12,5.62,-9.17,up,2026-08-31
+BAT-BTN,Pimpri-Chinchwad,Battery,Button / coin cell,kg,29.52,36.5,23.64,26.57,39.42,3.83,-1.53,up,2026-08-31
+BAT-BTN,Pune,Battery,Button / coin cell,kg,29.87,36.93,23.64,26.88,39.88,2.33,1.12,up,2026-08-31
+BAT-LI,Aurangabad,Battery,Li-ion laptop / phone pack,kg,74.9,96.62,29.0,67.41,104.35,-4.82,-9.67,down,2026-08-31
+BAT-LI,Mumbai,Battery,Li-ion laptop / phone pack,kg,84.29,108.74,29.01,75.86,117.44,3.42,-2.54,up,2026-08-31
+BAT-LI,Nagpur,Battery,Li-ion laptop / phone pack,kg,75.96,97.99,29.0,68.36,105.83,-2.16,-3.78,down,2026-08-31
+BAT-LI,Nashik,Battery,Li-ion laptop / phone pack,kg,78.16,100.83,29.0,70.34,108.9,3.28,0.17,up,2026-08-31
+BAT-LI,Pimpri-Chinchwad,Battery,Li-ion laptop / phone pack,kg,81.44,105.06,29.0,73.3,113.46,-4.87,2.21,down,2026-08-31
+BAT-LI,Pune,Battery,Li-ion laptop / phone pack,kg,80.18,103.43,29.0,72.16,111.7,0.96,3.15,up,2026-08-31
+BAT-NIMH,Aurangabad,Battery,Ni-MH,kg,52.39,62.52,19.34,47.15,67.52,8.58,-2.66,up,2026-08-31
+BAT-NIMH,Mumbai,Battery,Ni-MH,kg,55.74,66.52,19.34,50.17,71.84,-2.82,-0.36,down,2026-08-31
+BAT-NIMH,Nagpur,Battery,Ni-MH,kg,49.32,58.86,19.34,44.39,63.57,1.42,-0.68,up,2026-08-31
+BAT-NIMH,Nashik,Battery,Ni-MH,kg,50.46,60.22,19.34,45.41,65.04,-2.7,-4.72,down,2026-08-31
+BAT-NIMH,Pimpri-Chinchwad,Battery,Ni-MH,kg,53.91,64.33,19.33,48.52,69.48,3.12,4.62,up,2026-08-31
+BAT-NIMH,Pune,Battery,Ni-MH,kg,57.56,68.69,19.34,51.8,74.19,8.71,12.03,up,2026-08-31
+BAT-PB,Aurangabad,Battery,Lead-acid,kg,65.9,74.39,12.88,59.31,80.34,2.49,0.05,up,2026-08-31
+BAT-PB,Mumbai,Battery,Lead-acid,kg,70.45,79.53,12.89,63.4,85.89,-0.37,-3.53,flat,2026-08-31
+BAT-PB,Nagpur,Battery,Lead-acid,kg,61.12,69.0,12.89,55.01,74.52,-1.48,-6.8,down,2026-08-31
+BAT-PB,Nashik,Battery,Lead-acid,kg,67.66,76.38,12.89,60.89,82.49,5.65,4.12,up,2026-08-31
+BAT-PB,Pimpri-Chinchwad,Battery,Lead-acid,kg,70.65,79.76,12.89,63.59,86.14,3.85,2.58,up,2026-08-31
+BAT-PB,Pune,Battery,Lead-acid,kg,68.74,77.6,12.89,61.87,83.81,3.06,0.84,up,2026-08-31
+CBL-AL,Aurangabad,Cable,Aluminium cable,kg,97.07,103.42,6.54,87.36,111.69,-0.15,-1.33,flat,2026-08-31
+CBL-AL,Mumbai,Cable,Aluminium cable,kg,108.74,115.86,6.55,97.87,125.13,1.67,1.93,up,2026-08-31
+CBL-AL,Nagpur,Cable,Aluminium cable,kg,99.06,105.54,6.54,89.15,113.98,-2.81,2.9,down,2026-08-31
+CBL-AL,Nashik,Cable,Aluminium cable,kg,99.65,106.17,6.54,89.68,114.66,-0.24,-5.16,flat,2026-08-31
+CBL-AL,Pimpri-Chinchwad,Cable,Aluminium cable,kg,106.26,113.22,6.55,95.63,122.28,7.02,2.37,up,2026-08-31
+CBL-AL,Pune,Cable,Aluminium cable,kg,107.48,114.52,6.55,96.73,123.68,6.81,5.05,up,2026-08-31
+CBL-ARM,Aurangabad,Cable,Armoured / data cable,kg,128.19,137.98,7.64,115.37,149.02,4.42,2.33,up,2026-08-31
+CBL-ARM,Mumbai,Cable,Armoured / data cable,kg,143.5,154.46,7.64,129.15,166.82,9.54,2.76,up,2026-08-31
+CBL-ARM,Nagpur,Cable,Armoured / data cable,kg,131.45,141.49,7.64,118.3,152.81,1.46,3.12,up,2026-08-31
+CBL-ARM,Nashik,Cable,Armoured / data cable,kg,130.24,140.19,7.64,117.22,151.41,7.15,5.67,up,2026-08-31
+CBL-ARM,Pimpri-Chinchwad,Cable,Armoured / data cable,kg,133.73,143.94,7.63,120.36,155.46,-0.57,1.43,flat,2026-08-31
+CBL-ARM,Pune,Cable,Armoured / data cable,kg,134.28,144.54,7.64,120.85,156.1,4.19,7.18,up,2026-08-31
+CBL-CU,Aurangabad,Cable,Copper household wire,kg,253.91,267.76,5.45,228.52,289.18,3.19,-3.11,up,2026-08-31
+CBL-CU,Mumbai,Cable,Copper household wire,kg,294.12,310.17,5.46,264.71,334.98,4.81,1.59,up,2026-08-31
+CBL-CU,Nagpur,Cable,Copper household wire,kg,262.11,276.41,5.46,235.9,298.52,2.57,2.33,up,2026-08-31
+CBL-CU,Nashik,Cable,Copper household wire,kg,269.91,284.63,5.45,242.92,307.4,6.09,3.61,up,2026-08-31
+CBL-CU,Pimpri-Chinchwad,Cable,Copper household wire,kg,258.58,272.69,5.46,232.72,294.51,-7.43,-6.48,down,2026-08-31
+CBL-CU,Pune,Cable,Copper household wire,kg,274.27,289.23,5.45,246.84,312.37,2.53,-1.73,up,2026-08-31
+CBL-MIX,Aurangabad,Cable,Mixed insulated,kg,77.24,84.82,9.81,69.52,91.61,7.26,3.86,up,2026-08-31
+CBL-MIX,Mumbai,Cable,Mixed insulated,kg,78.06,85.73,9.83,70.25,92.59,-5.66,-5.12,down,2026-08-31
+CBL-MIX,Nagpur,Cable,Mixed insulated,kg,74.8,82.15,9.83,67.32,88.72,9.21,-0.16,up,2026-08-31
+CBL-MIX,Nashik,Cable,Mixed insulated,kg,77.51,85.12,9.82,69.76,91.93,7.16,3.0,up,2026-08-31
+CBL-MIX,Pimpri-Chinchwad,Cable,Mixed insulated,kg,80.77,88.7,9.82,72.69,95.8,3.98,5.93,up,2026-08-31
+CBL-MIX,Pune,Cable,Mixed insulated,kg,80.43,88.33,9.82,72.39,95.4,4.81,9.03,up,2026-08-31
+CRT-CTV,Aurangabad,CRT,Colour TV tube,kg,12.73,16.99,33.46,11.46,18.35,0.0,-1.24,flat,2026-08-31
+CRT-CTV,Mumbai,CRT,Colour TV tube,kg,13.82,18.44,33.43,12.44,19.92,-0.43,0.0,flat,2026-08-31
+CRT-CTV,Nagpur,CRT,Colour TV tube,kg,12.67,16.91,33.46,11.4,18.26,-0.55,-2.09,flat,2026-08-31
+CRT-CTV,Nashik,CRT,Colour TV tube,kg,13.03,17.39,33.46,11.73,18.78,0.62,1.24,flat,2026-08-31
+CRT-CTV,Pimpri-Chinchwad,CRT,Colour TV tube,kg,13.51,18.03,33.46,12.16,19.47,1.66,0.0,up,2026-08-31
+CRT-CTV,Pune,CRT,Colour TV tube,kg,13.61,18.16,33.43,12.25,19.61,1.64,0.52,up,2026-08-31
+CRT-MON,Aurangabad,CRT,Monochrome monitor tube,kg,8.81,11.57,31.33,7.93,12.5,-0.23,-3.5,flat,2026-08-31
+CRT-MON,Mumbai,CRT,Monochrome monitor tube,kg,9.88,12.97,31.28,8.89,14.01,1.65,-1.3,up,2026-08-31
+CRT-MON,Nagpur,CRT,Monochrome monitor tube,kg,9.21,12.09,31.27,8.29,13.06,1.1,0.66,up,2026-08-31
+CRT-MON,Nashik,CRT,Monochrome monitor tube,kg,8.86,11.63,31.26,7.97,12.56,-3.28,-3.49,down,2026-08-31
+CRT-MON,Pimpri-Chinchwad,CRT,Monochrome monitor tube,kg,9.28,12.18,31.25,8.35,13.15,-2.62,-4.82,down,2026-08-31
+CRT-MON,Pune,CRT,Monochrome monitor tube,kg,9.62,12.63,31.29,8.66,13.64,-2.83,-3.8,down,2026-08-31
+CRT-YOK,Aurangabad,CRT,Deflection yoke,kg,38.61,44.44,15.1,34.75,48.0,-10.87,-8.27,down,2026-08-31
+CRT-YOK,Mumbai,CRT,Deflection yoke,kg,46.91,53.99,15.09,42.22,58.31,4.43,4.08,up,2026-08-31
+CRT-YOK,Nagpur,CRT,Deflection yoke,kg,40.07,46.12,15.1,36.06,49.81,-3.95,-6.4,down,2026-08-31
+CRT-YOK,Nashik,CRT,Deflection yoke,kg,41.81,48.12,15.09,37.63,51.97,0.5,-4.22,flat,2026-08-31
+CRT-YOK,Pimpri-Chinchwad,CRT,Deflection yoke,kg,44.45,51.16,15.1,40.01,55.25,-0.94,-3.68,down,2026-08-31
+CRT-YOK,Pune,CRT,Deflection yoke,kg,42.68,49.12,15.09,38.41,53.05,-5.53,-6.57,down,2026-08-31
+LCD-BLA,Aurangabad,LCD/LED panel,Backlight assembly,kg,41.75,49.47,18.49,37.58,53.43,1.04,4.45,up,2026-08-31
+LCD-BLA,Mumbai,LCD/LED panel,Backlight assembly,kg,47.29,56.03,18.48,42.56,60.51,6.29,4.32,up,2026-08-31
+LCD-BLA,Nagpur,LCD/LED panel,Backlight assembly,kg,41.56,49.24,18.48,37.4,53.18,2.69,6.7,up,2026-08-31
+LCD-BLA,Nashik,LCD/LED panel,Backlight assembly,kg,41.01,48.59,18.48,36.91,52.48,-1.94,-4.05,down,2026-08-31
+LCD-BLA,Pimpri-Chinchwad,LCD/LED panel,Backlight assembly,kg,42.54,50.4,18.48,38.29,54.43,6.86,-5.55,up,2026-08-31
+LCD-BLA,Pune,LCD/LED panel,Backlight assembly,kg,42.31,50.13,18.48,38.08,54.14,-0.94,-2.51,down,2026-08-31
+LCD-LAP,Aurangabad,LCD/LED panel,Laptop panel,kg,34.74,42.67,22.83,31.27,46.08,-1.7,-6.91,down,2026-08-31
+LCD-LAP,Mumbai,LCD/LED panel,Laptop panel,kg,38.95,47.84,22.82,35.06,51.67,-1.29,-3.92,down,2026-08-31
+LCD-LAP,Nagpur,LCD/LED panel,Laptop panel,kg,35.33,43.4,22.84,31.8,46.87,0.68,-5.94,flat,2026-08-31
+LCD-LAP,Nashik,LCD/LED panel,Laptop panel,kg,36.15,44.4,22.82,32.53,47.95,-1.58,-3.75,down,2026-08-31
+LCD-LAP,Pimpri-Chinchwad,LCD/LED panel,Laptop panel,kg,37.7,46.31,22.84,33.93,50.01,-0.16,-3.53,flat,2026-08-31
+LCD-LAP,Pune,LCD/LED panel,Laptop panel,kg,39.9,49.01,22.83,35.91,52.93,3.23,1.45,up,2026-08-31
+LCD-MON,Aurangabad,LCD/LED panel,Monitor panel,kg,29.66,36.11,21.75,26.69,39.0,1.47,-2.21,up,2026-08-31
+LCD-MON,Mumbai,LCD/LED panel,Monitor panel,kg,32.4,39.44,21.73,29.16,42.6,-2.61,-4.76,down,2026-08-31
+LCD-MON,Nagpur,LCD/LED panel,Monitor panel,kg,29.77,36.24,21.73,26.79,39.14,0.17,-2.49,flat,2026-08-31
+LCD-MON,Nashik,LCD/LED panel,Monitor panel,kg,31.35,38.17,21.75,28.22,41.22,4.78,1.16,up,2026-08-31
+LCD-MON,Pimpri-Chinchwad,LCD/LED panel,Monitor panel,kg,30.62,37.28,21.75,27.56,40.26,-4.43,-7.24,down,2026-08-31
+LCD-MON,Pune,LCD/LED panel,Monitor panel,kg,32.09,39.07,21.75,28.88,42.2,2.46,-3.92,up,2026-08-31
+LCD-TV,Aurangabad,LCD/LED panel,TV panel,kg,25.2,30.41,20.67,22.68,32.84,3.32,4.78,up,2026-08-31
+LCD-TV,Mumbai,LCD/LED panel,TV panel,kg,27.76,33.49,20.64,24.98,36.17,3.31,1.87,up,2026-08-31
+LCD-TV,Nagpur,LCD/LED panel,TV panel,kg,25.83,31.17,20.67,23.25,33.66,5.04,2.83,up,2026-08-31
+LCD-TV,Nashik,LCD/LED panel,TV panel,kg,25.09,30.27,20.65,22.58,32.69,-1.06,-1.45,down,2026-08-31
+LCD-TV,Pimpri-Chinchwad,LCD/LED panel,TV panel,kg,26.93,32.49,20.65,24.24,35.09,2.2,5.4,up,2026-08-31
+LCD-TV,Pune,LCD/LED panel,TV panel,kg,26.89,32.44,20.64,24.2,35.04,2.28,-3.24,up,2026-08-31
+MTR-CMP,Aurangabad,Motor & magnet-bearing,Compressor motor,kg,55.68,66.01,18.55,50.11,71.29,3.34,-3.55,up,2026-08-31
+MTR-CMP,Mumbai,Motor & magnet-bearing,Compressor motor,kg,62.57,74.18,18.56,56.31,80.11,1.56,-1.68,up,2026-08-31
+MTR-CMP,Nagpur,Motor & magnet-bearing,Compressor motor,kg,57.19,67.8,18.55,51.47,73.22,1.28,-0.1,up,2026-08-31
+MTR-CMP,Nashik,Motor & magnet-bearing,Compressor motor,kg,60.68,71.94,18.56,54.61,77.7,5.26,5.13,up,2026-08-31
+MTR-CMP,Pimpri-Chinchwad,Motor & magnet-bearing,Compressor motor,kg,60.84,72.12,18.54,54.76,77.89,0.18,5.79,flat,2026-08-31
+MTR-CMP,Pune,Motor & magnet-bearing,Compressor motor,kg,60.94,72.24,18.54,54.85,78.02,7.74,-0.49,up,2026-08-31
+MTR-HDD,Aurangabad,Motor & magnet-bearing,HDD assembly,kg,137.3,173.25,26.18,123.57,187.11,4.44,3.33,up,2026-08-31
+MTR-HDD,Mumbai,Motor & magnet-bearing,HDD assembly,kg,151.92,191.7,26.18,136.73,207.04,3.3,0.16,up,2026-08-31
+MTR-HDD,Nagpur,Motor & magnet-bearing,HDD assembly,kg,144.56,182.41,26.18,130.1,197.0,6.49,6.78,up,2026-08-31
+MTR-HDD,Nashik,Motor & magnet-bearing,HDD assembly,kg,139.49,176.02,26.19,125.54,190.1,0.55,0.5,flat,2026-08-31
+MTR-HDD,Pimpri-Chinchwad,Motor & magnet-bearing,HDD assembly,kg,146.3,184.61,26.19,131.67,199.38,0.12,3.97,flat,2026-08-31
+MTR-HDD,Pune,Motor & magnet-bearing,HDD assembly,kg,146.13,184.4,26.19,131.52,199.15,5.49,0.19,up,2026-08-31
+MTR-SML,Aurangabad,Motor & magnet-bearing,Small AC/DC motor,kg,67.71,81.75,20.74,60.94,88.29,3.11,-0.31,up,2026-08-31
+MTR-SML,Mumbai,Motor & magnet-bearing,Small AC/DC motor,kg,73.33,88.53,20.73,66.0,95.61,-3.18,-0.31,down,2026-08-31
+MTR-SML,Nagpur,Motor & magnet-bearing,Small AC/DC motor,kg,67.66,81.69,20.74,60.89,88.23,1.9,0.4,up,2026-08-31
+MTR-SML,Nashik,Motor & magnet-bearing,Small AC/DC motor,kg,68.98,83.28,20.73,62.08,89.94,1.43,0.82,up,2026-08-31
+MTR-SML,Pimpri-Chinchwad,Motor & magnet-bearing,Small AC/DC motor,kg,70.87,85.56,20.73,63.78,92.4,-1.87,1.59,down,2026-08-31
+MTR-SML,Pune,Motor & magnet-bearing,Small AC/DC motor,kg,72.95,88.07,20.73,65.66,95.12,2.47,-0.78,up,2026-08-31
+MTR-SPK,Aurangabad,Motor & magnet-bearing,Speaker magnet,kg,89.84,112.39,25.1,80.86,121.38,-2.74,0.36,down,2026-08-31
+MTR-SPK,Mumbai,Motor & magnet-bearing,Speaker magnet,kg,100.22,125.37,25.09,90.2,135.4,3.36,-5.54,up,2026-08-31
+MTR-SPK,Nagpur,Motor & magnet-bearing,Speaker magnet,kg,93.34,116.76,25.09,84.01,126.1,2.5,1.53,up,2026-08-31
+MTR-SPK,Nashik,Motor & magnet-bearing,Speaker magnet,kg,98.04,122.64,25.09,88.24,132.45,4.15,6.65,up,2026-08-31
+MTR-SPK,Pimpri-Chinchwad,Motor & magnet-bearing,Speaker magnet,kg,99.12,123.99,25.09,89.21,133.91,8.27,0.6,up,2026-08-31
+MTR-SPK,Pune,Motor & magnet-bearing,Speaker magnet,kg,97.94,122.52,25.1,88.15,132.32,-3.12,0.45,down,2026-08-31
+PCB-GPU,Aurangabad,PCB,GPU / add-on card,kg,706.86,901.03,27.47,636.17,973.11,3.33,-5.61,up,2026-08-31
+PCB-GPU,Mumbai,PCB,GPU / add-on card,kg,876.38,1117.12,27.47,788.74,1206.49,12.88,8.66,up,2026-08-31
+PCB-GPU,Nagpur,PCB,GPU / add-on card,kg,770.21,981.79,27.47,693.19,1060.33,12.26,-0.08,up,2026-08-31
+PCB-GPU,Nashik,PCB,GPU / add-on card,kg,855.38,1090.35,27.47,769.84,1177.58,8.37,14.6,up,2026-08-31
+PCB-GPU,Pimpri-Chinchwad,PCB,GPU / add-on card,kg,827.52,1054.84,27.47,744.77,1139.23,3.42,6.05,up,2026-08-31
+PCB-GPU,Pune,PCB,GPU / add-on card,kg,810.99,1033.77,27.47,729.89,1116.47,7.04,15.94,up,2026-08-31
+PCB-LOW,Aurangabad,PCB,TV / appliance board (low grade),kg,133.73,174.87,30.76,120.36,188.86,9.33,5.66,up,2026-08-31
+PCB-LOW,Mumbai,PCB,TV / appliance board (low grade),kg,148.78,194.55,30.76,133.9,210.11,5.97,3.0,up,2026-08-31
+PCB-LOW,Nagpur,PCB,TV / appliance board (low grade),kg,132.31,173.02,30.77,119.08,186.86,5.48,9.24,up,2026-08-31
+PCB-LOW,Nashik,PCB,TV / appliance board (low grade),kg,134.11,175.37,30.77,120.7,189.4,6.7,3.5,up,2026-08-31
+PCB-LOW,Pimpri-Chinchwad,PCB,TV / appliance board (low grade),kg,135.82,177.61,30.77,122.24,191.82,5.0,5.27,up,2026-08-31
+PCB-LOW,Pune,PCB,TV / appliance board (low grade),kg,150.97,197.42,30.77,135.87,213.21,9.37,9.53,up,2026-08-31
+PCB-MBH,Aurangabad,PCB,Motherboard (high grade),kg,608.03,781.74,28.57,547.23,844.28,4.41,9.65,up,2026-08-31
+PCB-MBH,Mumbai,PCB,Motherboard (high grade),kg,672.57,864.72,28.57,605.31,933.9,11.12,4.66,up,2026-08-31
+PCB-MBH,Nagpur,PCB,Motherboard (high grade),kg,598.42,769.38,28.57,538.58,830.93,2.8,0.74,up,2026-08-31
+PCB-MBH,Nashik,PCB,Motherboard (high grade),kg,651.5,837.63,28.57,586.35,904.64,7.67,3.19,up,2026-08-31
+PCB-MBH,Pimpri-Chinchwad,PCB,Motherboard (high grade),kg,623.17,801.2,28.57,560.85,865.3,7.14,-6.48,up,2026-08-31
+PCB-MBH,Pune,PCB,Motherboard (high grade),kg,688.01,884.57,28.57,619.21,955.34,13.31,6.05,up,2026-08-31
+PCB-MIX,Aurangabad,PCB,Mixed populated board,kg,341.7,443.07,29.67,307.53,478.52,7.52,4.34,up,2026-08-31
+PCB-MIX,Mumbai,PCB,Mixed populated board,kg,396.24,513.79,29.67,356.62,554.89,12.48,14.18,up,2026-08-31
+PCB-MIX,Nagpur,PCB,Mixed populated board,kg,332.66,431.35,29.67,299.39,465.86,5.7,-1.12,up,2026-08-31
+PCB-MIX,Nashik,PCB,Mixed populated board,kg,341.48,442.79,29.67,307.33,478.21,7.52,-0.82,up,2026-08-31
+PCB-MIX,Pimpri-Chinchwad,PCB,Mixed populated board,kg,347.26,450.28,29.67,312.53,486.3,4.33,2.48,up,2026-08-31
+PCB-MIX,Pune,PCB,Mixed populated board,kg,377.09,488.96,29.67,339.38,528.08,19.84,8.84,up,2026-08-31
+PCB-RAM,Aurangabad,PCB,RAM / gold-finger,kg,2031.34,2567.03,26.37,1828.21,2772.39,7.97,-0.71,up,2026-08-31
+PCB-RAM,Mumbai,PCB,RAM / gold-finger,kg,2190.44,2768.09,26.37,1971.4,2989.54,8.69,4.01,up,2026-08-31
+PCB-RAM,Nagpur,PCB,RAM / gold-finger,kg,2095.5,2648.11,26.37,1885.95,2859.96,7.31,12.8,up,2026-08-31
+PCB-RAM,Nashik,PCB,RAM / gold-finger,kg,2020.99,2553.95,26.37,1818.89,2758.27,1.77,0.05,up,2026-08-31
+PCB-RAM,Pimpri-Chinchwad,PCB,RAM / gold-finger,kg,2082.1,2631.17,26.37,1873.89,2841.66,7.37,8.06,up,2026-08-31
+PCB-RAM,Pune,PCB,RAM / gold-finger,kg,2118.89,2677.67,26.37,1907.0,2891.88,6.37,0.92,up,2026-08-31
+PLA-ABS,Aurangabad,Mixed plastic,ABS casing,kg,31.69,35.46,11.9,28.52,38.3,4.04,1.02,up,2026-08-31
+PLA-ABS,Mumbai,Mixed plastic,ABS casing,kg,33.62,37.62,11.9,30.26,40.63,1.02,-1.06,up,2026-08-31
+PLA-ABS,Nagpur,Mixed plastic,ABS casing,kg,31.76,35.54,11.9,28.58,38.38,0.83,3.15,up,2026-08-31
+PLA-ABS,Nashik,Mixed plastic,ABS casing,kg,32.31,36.16,11.92,29.08,39.05,1.76,1.25,up,2026-08-31
+PLA-ABS,Pimpri-Chinchwad,Mixed plastic,ABS casing,kg,33.5,37.49,11.91,30.15,40.49,4.92,5.21,up,2026-08-31
+PLA-ABS,Pune,Mixed plastic,ABS casing,kg,33.38,37.35,11.89,30.04,40.34,-1.27,-2.51,down,2026-08-31
+PLA-HIPS,Aurangabad,Mixed plastic,HIPS,kg,24.25,26.87,10.8,21.82,29.02,-0.16,-0.21,flat,2026-08-31
+PLA-HIPS,Mumbai,Mixed plastic,HIPS,kg,27.28,30.23,10.81,24.55,32.65,2.67,0.15,up,2026-08-31
+PLA-HIPS,Nagpur,Mixed plastic,HIPS,kg,24.75,27.43,10.83,22.28,29.62,-0.92,3.08,down,2026-08-31
+PLA-HIPS,Nashik,Mixed plastic,HIPS,kg,24.97,27.67,10.81,22.47,29.88,-0.79,-3.89,flat,2026-08-31
+PLA-HIPS,Pimpri-Chinchwad,Mixed plastic,HIPS,kg,26.25,29.09,10.82,23.62,31.42,-1.39,0.96,down,2026-08-31
+PLA-HIPS,Pune,Mixed plastic,HIPS,kg,26.8,29.7,10.82,24.12,32.08,4.36,3.88,up,2026-08-31
+PLA-MIX,Aurangabad,Mixed plastic,Mixed dirty,kg,11.59,12.72,9.75,10.43,13.74,2.75,5.56,up,2026-08-31
+PLA-MIX,Mumbai,Mixed plastic,Mixed dirty,kg,12.45,13.66,9.72,11.2,14.75,-1.03,3.92,down,2026-08-31
+PLA-MIX,Nagpur,Mixed plastic,Mixed dirty,kg,11.37,12.48,9.76,10.23,13.48,-4.37,-1.39,down,2026-08-31
+PLA-MIX,Nashik,Mixed plastic,Mixed dirty,kg,10.98,12.05,9.74,9.88,13.01,-6.71,-6.31,down,2026-08-31
+PLA-MIX,Pimpri-Chinchwad,Mixed plastic,Mixed dirty,kg,11.36,12.47,9.77,10.22,13.47,-4.46,-2.57,down,2026-08-31
+PLA-MIX,Pune,Mixed plastic,Mixed dirty,kg,11.99,13.16,9.76,10.79,14.21,-3.31,3.54,down,2026-08-31
+PLA-PCABS,Aurangabad,Mixed plastic,PC/ABS blend,kg,35.07,39.62,12.97,31.56,42.79,2.9,2.01,up,2026-08-31
+PLA-PCABS,Mumbai,Mixed plastic,PC/ABS blend,kg,38.03,42.97,12.99,34.23,46.41,0.34,5.2,flat,2026-08-31
+PLA-PCABS,Nagpur,Mixed plastic,PC/ABS blend,kg,34.65,39.15,12.99,31.18,42.28,0.49,2.82,flat,2026-08-31
+PLA-PCABS,Nashik,Mixed plastic,PC/ABS blend,kg,34.42,38.89,12.99,30.98,42.0,-2.74,-1.06,down,2026-08-31
+PLA-PCABS,Pimpri-Chinchwad,Mixed plastic,PC/ABS blend,kg,35.84,40.49,12.97,32.26,43.73,-1.29,-0.67,down,2026-08-31
+PLA-PCABS,Pune,Mixed plastic,PC/ABS blend,kg,36.12,40.81,12.98,32.51,44.07,-0.55,-0.33,flat,2026-08-31

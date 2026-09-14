@@ -1,0 +1,16 @@
+{
+  "name": "KabaadE",
+  "short_name": "KabaadE",
+  "description": "Fair prices, authorised recyclers and traceable handovers for e-waste collectors.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#F1F6F0",
+  "theme_color": "#0F4D38",
+  "lang": "hi",
+  "icons": [
+    { "src": "./icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any maskable" },
+    { "src": "./icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" }
+  ]
+}

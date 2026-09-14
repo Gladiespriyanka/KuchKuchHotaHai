@@ -1,0 +1,15 @@
+fastapi==0.115.0
+uvicorn[standard]==0.30.6
+SQLAlchemy==2.0.35
+pydantic==2.9.2
+pydantic-settings==2.5.2
+python-multipart==0.0.9
+# PostgreSQL driver - only needed if DATABASE_URL points at Postgres.
+# No Windows wheel; it needs Visual Studio to build. Install it manually
+# when you actually move to Postgres:  pip install psycopg2-binary
+Pillow==11.3.0
+scikit-learn==1.8.0
+# Required by the image classifier (skimage.feature.hog, local_binary_pattern)
+scikit-image
+pandas  # unpinned: 2.2.3 has no wheel for newer Python
+joblib==1.4.2
