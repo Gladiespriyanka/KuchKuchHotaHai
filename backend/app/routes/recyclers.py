@@ -22,16 +22,35 @@ def list_recyclers(
     db: Session = Depends(get_db),
 ):
     """Public directory — approved recyclers only."""
+
     rows = db.query(Recycler).filter(Recycler.authorization_status == "approved").all()
+
     out = []
+
     for r in rows:
+
         if material and material not in (r.accepted_materials or []):
             continue
+
         item = recycler_dict(r)
-        if lat is not None and lng is not None:
-            item["distance_km"] = matching.haversine_km(lat, lng, r.latitude, r.longitude)
+
+        if (
+            lat is not None
+            and lng is not None
+            and r.latitude is not None
+            and r.longitude is not None
+        ):
+            item["distance_km"] = matching.haversine_km(
+                lat,
+                lng,
+                r.latitude,
+                r.longitude,
+            )
+
         out.append(item)
+
     out.sort(key=lambda x: x.get("distance_km", 0))
+
     return out
 
 

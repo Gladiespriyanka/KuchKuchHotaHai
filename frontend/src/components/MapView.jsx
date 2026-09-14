@@ -1,14 +1,34 @@
-import { CircleMarker, MapContainer, TileLayer, Tooltip } from 'react-leaflet'
+import { useEffect } from 'react'
+import { CircleMarker, MapContainer, TileLayer, Tooltip, useMap } from 'react-leaflet'
 import 'leaflet/dist/leaflet.css'
 
 /**
  * Leaflet + OpenStreetMap. Circle markers instead of image pins so the map
  * needs no bundled assets and still renders if tiles are blocked.
+ * 
  */
-export default function MapView({ points = [], center = [26.9124, 75.7873], zoom = 11, height = 340 }) {
-  return (
+function MapCenter({ center }) {
+  const map = useMap()
+
+  useEffect(() => {
+    if (
+      Array.isArray(center) &&
+      center.length === 2 &&
+      center[0] != null &&
+      center[1] != null
+    ) {
+      map.setView(center, map.getZoom())
+    }
+  }, [center, map])
+
+  return null
+}
+
+export default function MapView({ points = [], center, zoom = 11, height = 340 }) {
+    return (
     <div className="border-2 border-ink" style={{ height }}>
       <MapContainer center={center} zoom={zoom} style={{ height: '100%', width: '100%' }} scrollWheelZoom={false}>
+        <MapCenter center={center} />
         <TileLayer
           attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"

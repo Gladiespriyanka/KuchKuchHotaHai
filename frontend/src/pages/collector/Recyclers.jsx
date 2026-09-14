@@ -23,30 +23,73 @@ export default function Recyclers() {
   const [rows, setRows] = useState(null)
   const [cached, setCached] = useState(false)
 
-  const lat = coords?.latitude ?? user?.latitude ?? 26.9124
-  const lng = coords?.longitude ?? user?.longitude ?? 75.7873
+  // const lat = coords?.latitude ?? user?.latitude ?? null
+  // const lng = coords?.longitude ?? user?.longitude ?? null
+  const lat = coords?.latitude ?? (
+  user?.latitude != null && user.latitude !== 0
+    ? user.latitude
+    : null
+)
 
+const lng = coords?.longitude ?? (
+  user?.longitude != null && user.longitude !== 0
+    ? user.longitude
+    : null
+)
+
+  // useEffect(() => {
+  //   let alive = true
+  //   getCache('recyclers').then((c) => {
+  //     if (alive && c && !rows) { setRows(c); setCached(true) }
+  //   })
+  //   // catalog.recyclers({ lat, lng, material: material || undefined })
+  //         catalog.recyclers({
+  //       ...(lat != null && lng != null ? { lat, lng } : {}),
+  //       ...(material ? { material } : {}),
+  //     })
+  //     .then((data) => {
+  //       if (!alive) return
+  //       setRows(data)
+  //       setCached(false)
+  //       if (!material) putCache('recyclers', data)
+  //     })
+  //     .catch(() => {})
+  //   return () => { alive = false }
+  //   // eslint-disable-next-line react-hooks/exhaustive-deps
+  // }, [material, lat, lng])
   useEffect(() => {
-    let alive = true
-    getCache('recyclers').then((c) => {
-      if (alive && c && !rows) { setRows(c); setCached(true) }
+  let alive = true
+
+  catalog.recyclers({
+    ...(lat != null && lng != null ? { lat, lng } : {}),
+    ...(material ? { material } : {}),
+  })
+    .then((data) => {
+      if (!alive) return
+      setRows(data)
+      setCached(false)
+
+      if (!material) {
+        putCache('recyclers', data)
+      }
     })
-    catalog.recyclers({ lat, lng, material: material || undefined })
-      .then((data) => {
-        if (!alive) return
-        setRows(data)
-        setCached(false)
-        if (!material) putCache('recyclers', data)
-      })
-      .catch(() => {})
-    return () => { alive = false }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [material, lat, lng])
+    .catch(() => {
+      if (alive) setRows([])
+    })
+
+  return () => {
+    alive = false
+  }
+}, [material, lat, lng])
 
   if (!rows) return <Loading />
 
+  // const points = [
+  //   { name: 'You', lat, lng, kind: 'me' },
   const points = [
-    { name: 'You', lat, lng, kind: 'me' },
+  ...(lat != null && lng != null
+    ? [{ name: 'You', lat, lng, kind: 'me' }]
+    : []),
     ...rows.map((r) => ({
       name: r.name, lat: r.latitude, lng: r.longitude, kind: 'recycler', detail: r.location,
     })),
@@ -71,7 +114,13 @@ export default function Recyclers() {
         ))}
       </div>
 
-      <MapView points={points} center={[lat, lng]} zoom={10} height={240} />
+      {/* <MapView points={points} center={[lat, lng]} zoom={10} height={240} /> */}
+      <MapView
+            points={points}
+            center={lat != null && lng != null ? [lat, lng] : undefined}
+            zoom={10}
+            height={240}
+          />
 
       <div className="space-y-2">
         {rows.length === 0 && <Notice>{t('noMatches')}</Notice>}

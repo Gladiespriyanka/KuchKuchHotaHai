@@ -30,7 +30,12 @@ export function useGeolocation({ auto = true } = {}) {
         setState('denied')
         setError(err.message)
       },
-      { enableHighAccuracy: false, timeout: 8000, maximumAge: 300000 }
+      // { enableHighAccuracy: false, timeout: 8000, maximumAge: 300000 }
+          {
+      enableHighAccuracy: true,
+      timeout: 15000,
+      maximumAge: 0,
+    }
     )
   }, [])
 
