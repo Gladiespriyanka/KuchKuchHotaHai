@@ -15,7 +15,7 @@ export default {
         line: '#D3DED6',
       },
       fontFamily: {
-        display: ['Anton', 'Arial Narrow', 'Haettenschweiler', 'Impact', 'sans-serif'],
+        display: ['"Plus Jakarta Sans"', 'Inter', 'system-ui', 'sans-serif'],
         body: ['Inter', 'Noto Sans Devanagari', 'Segoe UI', 'system-ui', 'sans-serif'],
         data: ['"JetBrains Mono"', 'ui-monospace', 'SFMono-Regular', 'Menlo', 'monospace'],
       },
