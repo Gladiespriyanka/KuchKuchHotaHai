@@ -28,29 +28,29 @@ export const MATERIALS = [
 ]
 
 const COLLECTORS = [
-  ['Ramesh Kumar', 'collector@demo.com', 'hi', 'Malviya Nagar, Jaipur', 26.8535, 75.8135],
-  ['Sunita Devi', 'sunita@demo.com', 'hi', 'Sanganer, Jaipur', 26.818, 75.79],
-  ['Imran Shaikh', 'imran@demo.com', 'mr', 'Jhotwara, Jaipur', 26.944, 75.748],
-  ['Lakshmi Bai', 'lakshmi@demo.com', 'hi', 'Vaishali Nagar, Jaipur', 26.912, 75.737],
-  ['Govind Meena', 'govind@demo.com', 'hi', 'Amer Road, Jaipur', 26.98, 75.85],
-  ['Prakash Jadhav', 'prakash@demo.com', 'mr', 'Mansarovar, Jaipur', 26.85, 75.762],
-  ['Fatima Bano', 'fatima@demo.com', 'hi', 'Ramganj, Jaipur', 26.922, 75.83],
-  ['Deepak Yadav', 'deepak@demo.com', 'hi', 'Jagatpura, Jaipur', 26.818, 75.862],
-  ['Sanjay More', 'sanjay@demo.com', 'mr', 'Bais Godam, Jaipur', 26.901, 75.783],
-  ['Kavita Sharma', 'kavita@demo.com', 'en', 'C-Scheme, Jaipur', 26.907, 75.793],
+  ['Ramesh Kumar', 'collector@demo.com', 'hi', 'Connaught Place, New Delhi', 28.6139, 77.2090],
+  ['Sunita Devi', 'sunita@demo.com', 'hi', 'Okhla Industrial Area, South Delhi', 28.5355, 77.2426],
+  ['Imran Shaikh', 'imran@demo.com', 'mr', 'Wazirpur, North Delhi', 28.7041, 77.1668],
+  ['Lakshmi Bai', 'lakshmi@demo.com', 'hi', 'Sector 18, Noida', 28.5355, 77.3910],
+  ['Govind Meena', 'govind@demo.com', 'hi', 'Raj Nagar, Ghaziabad', 28.6692, 77.4538],
+  ['Prakash Jadhav', 'prakash@demo.com', 'mr', 'Cyber City, Gurugram', 28.4595, 77.0266],
+  ['Fatima Bano', 'fatima@demo.com', 'hi', 'Sector 15, Faridabad', 28.4089, 77.3178],
+  ['Deepak Yadav', 'deepak@demo.com', 'hi', 'Lajpat Nagar, South Delhi', 28.5672, 77.2100],
+  ['Sanjay More', 'sanjay@demo.com', 'mr', 'Dwarka, South West Delhi', 28.5965, 77.0498],
+  ['Kavita Sharma', 'kavita@demo.com', 'en', 'Karol Bagh, Central Delhi', 28.6512, 77.1911],
 ]
 
 const RECYCLERS = [
-  ['Green Recyclers', 'recycler@demo.com', 'Ajmer Road Industrial Belt, Jaipur', 26.913, 75.783, ['PCB', 'Cable', 'Battery', 'Motor & magnet-bearing', 'LCD/LED panel'], 'AUTH-12345', 'approved', '+91 98290 10001', 1.03, true, 25],
-  ['Aravalli E-Waste Pvt Ltd', 'aravalli@demo.com', 'Sitapura Industrial Area, Jaipur', 26.786, 75.848, ['PCB', 'LCD/LED panel', 'CRT', 'Mixed plastic', 'Cable'], 'AUTH-20871', 'approved', '+91 98290 10002', 0.98, true, 30],
-  ['Pink City Metals', null, 'Bais Godam, Jaipur', 26.889, 75.772, ['Cable', 'Motor & magnet-bearing'], 'AUTH-30442', 'approved', '+91 98290 10003', 1.01, false, 15],
-  ['Jaipur Circular Systems', null, 'Jhotwara Industrial Area, Jaipur', 26.949, 75.735, ['PCB', 'Battery', 'Mixed plastic'], 'AUTH-40113', 'approved', '+91 98290 10004', 0.96, true, 20],
-  ['Marudhara Recycling', null, 'Bagru, Jaipur', 26.813, 75.546, ['CRT', 'LCD/LED panel', 'Mixed plastic', 'Motor & magnet-bearing'], 'AUTH-50219', 'approved', '+91 98290 10005', 0.94, false, 35],
-  ['Chambal Green Loop', null, 'Kota Road, Jaipur', 26.76, 75.81, ['Battery', 'PCB', 'Cable'], 'AUTH-60777', 'approved', '+91 98290 10006', 1.0, true, 28],
-  ['Suraj Metal Recovery', null, 'Sanganer, Jaipur', 26.821, 75.788, ['Cable', 'Motor & magnet-bearing', 'Mixed plastic'], 'AUTH-70884', 'approved', '+91 98290 10007', 0.97, true, 18],
-  ['Nirmal Urban Mining', null, 'Kukas, Jaipur', 27.048, 75.912, ['PCB', 'Motor & magnet-bearing', 'LCD/LED panel', 'Battery'], 'AUTH-80990', 'approved', '+91 98290 10008', 1.02, true, 32],
-  ['Shakti Waste Solutions', null, 'Chomu, Jaipur', 27.167, 75.722, ['Cable', 'Battery', 'CRT'], 'AUTH-90551', 'pending', '+91 98290 10009', 0.99, true, 25],
-  ['Vasundhara Recyclers', null, 'Tonk Road, Jaipur', 26.802, 75.806, ['PCB', 'LCD/LED panel', 'Mixed plastic'], 'AUTH-91662', 'pending', '+91 98290 10010', 1.0, false, 20],
+  ['Green Recyclers', 'recycler@demo.com', 'Okhla Industrial Estate, New Delhi', 28.5650, 77.2540, ['PCB', 'Cable', 'Battery', 'Motor & magnet-bearing', 'LCD/LED panel'], 'AUTH-12345', 'approved', '+91 98290 10001', 1.03, true, 25],
+  ['Aravalli E-Waste Pvt Ltd', 'aravalli@demo.com', 'Udyog Vihar, Gurugram', 28.4721, 77.0572, ['PCB', 'LCD/LED panel', 'CRT', 'Mixed plastic', 'Cable'], 'AUTH-20871', 'approved', '+91 98290 10002', 0.98, true, 30],
+  ['Pink City Metals', null, 'Rohini Industrial Area, North Delhi', 28.7345, 77.1245, ['Cable', 'Motor & magnet-bearing'], 'AUTH-30442', 'approved', '+91 98290 10003', 1.01, false, 15],
+  ['Jaipur Circular Systems', null, 'Faridabad Industrial Sector, Faridabad', 28.4123, 77.3145, ['PCB', 'Battery', 'Mixed plastic'], 'AUTH-40113', 'approved', '+91 98765 43213', 0.96, true, 20],
+  ['Marudhara Recycling', null, 'Noida Sector 62, Noida', 28.5735, 77.3772, ['CRT', 'LCD/LED panel', 'Mixed plastic', 'Motor & magnet-bearing'], 'AUTH-50219', 'approved', '+91 98765 43214', 0.94, false, 35],
+  ['Chambal Green Loop', null, 'Ghaziabad Meerut Road, Ghaziabad', 28.6921, 77.4845, ['Battery', 'PCB', 'Cable'], 'AUTH-60777', 'approved', '+91 98765 43215', 1.0, true, 28],
+  ['Suraj Metal Recovery', null, 'Dwarka Industrial Area, South West Delhi', 28.5984, 77.0556, ['Cable', 'Motor & magnet-bearing', 'Mixed plastic'], 'AUTH-70884', 'approved', '+91 98765 43216', 0.97, true, 18],
+  ['Nirmal Urban Mining', null, 'Mayapuri Industrial Area, West Delhi', 28.6254, 77.1198, ['PCB', 'Motor & magnet-bearing', 'LCD/LED panel', 'Battery'], 'AUTH-80990', 'approved', '+91 98765 43217', 1.02, true, 32],
+  ['Shakti Waste Solutions', null, 'Vasant Kunj Industrial Area, South Delhi', 28.5284, 77.1652, ['Cable', 'Battery', 'CRT'], 'AUTH-90551', 'pending', '+91 98765 43218', 0.99, true, 25],
+  ['Vasundhara Recyclers', null, 'Rajouri Garden Industrial Area, West Delhi', 28.6412, 77.1024, ['PCB', 'LCD/LED panel', 'Mixed plastic'], 'AUTH-91662', 'pending', '+91 98765 43219', 1.0, false, 20],
 ]
 
 const DEMO_PCB = {
@@ -97,7 +97,6 @@ export function haversineKm(lat1, lon1, lat2, lon2) {
 }
 
 function seed() {
-  if (db.users.length) return
   const t0 = now()
 
   db.users.push({ id: 1, email: 'admin@demo.com', role: 'admin', name: 'Platform Admin', language: 'en' })
@@ -134,7 +133,7 @@ function seed() {
     })
   })
 
-  const locations = ['Malviya Nagar, Jaipur', 'Sanganer, Jaipur', 'Ajmer Road Industrial Belt, Jaipur']
+  const locations = ['Connaught Place, New Delhi', 'Okhla Industrial Area, South Delhi', 'Wazirpur, North Delhi']
   MATERIALS.forEach((m) => {
     for (let day = 90; day >= 0; day -= 1) {
       const date = t0 - day * DAY
@@ -623,8 +622,8 @@ export function login(email, password) {
   db.session = {
     id: user.id, name: user.name, email: user.email, role: user.role, language: user.language,
     profile_id: profile?.collector_id ?? profile?.recycler_id ?? null,
-    location: profile?.operating_location ?? profile?.location ?? 'Jaipur',
-    latitude: profile?.latitude ?? 26.9124, longitude: profile?.longitude ?? 75.7873,
+    location: profile?.operating_location ?? profile?.location ?? 'Connaught Place, New Delhi',
+    latitude: profile?.latitude ?? 28.6139, longitude: profile?.longitude ?? 77.2090,
   }
   return { token: `demo.${user.id}`, user: db.session }
 }

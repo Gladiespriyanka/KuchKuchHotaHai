@@ -19,7 +19,7 @@ from ..services.security import hash_password
 
 random.seed(26229)
 
-CITY = (26.9124, 75.7873)  # Jaipur
+CITY = (28.6139, 77.2090)  # New Delhi
 
 MATERIALS = [
     ("PCB", "Motherboards, RAM, adapters", "Printed circuit boards from computers and appliances",
@@ -41,49 +41,49 @@ MATERIALS = [
 ]
 
 COLLECTORS = [
-    ("Ramesh Kumar", "collector@demo.com", "hi", "Malviya Nagar, Jaipur", 26.8535, 75.8135),
-    ("Sunita Devi", "sunita@demo.com", "hi", "Sanganer, Jaipur", 26.8180, 75.7900),
-    ("Imran Shaikh", "imran@demo.com", "mr", "Jhotwara, Jaipur", 26.9440, 75.7480),
-    ("Lakshmi Bai", "lakshmi@demo.com", "hi", "Vaishali Nagar, Jaipur", 26.9120, 75.7370),
-    ("Govind Meena", "govind@demo.com", "hi", "Amer Road, Jaipur", 26.9800, 75.8500),
-    ("Prakash Jadhav", "prakash@demo.com", "mr", "Mansarovar, Jaipur", 26.8500, 75.7620),
-    ("Fatima Bano", "fatima@demo.com", "hi", "Ramganj, Jaipur", 26.9220, 75.8300),
-    ("Deepak Yadav", "deepak@demo.com", "hi", "Jagatpura, Jaipur", 26.8180, 75.8620),
-    ("Sanjay More", "sanjay@demo.com", "mr", "Bais Godam, Jaipur", 26.9010, 75.7830),
-    ("Kavita Sharma", "kavita@demo.com", "en", "C-Scheme, Jaipur", 26.9070, 75.7930),
+    ("Ramesh Kumar", "collector@demo.com", "hi", "Connaught Place, New Delhi", 28.6139, 77.2090),
+    ("Sunita Devi", "sunita@demo.com", "hi", "Okhla Industrial Area, South Delhi", 28.5355, 77.2426),
+    ("Imran Shaikh", "imran@demo.com", "mr", "Wazirpur, North Delhi", 28.7041, 77.1668),
+    ("Lakshmi Bai", "lakshmi@demo.com", "hi", "Sector 18, Noida", 28.5355, 77.3910),
+    ("Govind Meena", "govind@demo.com", "hi", "Raj Nagar, Ghaziabad", 28.6692, 77.4538),
+    ("Prakash Jadhav", "prakash@demo.com", "mr", "Cyber City, Gurugram", 28.4595, 77.0266),
+    ("Fatima Bano", "fatima@demo.com", "hi", "Sector 15, Faridabad", 28.4089, 77.3178),
+    ("Deepak Yadav", "deepak@demo.com", "hi", "Lajpat Nagar, South Delhi", 28.5672, 77.2100),
+    ("Sanjay More", "sanjay@demo.com", "mr", "Dwarka, South West Delhi", 28.5965, 77.0498),
+    ("Kavita Sharma", "kavita@demo.com", "en", "Karol Bagh, Central Delhi", 28.6512, 77.1911),
 ]
 
 # name, email(optional), location, lat, lng, materials, auth id, status, contact,
 # rate multiplier, pickup, service radius
 RECYCLERS = [
-    ("Green Recyclers", "recycler@demo.com", "Ajmer Road Industrial Belt, Jaipur",
-     26.9130, 75.7830,
+    ("Green Recyclers", "recycler@demo.com", "Okhla Industrial Estate, New Delhi",
+     28.5650, 77.2540,
      ["PCB", "Cable", "Battery", "Motor", "Magnet-bearing Assembly", "LCD"],
      "AUTH-12345", "approved", "+91 98290 10001", 1.03, True, 25),
-    ("Aravalli E-Waste Pvt Ltd", "aravalli@demo.com", "Sitapura Industrial Area, Jaipur",
-     26.7860, 75.8480, ["PCB", "LCD", "CRT", "Mixed Plastic", "Cable"],
+    ("Aravalli E-Waste Pvt Ltd", "aravalli@demo.com", "Udyog Vihar, Gurugram",
+     28.4721, 77.0572, ["PCB", "LCD", "CRT", "Mixed Plastic", "Cable"],
      "AUTH-20871", "approved", "+91 98290 10002", 0.98, True, 30),
-    ("Pink City Metals", "pinkcity@demo.com", "Bais Godam, Jaipur", 26.8890, 75.7720,
+    ("Pink City Metals", "pinkcity@demo.com", "Rohini Industrial Area, North Delhi", 28.7345, 77.1245,
      ["Cable", "Motor", "Magnet-bearing Assembly"],
      "AUTH-30442", "approved", "+91 98290 10003", 1.01, False, 15),
-    ("Jaipur Circular Systems", None, "Jhotwara Industrial Area, Jaipur", 26.9490, 75.7350,
-     ["PCB", "Battery", "Mixed Plastic"], "AUTH-40113", "approved", "+91 98290 10004",
+    ("Jaipur Circular Systems", None, "Faridabad Industrial Sector, Faridabad", 28.4123, 77.3145,
+     ["PCB", "Battery", "Mixed Plastic"], "AUTH-40113", "approved", "+91 98765 43213",
      0.96, True, 20),
-    ("Marudhara Recycling", None, "Bagru, Jaipur", 26.8130, 75.5460,
+    ("Marudhara Recycling", None, "Noida Sector 62, Noida", 28.5735, 77.3772,
      ["CRT", "LCD", "Mixed Plastic", "Motor"], "AUTH-50219", "approved",
-     "+91 98290 10005", 0.94, False, 35),
-    ("Chambal Green Loop", None, "Kota Road, Jaipur", 26.7600, 75.8100,
-     ["Battery", "PCB", "Cable"], "AUTH-60777", "approved", "+91 98290 10006", 1.00, True, 28),
-    ("Suraj Metal Recovery", None, "Sanganer, Jaipur", 26.8210, 75.7880,
+     "+91 98765 43214", 0.94, False, 35),
+    ("Chambal Green Loop", None, "Ghaziabad Meerut Road, Ghaziabad", 28.6921, 77.4845,
+     ["Battery", "PCB", "Cable"], "AUTH-60777", "approved", "+91 98765 43215", 1.00, True, 28),
+    ("Suraj Metal Recovery", None, "Dwarka Industrial Area, South West Delhi", 28.5984, 77.0556,
      ["Cable", "Motor", "Mixed Plastic"], "AUTH-70884", "approved",
-     "+91 98290 10007", 0.97, True, 18),
-    ("Nirmal Urban Mining", None, "Kukas, Jaipur", 27.0480, 75.9120,
+     "+91 98765 43216", 0.97, True, 18),
+    ("Nirmal Urban Mining", None, "Mayapuri Industrial Area, West Delhi", 28.6254, 77.1198,
      ["PCB", "Magnet-bearing Assembly", "LCD", "Battery"], "AUTH-80990", "approved",
-     "+91 98290 10008", 1.02, True, 32),
-    ("Shakti Waste Solutions", None, "Chomu, Jaipur", 27.1670, 75.7220,
-     ["Cable", "Battery", "CRT"], "AUTH-90551", "pending", "+91 98290 10009", 0.99, True, 25),
-    ("Vasundhara Recyclers", None, "Tonk Road, Jaipur", 26.8020, 75.8060,
-     ["PCB", "LCD", "Mixed Plastic"], "AUTH-91662", "pending", "+91 98290 10010", 1.00, False, 20),
+     "+91 98765 43217", 1.02, True, 32),
+    ("Shakti Waste Solutions", None, "Vasant Kunj Industrial Area, South Delhi", 28.5284, 77.1652,
+     ["Cable", "Battery", "CRT"], "AUTH-90551", "pending", "+91 98765 43218", 0.99, True, 25),
+    ("Vasundhara Recyclers", None, "Rajouri Garden Industrial Area, West Delhi", 28.6412, 77.1024,
+     ["PCB", "LCD", "Mixed Plastic"], "AUTH-91662", "pending", "+91 98765 43219", 1.00, False, 20),
 ]
 
 CONDITIONS = ["good", "damaged", "mixed"]
@@ -166,8 +166,8 @@ def run() -> None:
             r.offered_rate = {**r.offered_rate, "PCB": demo_pcb[r.name]}
 
     # ---- price history (90 days x 8 materials x 3 locations) -------------
-    locations = ["Malviya Nagar, Jaipur", "Sanganer, Jaipur",
-                 "Ajmer Road Industrial Belt, Jaipur"]
+    locations = ["Connaught Place, New Delhi", "Okhla Industrial Area, South Delhi",
+                 "Wazirpur, North Delhi"]
     for cat, *_ in MATERIALS:
         base = base_rate[cat]
         for day in range(90, -1, -1):

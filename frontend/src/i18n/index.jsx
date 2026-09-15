@@ -222,7 +222,7 @@ const en = {
   scalePhotoRequired: 'A photo of the scale is required before confirming the handover.',
   estimator: 'Value estimator',
   estimatorTitle: 'Estimate your scrap value',
-  estimatorIntro: 'Published Jaipur rates, adjusted for your area, quality and quantity.',
+  estimatorIntro: 'Published Delhi rates, adjusted for your area, quality and quantity.',
   estimatorPickItem: 'Choose the item (highest paying first)',
   estimatorQuantity: 'Quantity',
   estimatorLocality: 'Area',
