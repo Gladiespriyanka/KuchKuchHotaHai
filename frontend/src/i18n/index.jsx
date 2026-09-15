@@ -7,7 +7,7 @@ export const LANGUAGES = [
 ]
 
 const en = {
-  appName: 'KabaadE',
+  appName: 'PunahSetu',
   tagline: 'Fair rates. Authorised recyclers. Every lot traceable.',
   welcomeHeadline1: 'Got e-waste?',
   welcomeHeadline2: 'Recycle it right.',
