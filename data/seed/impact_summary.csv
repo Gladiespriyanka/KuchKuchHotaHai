@@ -1,0 +1,29 @@
+material_code,material_category,sub_category,weight_formalised_kg,lithium_recovered_g,cobalt_recovered_g,neodymium_recovered_g,tantalum_recovered_g,gallium_recovered_g,indium_recovered_g,open_burning_events_avoided
+PLA-ABS,Mixed plastic,ABS casing,31836.9,0.0,0.0,0.0,0.0,0.0,0.0,79
+CBL-MIX,Cable,Mixed insulated,30158.4,0.0,0.0,0.0,0.0,0.0,0.0,436
+CBL-AL,Cable,Aluminium cable,30004.1,0.0,0.0,0.0,0.0,0.0,0.0,430
+PLA-PCABS,Mixed plastic,PC/ABS blend,29895.2,0.0,0.0,0.0,0.0,0.0,0.0,75
+CBL-ARM,Cable,Armoured / data cable,29058.8,0.0,0.0,0.0,0.0,0.0,0.0,422
+CBL-CU,Cable,Copper household wire,28598.7,0.0,0.0,0.0,0.0,0.0,0.0,414
+PLA-HIPS,Mixed plastic,HIPS,28154.9,0.0,0.0,0.0,0.0,0.0,0.0,72
+PLA-MIX,Mixed plastic,Mixed dirty,26462.8,0.0,0.0,0.0,0.0,0.0,0.0,69
+CRT-MON,CRT,Monochrome monitor tube,21113.7,0.0,0.0,0.0,0.0,0.0,0.0,52
+CRT-CTV,CRT,Colour TV tube,20062.3,0.0,0.0,0.0,0.0,0.0,0.0,51
+CRT-YOK,CRT,Deflection yoke,19011.8,0.0,0.0,0.0,0.0,0.0,0.0,51
+MTR-SML,Motor & magnet-bearing,Small AC/DC motor,10197.1,0.0,0.0,32630.7,0.0,0.0,0.0,52
+MTR-SPK,Motor & magnet-bearing,Speaker magnet,10069.0,0.0,0.0,241656.0,0.0,0.0,0.0,51
+MTR-CMP,Motor & magnet-bearing,Compressor motor,9757.6,0.0,0.0,10733.4,0.0,0.0,0.0,52
+MTR-HDD,Motor & magnet-bearing,HDD assembly,8178.8,0.0,0.0,118592.6,0.0,0.0,0.0,46
+PCB-RAM,PCB,RAM / gold-finger,4931.5,0.0,0.0,0.0,4438.4,197.3,0.0,52
+BAT-NIMH,Battery,Ni-MH,4686.6,0.0,0.0,0.0,0.0,0.0,0.0,48
+PCB-LOW,PCB,TV / appliance board (low grade),4656.4,0.0,0.0,0.0,1862.6,0.0,0.0,51
+LCD-LAP,LCD/LED panel,Laptop panel,4602.6,0.0,0.0,0.0,0.0,184.1,1288.7,29
+BAT-BTN,Battery,Button / coin cell,4534.5,36276.0,0.0,0.0,0.0,0.0,0.0,45
+PCB-GPU,PCB,GPU / add-on card,4533.4,0.0,0.0,0.0,6346.8,317.3,0.0,49
+BAT-LI,Battery,Li-ion laptop / phone pack,4420.4,92828.4,256383.2,0.0,0.0,0.0,0.0,48
+LCD-MON,LCD/LED panel,Monitor panel,4407.5,0.0,0.0,0.0,0.0,132.2,1057.8,27
+PCB-MBH,PCB,Motherboard (high grade),4301.0,0.0,0.0,0.0,6881.6,215.1,0.0,49
+LCD-BLA,LCD/LED panel,Backlight assembly,4240.1,0.0,0.0,0.0,0.0,0.0,254.4,28
+PCB-MIX,PCB,Mixed populated board,4046.3,0.0,0.0,0.0,4046.3,121.4,0.0,48
+BAT-PB,Battery,Lead-acid,3832.3,0.0,0.0,0.0,0.0,0.0,0.0,41
+LCD-TV,LCD/LED panel,TV panel,3345.6,0.0,0.0,0.0,0.0,100.4,635.7,22

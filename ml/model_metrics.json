@@ -1,0 +1,60 @@
+{
+  "model_selected": "GradientBoostingRegressor",
+  "trained_on": "data/synthetic_scrap_training_data.csv",
+  "training_rows": 3330,
+  "real_reference_rates": 37,
+  "real_data_source": "https://www.thekabadiwala.com/scrap-rates/Jaipur",
+  "features": {
+    "categorical": [
+      "material",
+      "category",
+      "item_type",
+      "locality",
+      "unit",
+      "quality"
+    ],
+    "numeric": [
+      "quantity",
+      "days_index"
+    ]
+  },
+  "target": "price",
+  "comparison": {
+    "RandomForestRegressor": {
+      "mae": 17.825,
+      "rmse": 55.265,
+      "r2": 0.9946
+    },
+    "GradientBoostingRegressor": {
+      "mae": 20.322,
+      "rmse": 51.116,
+      "r2": 0.9954
+    }
+  },
+  "selected_metrics_per_unit": {
+    "kg": {
+      "mae": 7.566,
+      "rmse": 10.722,
+      "r2": 0.9359
+    },
+    "piece": {
+      "mae": 43.563,
+      "rmse": 84.641,
+      "r2": 0.9936
+    }
+  },
+  "unseen_material_check": {
+    "mae": 579.446,
+    "rmse": 1274.2,
+    "r2": -0.1803
+  },
+  "interpretation": "These metrics are measured on SYNTHETIC data generated from 37 real published reference rates. A high R-squared here means the regressor recovered the documented generator rules (locality, quality, quantity and market-drift factors) \u2014 it is NOT evidence that the model predicts real Jaipur market prices. The unseen-material check is deliberately included and is poor, which shows the estimator is reference-anchored: it interpolates around known published rates and cannot price a material it has never seen.",
+  "limitations": [
+    "One published rate per material; no real historical time series.",
+    "Every Jaipur locality page serves identical rates \u2014 real locality variation is unavailable and is MODELLED, not observed.",
+    "Rates are a scrap aggregator's published buying prices, not verified transaction prices.",
+    "The model cannot price materials outside the 37 reference items.",
+    "Accuracy against real transactions is unmeasured, because no real transaction data exists yet."
+  ],
+  "how_to_improve": "Every completed platform transaction is appended to data/scrap_transactions.csv. Once enough real rows accumulate, retrain on those instead of the synthetic set and the metrics become meaningful."
+}
