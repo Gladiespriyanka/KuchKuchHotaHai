@@ -1,42 +1,1262 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-    <meta name="theme-color" content="#0F4D38" />
-    <meta name="description" content="PunahSetu — fair prices, authorised recyclers and traceable handovers for informal e-waste collectors." />
-    <title>PunahSetu</title>
-    <link rel="manifest" href="./manifest.webmanifest" />
-    <link rel="apple-touch-icon" href="./icon-192.png" />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&family=Noto+Sans+Devanagari:wght@400;600;700&display=swap"
-      rel="stylesheet"
-    />
-  </head>
-  <body>
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
-    <script>
-      // Register the service worker ONLY in a production build.
-      // In `npm run dev` a cache-first shell serves stale modules, so code
-      // changes appear not to take effect. Any worker registered by an
-      // earlier visit is unregistered and its caches cleared.
-      const isDevServer = ['localhost', '127.0.0.1'].includes(location.hostname)
-        && ['5173', '4173'].includes(location.port)
-      if ('serviceWorker' in navigator) {
-        if (isDevServer) {
-          navigator.serviceWorker.getRegistrations()
-            .then((rs) => rs.forEach((r) => r.unregister()))
-            .catch(() => {})
-          if (window.caches) caches.keys().then((ks) => ks.forEach((k) => caches.delete(k))).catch(() => {})
-        } else if (location.protocol.startsWith('http')) {
-          window.addEventListener('load', () => {
-            navigator.serviceWorker.register('./sw.js').catch(() => {})
-          })
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PunahSetu | Modern Eco-Tech Platform</title>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Phosphor / Lucide Icons via CDN -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            display: ['"Space Grotesk"', 'sans-serif'],
+          },
+          colors: {
+            brand: {
+              50: '#ecfdf5',
+              100: '#d1fae5',
+              200: '#a7f3d0',
+              300: '#6ee7b7',
+              400: '#34d399',
+              500: '#10b981',
+              600: '#059669',
+              700: '#047857',
+              800: '#065f46',
+              900: '#064e3b',
+              950: '#022c22',
+            },
+            tealAccent: '#0D9488',
+            amberAccent: '#F59E0B',
+          },
+          boxShadow: {
+            'glass': '0 20px 40px -15px rgba(16, 185, 129, 0.12), 0 0 1px 1px rgba(16, 185, 129, 0.08)',
+            'float': '0 25px 50px -12px rgba(2, 44, 34, 0.15)',
+          }
         }
       }
-    </script>
-  </body>
+    }
+  </script>
+  <style>
+    .glass-card {
+      background: rgba(255, 255, 255, 0.85);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(16, 185, 129, 0.16);
+    }
+    .gradient-mesh {
+      background-color: #f0fdf4;
+      background-image: 
+        radial-gradient(at 0% 0%, rgba(52, 211, 153, 0.18) 0px, transparent 50%),
+        radial-gradient(at 100% 0%, rgba(13, 148, 136, 0.15) 0px, transparent 50%),
+        radial-gradient(at 50% 100%, rgba(167, 243, 208, 0.22) 0px, transparent 50%);
+    }
+    .ticker-wrap {
+      animation: ticker 28s linear infinite;
+    }
+    .ticker-wrap:hover {
+      animation-play-state: paused;
+    }
+    @keyframes ticker {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+    input[type=range]::-webkit-slider-thumb {
+      background: #059669;
+      height: 22px;
+      width: 22px;
+      border-radius: 50%;
+      cursor: pointer;
+      box-shadow: 0 0 0 4px rgba(16, 185, 129, 0.25);
+    }
+  </style>
+</head>
+<body class="min-h-screen text-slate-800 font-sans gradient-mesh antialiased flex flex-col">
+
+  <!-- TOP STATUS / ANNOUNCEMENT BAR -->
+  <aside aria-label="Announcement banner" class="bg-brand-900 text-brand-100 text-xs py-2 px-4 border-b border-brand-800">
+    <div class="max-w-7xl mx-auto flex items-center justify-between">
+      <div class="flex items-center space-x-2">
+        <span class="inline-block w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+        <span class="font-medium tracking-wide" data-i18n="announcement">CPCB REGISTRATION PORTAL LIVE</span>
+        <span class="text-brand-300 hidden sm:inline" data-i18n="announcementSub">• Real-time market rates verified across 24 authorized centers</span>
+      </div>
+      <div class="flex items-center space-x-4">
+        <span class="text-emerald-300 font-semibold flex items-center gap-1">
+          <i data-lucide="shield-check" class="w-3.5 h-3.5"></i> <span data-i18n="escrowText">100% Traceable Escrow</span>
+        </span>
+        <div class="h-3 w-px bg-brand-700"></div>
+        <!-- Language Selector -->
+        <select id="langSelect" onchange="changeLanguage(this.value)" class="bg-brand-800 text-xs text-white border-0 rounded px-2 py-0.5 focus:ring-1 focus:ring-emerald-400 cursor-pointer">
+          <option value="en">English</option>
+          <option value="hi">हिंदी (Hindi)</option>
+          <option value="mr">मराठी (Marathi)</option>
+        </select>
+      </div>
+    </div>
+  </aside>
+
+  <!-- NAVIGATION -->
+  <header class="sticky top-0 z-40 bg-white/80 backdrop-blur-md border-b border-emerald-100">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+      <!-- Logo -->
+      <div class="flex items-center gap-3">
+        <div class="w-12 h-12 rounded-2xl bg-gradient-to-br from-brand-500 to-teal-700 flex items-center justify-center text-white shadow-lg shadow-brand-500/25">
+          <i data-lucide="recycle" class="w-6 h-6"></i>
+        </div>
+        <div>
+          <div class="flex items-center gap-1.5">
+            <span class="font-display font-bold text-2xl tracking-tight text-slate-900">Punah<span class="text-brand-600">Setu</span></span>
+            <span class="px-2 py-0.5 text-[10px] font-extrabold uppercase tracking-wider bg-emerald-100 text-emerald-800 rounded-full">v2.0 Eco</span>
+          </div>
+          <p class="text-[11px] text-slate-500 font-medium" data-i18n="brandSub">Empowering Informal Collectors • Verified Recyclers</p>
+        </div>
+      </div>
+
+      <!-- Center Links -->
+      <nav class="hidden md:flex items-center space-x-1 bg-slate-100/70 p-1.5 rounded-full border border-slate-200/60 text-sm font-semibold text-slate-600">
+        <a href="#rates" class="px-4 py-1.5 rounded-full bg-white text-brand-700 shadow-sm transition" data-i18n="navRates">Live Price Board</a>
+        <a href="#calculator" class="px-4 py-1.5 rounded-full hover:text-brand-600 transition" data-i18n="navCalc">Instant Estimator</a>
+        <a href="#recyclers" class="px-4 py-1.5 rounded-full hover:text-brand-600 transition" data-i18n="navRecyclers">Authorized Centers</a>
+        <a href="#traceability" class="px-4 py-1.5 rounded-full hover:text-brand-600 transition" data-i18n="navTrace">Digital Handovers</a>
+      </nav>
+
+      <!-- Right Action CTA -->
+      <div class="flex items-center gap-3">
+        <button class="hidden sm:flex items-center gap-2 text-sm font-semibold text-slate-700 hover:text-brand-600 px-3 py-2">
+          <i data-lucide="phone-call" class="w-4 h-4 text-emerald-600"></i>
+          <span data-i18n="navHotline">Scrap Hotline: 1800-PUNAH</span>
+        </button>
+        <button onclick="openLoginModal()" id="navLoginBtn" class="flex items-center gap-1.5 text-sm font-bold text-slate-700 hover:text-brand-700 px-3.5 py-2.5 rounded-xl border border-slate-300 hover:border-emerald-400 bg-white transition shadow-sm">
+          <i data-lucide="log-in" class="w-4 h-4 text-emerald-600"></i>
+          <span data-i18n="navLogin">Login</span>
+        </button>
+        <button onclick="openLotModal()" class="flex items-center gap-2 bg-gradient-to-r from-brand-600 to-emerald-600 hover:from-brand-700 hover:to-emerald-700 text-white px-5 py-2.5 rounded-xl font-semibold shadow-lg shadow-brand-600/25 transition transform active:scale-95">
+          <i data-lucide="plus-circle" class="w-4 h-4"></i>
+          <span data-i18n="navSell">Sell E-Waste</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- LIVE TICKER TAPE -->
+  <div class="bg-emerald-950 text-white overflow-hidden py-2.5 border-y border-emerald-800/80 shadow-inner">
+    <div class="flex whitespace-nowrap ticker-wrap">
+      <!-- Item 1 -->
+      <div class="inline-flex items-center gap-2 mx-6 text-sm">
+        <span class="text-xs bg-emerald-500/20 text-emerald-300 px-2 py-0.5 rounded font-mono font-bold">PCB GRADE A</span>
+        <span class="font-bold">₹185.00/kg</span>
+        <span class="text-emerald-400 text-xs flex items-center"><i data-lucide="trending-up" class="w-3.5 h-3.5 mr-0.5"></i> +4.2%</span>
+      </div>
+      <!-- Item 2 -->
+      <div class="inline-flex items-center gap-2 mx-6 text-sm">
+        <span class="text-xs bg-emerald-500/20 text-emerald-300 px-2 py-0.5 rounded font-mono font-bold">COPPER CABLES</span>
+        <span class="font-bold">₹585.00/kg</span>
+        <span class="text-emerald-400 text-xs flex items-center"><i data-lucide="trending-up" class="w-3.5 h-3.5 mr-0.5"></i> +1.8%</span>
+      </div>
+      <!-- Item 3 -->
+      <div class="inline-flex items-center gap-2 mx-6 text-sm">
+        <span class="text-xs bg-amber-500/20 text-amber-300 px-2 py-0.5 rounded font-mono font-bold">LI-ION BATTERIES</span>
+        <span class="font-bold">₹135.00/kg</span>
+        <span class="text-amber-400 text-xs flex items-center"><i data-lucide="trending-down" class="w-3.5 h-3.5 mr-0.5"></i> -0.5%</span>
+      </div>
+      <!-- Item 4 -->
+      <div class="inline-flex items-center gap-2 mx-6 text-sm">
+        <span class="text-xs bg-emerald-500/20 text-emerald-300 px-2 py-0.5 rounded font-mono font-bold">LCD PANELS</span>
+        <span class="font-bold">₹78.50/kg</span>
+        <span class="text-emerald-400 text-xs flex items-center"><i data-lucide="trending-up" class="w-3.5 h-3.5 mr-0.5"></i> +2.1%</span>
+      </div>
+      <!-- Item 5 -->
+      <div class="inline-flex items-center gap-2 mx-6 text-sm">
+        <span class="text-xs bg-purple-500/20 text-purple-300 px-2 py-0.5 rounded font-mono font-bold">NEODYMIUM MAGNETS</span>
+        <span class="font-bold">₹182.00/kg</span>
+        <span class="text-emerald-400 text-xs flex items-center"><i data-lucide="trending-up" class="w-3.5 h-3.5 mr-0.5"></i> +6.3%</span>
+      </div>
+      <!-- Repeat for infinite loop seamlessness -->
+      <div class="inline-flex items-center gap-2 mx-6 text-sm">
+        <span class="text-xs bg-emerald-500/20 text-emerald-300 px-2 py-0.5 rounded font-mono font-bold">PCB GRADE A</span>
+        <span class="font-bold">₹185.00/kg</span>
+        <span class="text-emerald-400 text-xs flex items-center"><i data-lucide="trending-up" class="w-3.5 h-3.5 mr-0.5"></i> +4.2%</span>
+      </div>
+      <div class="inline-flex items-center gap-2 mx-6 text-sm">
+        <span class="text-xs bg-emerald-500/20 text-emerald-300 px-2 py-0.5 rounded font-mono font-bold">COPPER CABLES</span>
+        <span class="font-bold">₹585.00/kg</span>
+        <span class="text-emerald-400 text-xs flex items-center"><i data-lucide="trending-up" class="w-3.5 h-3.5 mr-0.5"></i> +1.8%</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- HERO SECTION -->
+  <main class="flex-grow">
+    <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-12 pb-16">
+      <div class="grid lg:grid-cols-12 gap-12 items-center">
+        
+        <!-- Left Hero Copy -->
+        <div class="lg:col-span-7 space-y-6">
+          <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-emerald-100/90 text-emerald-900 border border-emerald-300/60 text-xs font-bold uppercase tracking-wider">
+            <i data-lucide="leaf" class="w-3.5 h-3.5 text-emerald-600"></i>
+            <span data-i18n="heroBadge">Government CPCB Certified Circular Ecosystem</span>
+          </div>
+          <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 leading-[1.15] font-display" data-i18n="heroTitle">
+            Fair Market Prices.<br/>
+            <span class="bg-clip-text text-transparent bg-gradient-to-r from-brand-600 via-teal-600 to-emerald-500">
+              Zero Exploitation.
+            </span><br/>
+            Instant Cash Payout.
+          </h1>
+          <p class="text-lg text-slate-600 leading-relaxed max-w-2xl font-normal" data-i18n="heroDesc">
+            PunahSetu links local waste pickers and scrap aggregators directly to certified industrial recyclers. Say goodbye to middlemen cuts, hazardous backyard burning, and delayed payments.
+          </p>
+
+          <!-- Action Buttons -->
+          <div class="flex flex-wrap gap-4 pt-2">
+            <button onclick="document.getElementById('calculator').scrollIntoView({behavior:'smooth'})" class="px-7 py-4 rounded-xl bg-slate-900 hover:bg-slate-800 text-white font-bold text-base shadow-xl flex items-center gap-3 transition group">
+              <span data-i18n="heroCalcBtn">Calculate Your Scrap Value</span>
+              <i data-lucide="arrow-right" class="w-5 h-5 group-hover:translate-x-1 transition"></i>
+            </button>
+            <button onclick="document.getElementById('recyclers').scrollIntoView({behavior:'smooth'})" class="px-7 py-4 rounded-xl bg-white hover:bg-slate-50 text-slate-800 font-bold text-base border border-slate-300/80 shadow-sm flex items-center gap-2 transition">
+              <i data-lucide="map-pin" class="w-5 h-5 text-emerald-600"></i>
+              <span data-i18n="heroFindBtn">Find Nearby Centers (10)</span>
+            </button>
+          </div>
+
+          <!-- Trust Badges -->
+          <div class="pt-6 border-t border-slate-200/80 grid grid-cols-3 gap-4">
+            <div>
+              <div class="text-2xl font-extrabold text-brand-800 font-display">₹14.2 Lakh+</div>
+              <div class="text-xs text-slate-500 font-medium" data-i18n="stat1">Paid direct to collectors</div>
+            </div>
+            <div>
+              <div class="text-2xl font-extrabold text-brand-800 font-display">42,000+ kg</div>
+              <div class="text-xs text-slate-500 font-medium" data-i18n="stat2">Safe CPCB recycling</div>
+            </div>
+            <div>
+              <div class="text-2xl font-extrabold text-brand-800 font-display">100% Escrow</div>
+              <div class="text-xs text-slate-500 font-medium" data-i18n="stat3">Guaranteed digital receipts</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Hero Interactive Live Card -->
+        <div class="lg:col-span-5">
+          <div class="glass-card rounded-3xl p-6 shadow-float relative overflow-hidden">
+            <!-- Background Glow -->
+            <div class="absolute -top-16 -right-16 w-40 h-40 bg-emerald-400/20 rounded-full blur-2xl"></div>
+            
+            <div class="flex items-center justify-between pb-4 border-b border-slate-100">
+              <div class="flex items-center gap-2.5">
+                <span class="w-3 h-3 rounded-full bg-emerald-500 animate-pulse"></span>
+                <h3 class="font-bold text-slate-900 text-base" data-i18n="boardTitle">Live Scrapyard Board</h3>
+              </div>
+              <span class="text-xs font-semibold px-2.5 py-1 bg-emerald-50 text-emerald-700 rounded-full border border-emerald-200">
+                Updated 5m ago
+              </span>
+            </div>
+
+            <!-- Material Quick List -->
+            <div class="divide-y divide-slate-100 my-2">
+              <div class="py-3.5 flex items-center justify-between hover:bg-emerald-50/50 px-2 rounded-xl transition cursor-pointer" onclick="selectQuickMaterial('PCB', 185)">
+                <div class="flex items-center gap-3">
+                  <div class="w-10 h-10 rounded-xl bg-emerald-100 text-emerald-700 flex items-center justify-center font-bold text-lg">🔌</div>
+                  <div>
+                    <div class="font-bold text-sm text-slate-900">Printed Circuit Boards (PCB)</div>
+                    <div class="text-xs text-slate-500">Motherboards, RAM, telecom cards</div>
+                  </div>
+                </div>
+                <div class="text-right">
+                  <div class="font-mono font-bold text-emerald-700 text-base">₹185/kg</div>
+                  <div class="text-[11px] text-emerald-600 font-semibold">+₹12 today</div>
+                </div>
+              </div>
+
+              <div class="py-3.5 flex items-center justify-between hover:bg-emerald-50/50 px-2 rounded-xl transition cursor-pointer" onclick="selectQuickMaterial('Cable', 585)">
+                <div class="flex items-center gap-3">
+                  <div class="w-10 h-10 rounded-xl bg-amber-100 text-amber-700 flex items-center justify-center font-bold text-lg">🔗</div>
+                  <div>
+                    <div class="font-bold text-sm text-slate-900">Stripped Copper Wire</div>
+                    <div class="text-xs text-slate-500">Heavy gauge, clean wiring</div>
+                  </div>
+                </div>
+                <div class="text-right">
+                  <div class="font-mono font-bold text-emerald-700 text-base">₹585/kg</div>
+                  <div class="text-[11px] text-emerald-600 font-semibold">Highest Yield</div>
+                </div>
+              </div>
+
+              <div class="py-3.5 flex items-center justify-between hover:bg-emerald-50/50 px-2 rounded-xl transition cursor-pointer" onclick="selectQuickMaterial('Battery', 135)">
+                <div class="flex items-center gap-3">
+                  <div class="w-10 h-10 rounded-xl bg-red-100 text-red-700 flex items-center justify-center font-bold text-lg">🔋</div>
+                  <div>
+                    <div class="font-bold text-sm text-slate-900">Li-Ion Battery Packs</div>
+                    <div class="text-xs text-slate-500">Laptops, mobile batteries</div>
+                  </div>
+                </div>
+                <div class="text-right">
+                  <div class="font-mono font-bold text-slate-800 text-base">₹135/kg</div>
+                  <div class="text-[11px] text-amber-600 font-semibold">Hazardous rating</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Quick Voice Readout Helper -->
+            <div class="mt-4 p-3.5 bg-emerald-50 rounded-2xl border border-emerald-200/80 flex items-center justify-between">
+              <div class="flex items-center gap-3">
+                <button id="audioToggleBtn" onclick="toggleAudio()" class="w-9 h-9 rounded-full bg-emerald-600 text-white flex items-center justify-center hover:bg-emerald-700 transition shadow cursor-pointer" title="Play / Stop Audio">
+                  <i id="audioIcon" data-lucide="volume-2" class="w-4 h-4"></i>
+                </button>
+                <div>
+                  <div class="text-xs font-bold text-emerald-950" data-i18n="audioTitle">Daily Audio Broadcast</div>
+                  <div class="text-[11px] text-emerald-700" id="audioStatus" data-i18n="audioStatus">Click to hear rates in Hindi / English / Marathi</div>
+                </div>
+              </div>
+              <span class="text-[10px] font-bold uppercase tracking-wider text-emerald-800 bg-white px-2 py-1 rounded shadow-sm">AI Voice</span>
+            </div>
+
+            <!-- Instant Sell Button inside card -->
+            <button onclick="openLotModal()" class="w-full mt-4 py-3 bg-brand-600 hover:bg-brand-700 text-white rounded-xl font-bold text-sm shadow-md transition flex items-center justify-center gap-2">
+              <i data-lucide="zap" class="w-4 h-4 text-amber-300"></i>
+              <span data-i18n="btnLockRate">Create Scrap Lot & Lock Rate</span>
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION: INTERACTIVE ESTIMATION ENGINE -->
+    <section id="calculator" class="py-16 bg-white/60 border-y border-emerald-100">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center max-w-3xl mx-auto mb-12">
+          <span class="text-xs font-extrabold uppercase tracking-wider text-brand-600 bg-brand-50 px-3 py-1 rounded-full border border-brand-200" data-i18n="calcBadge">
+            Smart Transparency Engine
+          </span>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-900 mt-3 font-display" data-i18n="calcTitle">
+            Instant E-Waste Payout Estimator
+          </h2>
+          <p class="text-slate-600 mt-2 text-base" data-i18n="calcSub">
+            Select your scrap material, adjust estimated weight, and see exactly what authorized recyclers will pay you with zero deductions.
+          </p>
+        </div>
+
+        <div class="max-w-4xl mx-auto glass-card rounded-3xl p-6 sm:p-10 shadow-glass">
+          <div class="grid md:grid-cols-12 gap-8">
+            
+            <!-- Controls (Left 7 Cols) -->
+            <div class="md:col-span-7 space-y-6">
+              <!-- Material Selection -->
+              <div>
+                <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-2" data-i18n="step1">
+                  1. Select Material Category
+                </label>
+                <div class="grid grid-cols-3 gap-2.5" id="categoryChips">
+                  <button type="button" onclick="setCalcCategory('PCB', 185, this)" class="cat-chip active p-3 rounded-2xl border-2 border-brand-600 bg-brand-50 text-left transition">
+                    <span class="text-2xl block">🔌</span>
+                    <span class="font-bold text-xs text-slate-900 block mt-1">Circuit Boards</span>
+                    <span class="text-[11px] text-emerald-700 font-mono">₹185/kg</span>
+                  </button>
+
+                  <button type="button" onclick="setCalcCategory('Cable', 585, this)" class="cat-chip p-3 rounded-2xl border-2 border-slate-200 bg-white hover:border-emerald-300 text-left transition">
+                    <span class="text-2xl block">🔗</span>
+                    <span class="font-bold text-xs text-slate-900 block mt-1">Copper Wire</span>
+                    <span class="text-[11px] text-slate-500 font-mono">₹585/kg</span>
+                  </button>
+
+                  <button type="button" onclick="setCalcCategory('Battery', 135, this)" class="cat-chip p-3 rounded-2xl border-2 border-slate-200 bg-white hover:border-emerald-300 text-left transition">
+                    <span class="text-2xl block">🔋</span>
+                    <span class="font-bold text-xs text-slate-900 block mt-1">Li-Ion Pack</span>
+                    <span class="text-[11px] text-slate-500 font-mono">₹135/kg</span>
+                  </button>
+
+                  <button type="button" onclick="setCalcCategory('LCD', 78, this)" class="cat-chip p-3 rounded-2xl border-2 border-slate-200 bg-white hover:border-emerald-300 text-left transition">
+                    <span class="text-2xl block">🖥️</span>
+                    <span class="font-bold text-xs text-slate-900 block mt-1">LCD Screens</span>
+                    <span class="text-[11px] text-slate-500 font-mono">₹78/kg</span>
+                  </button>
+
+                  <button type="button" onclick="setCalcCategory('Motor', 125, this)" class="cat-chip p-3 rounded-2xl border-2 border-slate-200 bg-white hover:border-emerald-300 text-left transition">
+                    <span class="text-2xl block">⚙️</span>
+                    <span class="font-bold text-xs text-slate-900 block mt-1">Electric Motor</span>
+                    <span class="text-[11px] text-slate-500 font-mono">₹125/kg</span>
+                  </button>
+
+                  <button type="button" onclick="setCalcCategory('Mixed Plastic', 32, this)" class="cat-chip p-3 rounded-2xl border-2 border-slate-200 bg-white hover:border-emerald-300 text-left transition">
+                    <span class="text-2xl block">♻️</span>
+                    <span class="font-bold text-xs text-slate-900 block mt-1">E-Plastic</span>
+                    <span class="text-[11px] text-slate-500 font-mono">₹32/kg</span>
+                  </button>
+                </div>
+              </div>
+
+              <!-- Weight Slider -->
+              <div>
+                <div class="flex justify-between items-center mb-2">
+                  <label class="text-xs font-bold uppercase tracking-wider text-slate-700" data-i18n="step2">
+                    2. Estimated Scrap Weight
+                  </label>
+                  <span class="font-display font-extrabold text-brand-700 text-xl" id="weightDisplay">25 kg</span>
+                </div>
+                <input id="weightSlider" type="range" min="1" max="250" value="25" class="w-full h-3 bg-slate-200 rounded-lg appearance-none cursor-pointer accent-emerald-600" oninput="updateCalculation()">
+                <div class="flex justify-between text-[11px] text-slate-400 mt-1">
+                  <span>1 kg (Small bag)</span>
+                  <span>50 kg</span>
+                  <span>150 kg</span>
+                  <span>250 kg (Tempo load)</span>
+                </div>
+              </div>
+
+              <!-- Quality Condition -->
+              <div>
+                <label class="block text-xs font-bold uppercase tracking-wider text-slate-700 mb-2" data-i18n="step3">
+                  3. Batch Condition
+                </label>
+                <div class="grid grid-cols-3 gap-2">
+                  <button type="button" onclick="setCondition(1.05, this)" class="cond-btn active py-2 px-3 rounded-xl border text-xs font-bold border-brand-600 bg-brand-50 text-brand-800">
+                    Sorted & Clean (+5%)
+                  </button>
+                  <button type="button" onclick="setCondition(1.0, this)" class="cond-btn py-2 px-3 rounded-xl border text-xs font-bold border-slate-200 bg-white text-slate-700">
+                    Standard Mixed (Base)
+                  </button>
+                  <button type="button" onclick="setCondition(0.92, this)" class="cond-btn py-2 px-3 rounded-xl border text-xs font-bold border-slate-200 bg-white text-slate-700">
+                    Damaged / Unsorted (-8%)
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Result Box (Right 5 Cols) -->
+            <div class="md:col-span-5 bg-gradient-to-br from-brand-900 to-slate-900 rounded-2xl p-6 text-white flex flex-col justify-between shadow-xl">
+              <div>
+                <div class="flex items-center justify-between text-brand-300 text-xs font-bold uppercase tracking-wider">
+                  <span data-i18n="guaranteedPayout">Guaranteed Payout</span>
+                  <span class="px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300">Live Rate</span>
+                </div>
+
+                <div class="mt-4">
+                  <div class="text-xs text-slate-400" data-i18n="estimatedTotal">Estimated Total Payout</div>
+                  <div class="font-display text-4xl sm:text-5xl font-extrabold text-emerald-400 mt-1" id="totalPayout">
+                    ₹4,856
+                  </div>
+                  <div class="text-xs text-slate-300 mt-1 flex items-center gap-1">
+                    <i data-lucide="check-circle" class="w-3.5 h-3.5 text-emerald-400"></i> <span data-i18n="noDeductions">No middleman deductions</span>
+                  </div>
+                </div>
+
+                <!-- Breakdown -->
+                <div class="mt-6 space-y-2 text-xs border-t border-slate-800 pt-4 text-slate-300">
+                  <div class="flex justify-between">
+                    <span>Base Category Rate:</span>
+                    <span class="font-mono text-white" id="breakdownBase">₹185 / kg</span>
+                  </div>
+                  <div class="flex justify-between">
+                    <span>Quantity:</span>
+                    <span class="font-mono text-white" id="breakdownWeight">25 kg</span>
+                  </div>
+                  <div class="flex justify-between">
+                    <span>Condition Multiplier:</span>
+                    <span class="font-mono text-emerald-400" id="breakdownCond">+5% Clean</span>
+                  </div>
+                  <div class="flex justify-between">
+                    <span>Green ESG Bonus:</span>
+                    <span class="font-mono text-emerald-400">+₹50 (Instant)</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="mt-6 pt-4 border-t border-slate-800">
+                <button onclick="openLotModalWithVal()" class="w-full py-3.5 bg-emerald-500 hover:bg-emerald-400 text-slate-950 rounded-xl font-extrabold text-sm shadow-lg transition flex items-center justify-center gap-2">
+                  <i data-lucide="lock" class="w-4 h-4"></i>
+                  <span data-i18n="btnLockPickup">Lock Price & Request Pickup</span>
+                </button>
+                <p class="text-[11px] text-center text-slate-400 mt-2" data-i18n="rateGuarantee">
+                  Rate guaranteed for 48 hours upon pickup confirmation
+                </p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION: AUTHORIZED RECYCLER RADAR -->
+    <section id="recyclers" class="py-16 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-10">
+        <div>
+          <span class="text-xs font-extrabold uppercase tracking-wider text-teal-700 bg-teal-50 px-3 py-1 rounded-full border border-teal-200" data-i18n="recyclerBadge">
+            Government Certified Directory
+          </span>
+          <h2 class="text-3xl font-extrabold text-slate-900 mt-2 font-display" data-i18n="recyclerTitle">
+            Authorized CPCB Recyclers Near You
+          </h2>
+          <p class="text-slate-600 mt-1" data-i18n="recyclerSub">Direct handovers with verified licenses, doorstep weighing scales, and digital slips.</p>
+        </div>
+        <div class="mt-4 md:mt-0 flex gap-2">
+          <input type="text" placeholder="Search by area (e.g. Okhla, Noida)..." class="px-4 py-2 text-sm bg-white border border-slate-300 rounded-xl focus:ring-2 focus:ring-emerald-500 outline-none w-64 shadow-sm">
+          <button class="px-4 py-2 bg-slate-900 text-white rounded-xl text-sm font-semibold hover:bg-slate-800 transition" data-i18n="searchBtn">Search</button>
+        </div>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-6">
+        <!-- Center 1 -->
+        <div class="glass-card rounded-2xl p-5 shadow-sm hover:shadow-md transition border border-emerald-100 flex flex-col justify-between">
+          <div>
+            <div class="flex items-start justify-between">
+              <span class="inline-flex items-center gap-1 text-[11px] font-bold px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800">
+                <i data-lucide="badge-check" class="w-3 h-3"></i> CPCB Approved
+              </span>
+              <span class="text-xs font-bold text-slate-500 font-mono">AUTH-12345</span>
+            </div>
+            <h3 class="font-bold text-lg text-slate-900 mt-2">Green Recyclers India</h3>
+            <p class="text-xs text-slate-500 mt-0.5 flex items-center gap-1">
+              <i data-lucide="map-pin" class="w-3.5 h-3.5 text-slate-400"></i> Okhla Industrial Area, Delhi (3.2 km)
+            </p>
+
+            <div class="mt-4 flex flex-wrap gap-1.5">
+              <span class="text-[11px] bg-slate-100 text-slate-700 px-2 py-0.5 rounded-md font-medium">PCB</span>
+              <span class="text-[11px] bg-slate-100 text-slate-700 px-2 py-0.5 rounded-md font-medium">Cables</span>
+              <span class="text-[11px] bg-slate-100 text-slate-700 px-2 py-0.5 rounded-md font-medium">Li-Ion</span>
+              <span class="text-[11px] bg-slate-100 text-slate-700 px-2 py-0.5 rounded-md font-medium">Motors</span>
+            </div>
+
+            <div class="mt-4 p-2.5 bg-emerald-50/70 rounded-xl text-xs text-emerald-900 flex items-center justify-between">
+              <span>Rate Multiplier:</span>
+              <span class="font-bold text-emerald-700 font-mono">1.03x (+3% Market Bonus)</span>
+            </div>
+          </div>
+
+          <div class="mt-5 pt-4 border-t border-slate-100 flex items-center justify-between">
+            <span class="text-xs text-emerald-600 font-semibold flex items-center gap-1">
+              <i data-lucide="truck" class="w-3.5 h-3.5"></i> Free Tempo Pickup
+            </span>
+            <button onclick="openLotModal()" class="px-3.5 py-1.5 bg-slate-900 hover:bg-slate-800 text-white text-xs font-bold rounded-lg transition">
+              Dispatch Here
+            </button>
+          </div>
+        </div>
+
+        <!-- Center 2 -->
+        <div class="glass-card rounded-2xl p-5 shadow-sm hover:shadow-md transition border border-emerald-100 flex flex-col justify-between">
+          <div>
+            <div class="flex items-start justify-between">
+              <span class="inline-flex items-center gap-1 text-[11px] font-bold px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800">
+                <i data-lucide="badge-check" class="w-3 h-3"></i> CPCB Approved
+              </span>
+              <span class="text-xs font-bold text-slate-500 font-mono">AUTH-80990</span>
+            </div>
+            <h3 class="font-bold text-lg text-slate-900 mt-2">Nirmal Urban Mining Hub</h3>
+            <p class="text-xs text-slate-500 mt-0.5 flex items-center gap-1">
+              <i data-lucide="map-pin" class="w-3.5 h-3.5 text-slate-400"></i> Mayapuri Industrial Area, Delhi (5.8 km)
+            </p>
+
+            <div class="mt-4 flex flex-wrap gap-1.5">
+              <span class="text-[11px] bg-slate-100 text-slate-700 px-2 py-0.5 rounded-md font-medium">Motherboards</span>
+              <span class="text-[11px] bg-slate-100 text-slate-700 px-2 py-0.5 rounded-md font-medium">Rare Earths</span>
+              <span class="text-[11px] bg-slate-100 text-slate-700 px-2 py-0.5 rounded-md font-medium">LCD Panels</span>
+            </div>
+
+            <div class="mt-4 p-2.5 bg-emerald-50/70 rounded-xl text-xs text-emerald-900 flex items-center justify-between">
+              <span>Rate Multiplier:</span>
+              <span class="font-bold text-emerald-700 font-mono">1.02x (+2% Premium)</span>
+            </div>
+          </div>
+
+          <div class="mt-5 pt-4 border-t border-slate-100 flex items-center justify-between">
+            <span class="text-xs text-emerald-600 font-semibold flex items-center gap-1">
+              <i data-lucide="truck" class="w-3.5 h-3.5"></i> Free Tempo Pickup
+            </span>
+            <button onclick="openLotModal()" class="px-3.5 py-1.5 bg-slate-900 hover:bg-slate-800 text-white text-xs font-bold rounded-lg transition">
+              Dispatch Here
+            </button>
+          </div>
+        </div>
+
+        <!-- Center 3 -->
+        <div class="glass-card rounded-2xl p-5 shadow-sm hover:shadow-md transition border border-emerald-100 flex flex-col justify-between">
+          <div>
+            <div class="flex items-start justify-between">
+              <span class="inline-flex items-center gap-1 text-[11px] font-bold px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800">
+                <i data-lucide="badge-check" class="w-3 h-3"></i> CPCB Approved
+              </span>
+              <span class="text-xs font-bold text-slate-500 font-mono">AUTH-30442</span>
+            </div>
+            <h3 class="font-bold text-lg text-slate-900 mt-2">Pink City Metals & Alloys</h3>
+            <p class="text-xs text-slate-500 mt-0.5 flex items-center gap-1">
+              <i data-lucide="map-pin" class="w-3.5 h-3.5 text-slate-400"></i> Rohini Industrial Yard, Delhi (8.1 km)
+            </p>
+
+            <div class="mt-4 flex flex-wrap gap-1.5">
+              <span class="text-[11px] bg-slate-100 text-slate-700 px-2 py-0.5 rounded-md font-medium">High Copper</span>
+              <span class="text-[11px] bg-slate-100 text-slate-700 px-2 py-0.5 rounded-md font-medium">Heavy Motors</span>
+              <span class="text-[11px] bg-slate-100 text-slate-700 px-2 py-0.5 rounded-md font-medium">Transformers</span>
+            </div>
+
+            <div class="mt-4 p-2.5 bg-emerald-50/70 rounded-xl text-xs text-emerald-900 flex items-center justify-between">
+              <span>Rate Multiplier:</span>
+              <span class="font-bold text-emerald-700 font-mono">1.01x (Instant UPI)</span>
+            </div>
+          </div>
+
+          <div class="mt-5 pt-4 border-t border-slate-100 flex items-center justify-between">
+            <span class="text-xs text-slate-500 font-semibold flex items-center gap-1">
+              <i data-lucide="store" class="w-3.5 h-3.5"></i> Direct Scrapyard Drop
+            </span>
+            <button onclick="openLotModal()" class="px-3.5 py-1.5 bg-slate-900 hover:bg-slate-800 text-white text-xs font-bold rounded-lg transition">
+              Dispatch Here
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TRACEABILITY & WORKFLOW EXPLAINER -->
+    <section id="traceability" class="py-16 bg-brand-950 text-white relative overflow-hidden">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <div class="text-center max-w-3xl mx-auto mb-14">
+          <span class="text-xs font-extrabold uppercase tracking-wider text-emerald-400 bg-emerald-900/60 px-3 py-1 rounded-full border border-emerald-700" data-i18n="traceBadge">
+            Tamper-Proof Handover Chain
+          </span>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-3 font-display" data-i18n="traceTitle">
+            How Informal Waste Workers Win with PunahSetu
+          </h2>
+          <p class="text-brand-200 mt-2 text-base" data-i18n="traceSub">
+            Eliminating cash theft, arbitrary weight grading, and toxic roadside acid baths with 4 simple digital steps.
+          </p>
+        </div>
+
+        <div class="grid md:grid-cols-4 gap-6">
+          <!-- Step 1 -->
+          <div class="bg-brand-900/60 p-6 rounded-2xl border border-brand-800">
+            <div class="w-10 h-10 rounded-xl bg-emerald-500 text-slate-950 flex items-center justify-center font-extrabold text-lg mb-4">1</div>
+            <h3 class="font-bold text-lg text-white">Create Scrap Lot</h3>
+            <p class="text-xs text-slate-300 mt-2 leading-relaxed">
+              Take a photo of your collected circuit boards or wires. AI detects category and locks today's benchmark rate.
+            </p>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="bg-brand-900/60 p-6 rounded-2xl border border-brand-800">
+            <div class="w-10 h-10 rounded-xl bg-emerald-500 text-slate-950 flex items-center justify-center font-extrabold text-lg mb-4">2</div>
+            <h3 class="font-bold text-lg text-white">Certified Recycler Match</h3>
+            <p class="text-xs text-slate-300 mt-2 leading-relaxed">
+              Closest authorized CPCB unit confirms pickup or drop-off time. Zero middlemen commission.
+            </p>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="bg-brand-900/60 p-6 rounded-2xl border border-brand-800">
+            <div class="w-10 h-10 rounded-xl bg-emerald-500 text-slate-950 flex items-center justify-center font-extrabold text-lg mb-4">3</div>
+            <h3 class="font-bold text-lg text-white">QR Digital Weighing</h3>
+            <p class="text-xs text-slate-300 mt-2 leading-relaxed">
+              Weight is recorded on a Bluetooth scale and confirmed via one-time QR scan. No manual tampering.
+            </p>
+          </div>
+
+          <!-- Step 4 -->
+          <div class="bg-brand-900/60 p-6 rounded-2xl border border-brand-800">
+            <div class="w-10 h-10 rounded-xl bg-emerald-500 text-slate-950 flex items-center justify-center font-extrabold text-lg mb-4">4</div>
+            <h3 class="font-bold text-lg text-white">Instant UPI / Cash Transfer</h3>
+            <p class="text-xs text-slate-300 mt-2 leading-relaxed">
+              Money arrives directly in bank or UPI wallet within 60 seconds with an official government tax receipt.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- MODAL: SELL E-WASTE LOT -->
+  <div id="lotModal" class="fixed inset-0 z-50 bg-slate-950/70 backdrop-blur-sm hidden flex items-center justify-center p-4">
+    <div class="bg-white rounded-3xl max-w-lg w-full p-6 sm:p-8 shadow-2xl border border-slate-200">
+      <div class="flex items-center justify-between pb-4 border-b border-slate-100">
+        <div>
+          <h3 class="font-display font-extrabold text-xl text-slate-900" data-i18n="modalTitle">Create New E-Waste Lot</h3>
+          <p class="text-xs text-slate-500" data-i18n="modalSub">Lock your price with authorized recyclers</p>
+        </div>
+        <button onclick="closeLotModal()" class="w-8 h-8 rounded-full bg-slate-100 text-slate-500 hover:bg-slate-200 flex items-center justify-center">
+          <i data-lucide="x" class="w-4 h-4"></i>
+        </button>
+      </div>
+
+      <form onsubmit="handleLotSubmit(event)" class="mt-6 space-y-4">
+        <div>
+          <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1">E-Waste Category</label>
+          <select id="modalCategory" class="w-full bg-slate-50 border border-slate-300 rounded-xl p-3 text-sm focus:ring-2 focus:ring-emerald-500 outline-none">
+            <option value="PCB">Printed Circuit Boards (₹185/kg)</option>
+            <option value="Cable">Copper Wire & Cables (₹585/kg)</option>
+            <option value="Battery">Li-Ion / Lead Acid (₹135/kg)</option>
+            <option value="Motor">Electric Motors (₹125/kg)</option>
+            <option value="LCD">LCD Panels (₹78/kg)</option>
+          </select>
+        </div>
+
+        <div class="grid grid-cols-2 gap-4">
+          <div>
+            <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1">Estimated Weight (kg)</label>
+            <input type="number" id="modalWeight" value="25" min="1" class="w-full bg-slate-50 border border-slate-300 rounded-xl p-3 text-sm focus:ring-2 focus:ring-emerald-500 outline-none">
+          </div>
+          <div>
+            <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1">Pickup Type</label>
+            <select class="w-full bg-slate-50 border border-slate-300 rounded-xl p-3 text-sm focus:ring-2 focus:ring-emerald-500 outline-none">
+              <option>Doorstep Pickup</option>
+              <option>Self Drop at Center</option>
+            </select>
+          </div>
+        </div>
+
+        <div>
+          <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1">Your Scrapyard Location</label>
+          <input type="text" value="Connaught Place, New Delhi" class="w-full bg-slate-50 border border-slate-300 rounded-xl p-3 text-sm focus:ring-2 focus:ring-emerald-500 outline-none">
+        </div>
+
+        <div class="p-3 bg-emerald-50 rounded-xl border border-emerald-200 text-xs text-emerald-900 flex items-center justify-between">
+          <span class="font-medium">Estimated Payout:</span>
+          <span class="font-extrabold text-base text-emerald-700 font-mono" id="modalPayoutPreview">₹4,625</span>
+        </div>
+
+        <button type="submit" class="w-full py-3.5 bg-brand-600 hover:bg-brand-700 text-white font-bold rounded-xl shadow-lg transition">
+          <span data-i18n="modalBtn">Generate Digital Lot & QR Code</span>
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- MODAL: LOGIN / PORTAL ACCESS -->
+  <div id="loginModal" class="fixed inset-0 z-50 bg-slate-950/70 backdrop-blur-sm hidden flex items-center justify-center p-4">
+    <div class="bg-white rounded-3xl max-w-md w-full p-6 sm:p-8 shadow-2xl border border-slate-200">
+      <div class="flex items-center justify-between pb-4 border-b border-slate-100">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 rounded-xl bg-brand-50 text-brand-600 flex items-center justify-center">
+            <i data-lucide="shield-check" class="w-5 h-5 text-emerald-600"></i>
+          </div>
+          <div>
+            <h3 class="font-display font-extrabold text-xl text-slate-900" data-i18n="loginTitle">PunahSetu Sign In</h3>
+            <p class="text-xs text-slate-500" data-i18n="loginSub">Select role to access your dashboard</p>
+          </div>
+        </div>
+        <button onclick="closeLoginModal()" class="w-8 h-8 rounded-full bg-slate-100 text-slate-500 hover:bg-slate-200 flex items-center justify-center">
+          <i data-lucide="x" class="w-4 h-4"></i>
+        </button>
+      </div>
+
+      <!-- Role tabs -->
+      <div class="mt-5 grid grid-cols-3 gap-2">
+        <button type="button" id="roleBtnCollector" onclick="setLoginRole('collector')" class="py-2.5 px-2 rounded-xl text-xs font-bold border-2 border-brand-600 bg-brand-50 text-brand-800 flex flex-col items-center gap-1 transition">
+          <i data-lucide="user" class="w-4 h-4"></i>
+          <span data-i18n="roleCollector">Collector</span>
+        </button>
+        <button type="button" id="roleBtnRecycler" onclick="setLoginRole('recycler')" class="py-2.5 px-2 rounded-xl text-xs font-bold border-2 border-slate-200 bg-white text-slate-600 hover:border-slate-300 flex flex-col items-center gap-1 transition">
+          <i data-lucide="truck" class="w-4 h-4"></i>
+          <span data-i18n="roleRecycler">Recycler</span>
+        </button>
+        <button type="button" id="roleBtnAdmin" onclick="setLoginRole('admin')" class="py-2.5 px-2 rounded-xl text-xs font-bold border-2 border-slate-200 bg-white text-slate-600 hover:border-slate-300 flex flex-col items-center gap-1 transition">
+          <i data-lucide="shield" class="w-4 h-4"></i>
+          <span data-i18n="roleAdmin">Admin</span>
+        </button>
+      </div>
+
+      <form onsubmit="handleLoginSubmit(event)" class="mt-5 space-y-4">
+        <!-- Collector Phone field -->
+        <div id="phoneGroup">
+          <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1" data-i18n="phoneLabel">Mobile Number</label>
+          <input type="tel" id="loginPhone" value="+91 98100 00001" placeholder="+91 98100 00001" class="w-full bg-slate-50 border border-slate-300 rounded-xl p-3 text-sm focus:ring-2 focus:ring-emerald-500 outline-none">
+          <p class="text-[11px] text-slate-500 mt-1" data-i18n="phoneHint">No password required. Instant OTP login for collectors.</p>
+        </div>
+
+        <!-- Recycler / Admin Email & Password fields -->
+        <div id="emailGroup" class="hidden space-y-3">
+          <div>
+            <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1" data-i18n="emailLabel">Official Email</label>
+            <input type="email" id="loginEmail" value="recycler@demo.com" placeholder="name@company.com" class="w-full bg-slate-50 border border-slate-300 rounded-xl p-3 text-sm focus:ring-2 focus:ring-emerald-500 outline-none">
+          </div>
+          <div>
+            <label class="block text-xs font-bold text-slate-700 uppercase tracking-wider mb-1" data-i18n="passLabel">Password</label>
+            <input type="password" id="loginPassword" value="password123" class="w-full bg-slate-50 border border-slate-300 rounded-xl p-3 text-sm focus:ring-2 focus:ring-emerald-500 outline-none">
+          </div>
+        </div>
+
+        <div class="p-3 bg-slate-50 rounded-xl border border-slate-200 text-xs text-slate-600 flex items-center justify-between">
+          <span data-i18n="demoHint">Quick Demo:</span>
+          <span class="font-bold text-emerald-700 cursor-pointer hover:underline" onclick="fillDemoCredentials()" data-i18n="fillCredentials">Auto-fill Demo</span>
+        </div>
+
+        <button type="submit" class="w-full py-3.5 bg-brand-600 hover:bg-brand-700 text-white font-bold rounded-xl shadow-lg transition flex items-center justify-center gap-2">
+          <i data-lucide="log-in" class="w-4 h-4"></i>
+          <span data-i18n="signInBtn">Sign In to Dashboard</span>
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="bg-white border-t border-slate-200 py-8 text-xs text-slate-500">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div class="flex items-center gap-2">
+        <span class="font-bold text-slate-900 font-display">PunahSetu</span>
+        <span>• Circular Economy Platform for Informal E-Waste Workers</span>
+      </div>
+      <div class="flex items-center space-x-6 text-slate-600">
+        <span>CPCB Registered</span>
+        <span>Government EPR Compliant</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- SCRIPT LOGIC -->
+  <script>
+    // Initialize Lucide Icons
+    lucide.createIcons();
+
+    // Multilingual Translations Dictionary
+    const translations = {
+      en: {
+        announcement: "CPCB REGISTRATION PORTAL LIVE",
+        announcementSub: "• Real-time market rates verified across 24 authorized centers",
+        escrowText: "100% Traceable Escrow",
+        brandSub: "Empowering Informal Collectors • Verified Recyclers",
+        navRates: "Live Price Board",
+        navCalc: "Instant Estimator",
+        navRecyclers: "Authorized Centers",
+        navTrace: "Digital Handovers",
+        navHotline: "Scrap Hotline: 1800-PUNAH",
+        navLogin: "Login",
+        navSell: "Sell E-Waste",
+        heroBadge: "Government CPCB Certified Circular Ecosystem",
+        heroTitle: 'Fair Market Prices.<br/><span class="bg-clip-text text-transparent bg-gradient-to-r from-brand-600 via-teal-600 to-emerald-500">Zero Exploitation.</span><br/>Instant Cash Payout.',
+        heroDesc: "PunahSetu links local waste pickers and scrap aggregators directly to certified industrial recyclers. Say goodbye to middlemen cuts, hazardous backyard burning, and delayed payments.",
+        heroCalcBtn: "Calculate Your Scrap Value",
+        heroFindBtn: "Find Nearby Centers (10)",
+        stat1: "Paid direct to collectors",
+        stat2: "Safe CPCB recycling",
+        stat3: "Guaranteed digital receipts",
+        boardTitle: "Live Scrapyard Board",
+        audioTitle: "Daily Audio Broadcast",
+        audioStatus: "Click to hear rates in Hindi / English / Marathi",
+        btnLockRate: "Create Scrap Lot & Lock Rate",
+        calcBadge: "Smart Transparency Engine",
+        calcTitle: "Instant E-Waste Payout Estimator",
+        calcSub: "Select your scrap material, adjust estimated weight, and see exactly what authorized recyclers will pay you with zero deductions.",
+        step1: "1. Select Material Category",
+        step2: "2. Estimated Scrap Weight",
+        step3: "3. Batch Condition",
+        guaranteedPayout: "Guaranteed Payout",
+        estimatedTotal: "Estimated Total Payout",
+        noDeductions: "No middleman deductions",
+        btnLockPickup: "Lock Price & Request Pickup",
+        rateGuarantee: "Rate guaranteed for 48 hours upon pickup confirmation",
+        recyclerBadge: "Government Certified Directory",
+        recyclerTitle: "Authorized CPCB Recyclers Near You",
+        recyclerSub: "Direct handovers with verified licenses, doorstep weighing scales, and digital slips.",
+        searchBtn: "Search",
+        traceBadge: "Tamper-Proof Handover Chain",
+        traceTitle: "How Informal Waste Workers Win with PunahSetu",
+        traceSub: "Eliminating cash theft, arbitrary weight grading, and toxic roadside acid baths with 4 simple digital steps.",
+        modalTitle: "Create New E-Waste Lot",
+        modalSub: "Lock your price with authorized recyclers",
+        modalBtn: "Generate Digital Lot & QR Code",
+        loginTitle: "PunahSetu Sign In",
+        loginSub: "Select role to access your dashboard",
+        roleCollector: "Collector",
+        roleRecycler: "Recycler",
+        roleAdmin: "Admin",
+        phoneLabel: "Mobile Number",
+        phoneHint: "No password required. Instant OTP login for collectors.",
+        emailLabel: "Official Email",
+        passLabel: "Password",
+        demoHint: "Quick Demo:",
+        fillCredentials: "Auto-fill Demo",
+        signInBtn: "Sign In to Dashboard"
+      },
+      hi: {
+        announcement: "CPCB पंजीकरण पोर्टल चालू है",
+        announcementSub: "• 24 अधिकृत केंद्रों पर सत्यापित वास्तविक समय बाज़ार दरें",
+        escrowText: "100% सुरक्षित भुगतान",
+        brandSub: "कबाड़ीवालों का सशक्तिकरण • अधिकृत रीसाइक्लर",
+        navRates: "लाइव रेट बोर्ड",
+        navCalc: "कैलकुलेटर",
+        navRecyclers: "अधिकृत केंद्र",
+        navTrace: "डिजिटल हिसाब",
+        navHotline: "हेल्पलाइन: 1800-PUNAH",
+        navLogin: "लॉगिन करें",
+        navSell: "ई-कचरा बेचें",
+        heroBadge: "सरकार CPCB प्रमाणित रीसाइक्लिंग व्यवस्था",
+        heroTitle: 'उचित बाज़ार मूल्य।<br/><span class="bg-clip-text text-transparent bg-gradient-to-r from-brand-600 via-teal-600 to-emerald-500">शून्य शोषण।</span><br/>तुरंत नकद भुगतान।',
+        heroDesc: "पुनःसेतु कबाड़ीवालों और कचरा बीनने वालों को सीधे अधिकृत औद्योगिक रीसाइक्लर्स से जोड़ता है। बिचौलियों के कट और देर से भुगतान को कहें अलविदा।",
+        heroCalcBtn: "कचरे का दाम जानें",
+        heroFindBtn: "पास के केंद्र खोजें (10)",
+        stat1: "कलेक्टरों को सीधा भुगतान",
+        stat2: "सुरक्षित CPCB रीसाइक्लिंग",
+        stat3: "पक्की डिजिटल रसीद",
+        boardTitle: "लाइव रेट बोर्ड",
+        audioTitle: "दैनिक ऑडियो बुलेटिन",
+        audioStatus: "हिंदी / मराठी / अंग्रेज़ी में रेट सुनने के लिए क्लिक करें",
+        btnLockRate: "लॉट बनाएं और भाव लॉक करें",
+        calcBadge: "पारदर्शी मूल्य कैलकुलेटर",
+        calcTitle: "ई-कचरा भुगतान कैलकुलेटर",
+        calcSub: "सामग्री चुनें, अनुमानित वज़न सेट करें और बिना किसी कटौती के पूरा मूल्य देखें।",
+        step1: "1. सामग्री श्रेणी चुनें",
+        step2: "2. अनुमानित स्क्रैप वज़न",
+        step3: "3. बैच की स्थिति",
+        guaranteedPayout: "गारंटीड भुगतान",
+        estimatedTotal: "कुल अनुमानित भुगतान",
+        noDeductions: "बिचौलियों की कोई कटौती नहीं",
+        btnLockPickup: "भाव लॉक करें और पिकअप मंगाएं",
+        rateGuarantee: "पिकअप कन्फर्मेशन पर 48 घंटे तक रेट की गारंटी",
+        recyclerBadge: "सरकारी प्रमाणित रीसाइक्लर डायरेक्टरी",
+        recyclerTitle: "आपके पास अधिकृत CPCB रीसाइक्लर",
+        recyclerSub: "सत्यापित लाइसेंस, दरवाज़े पर डिजिटल कांटा और पक्की रसीद के साथ प्रत्यक्ष लेनदेन।",
+        searchBtn: "खोजें",
+        traceBadge: "सुरक्षित हस्तांतरण शृंखला",
+        traceTitle: "पुनःसेतु के साथ कबाड़ीवालों का फ़ायदा",
+        traceSub: "नकद चोरी, मनमाने वज़न की कटौती और सड़क किनारे एसिड जलाने से मुक्ति।",
+        modalTitle: "नया ई-कचरा लॉट बनाएं",
+        modalSub: "अधिकृत रीसाइक्लर के साथ अपना भाव पक्का करें",
+        modalBtn: "डिजिटल लॉट और QR कोड बनाएं",
+        loginTitle: "पुनःसेतु में लॉगिन करें",
+        loginSub: "अपने डैशबोर्ड के लिए अपनी भूमिका चुनें",
+        roleCollector: "कबाड़ीवाला",
+        roleRecycler: "रीसाइक्लर",
+        roleAdmin: "एडमिन",
+        phoneLabel: "मोबाइल नंबर",
+        phoneHint: "पासवर्ड की ज़रूरत नहीं। कबाड़ीवालों के लिए तुरंत OTP लॉगिन।",
+        emailLabel: "आधिकारिक ईमेल",
+        passLabel: "पासवर्ड",
+        demoHint: "डेमो खाता:",
+        fillCredentials: "डेमो क्रेडेंशियल भरें",
+        signInBtn: "डैशबोर्ड में लॉगिन करें"
+      },
+      mr: {
+        announcement: "CPCB नोंदणी पोर्टल थेट सुरू आहे",
+        announcementSub: "• 24 अधिकृत केंद्रांवर थेट पडताळलेले बाजार भाव",
+        escrowText: "100% हमी व्यवहार",
+        brandSub: "कचरा वेचकांचे सक्षमीकरण • अधिकृत रिसायकलर",
+        navRates: "थेट भाव फलक",
+        navCalc: "अंदाज कॅल्क्युलेटर",
+        navRecyclers: "अधिकृत केंद्र",
+        navTrace: "डिजिटल हस्तांतरण",
+        navHotline: "हेल्पलाइन: 1800-PUNAH",
+        navLogin: "लॉगिन करा",
+        navSell: "ई-कचरा विका",
+        heroBadge: "शासकीय CPCB प्रमाणित चक्राकार व्यवस्था",
+        heroTitle: 'योग्य बाजार भाव.<br/><span class="bg-clip-text text-transparent bg-gradient-to-r from-brand-600 via-teal-600 to-emerald-500">शून्य पिळवणूक.</span><br/>त्वरित रोख रक्कम.',
+        heroDesc: "पुनःसेतू स्थानिक कचरा वेचकांना थेट अधिकृत औद्योगिक रिसायकलरशी जोडतो. दलालांचे कमिशन, रस्त्यावरील विषारी जाळपोळ आणि विलंबाने मिळणाऱ्या पैशांपासून मुक्ती.",
+        heroCalcBtn: "कचऱ्याचा भाव तपासा",
+        heroFindBtn: "जवळची केंद्रे शोधा (10)",
+        stat1: "वेचकांना थेट रोख रक्कम",
+        stat2: "सुरक्षित CPCB रिसायकलिंग",
+        stat3: "हमी डिजिटल पावती",
+        boardTitle: "थेट भंगार फलक",
+        audioTitle: "दैनिक ऑडिओ बुलेटिन",
+        audioStatus: "मराठी / हिंदी / इंग्रजीत भाव ऐकण्यासाठी क्लिक करा",
+        btnLockRate: "लॉट बनवा आणि भाव लॉक करा",
+        calcBadge: "पारदर्शक मूल्य कॅल्क्युलेटर",
+        calcTitle: "ई-कचरा अंदाज कॅल्क्युलेटर",
+        calcSub: "साहित्य निवडा, अंदाजे वजन ठरवा आणि दलालांशिवाय थेट मिळणारी योग्य रक्कम पहा.",
+        step1: "1. साहित्याची वर्गवारी निवडा",
+        step2: "2. अंदाजे भंगार वजन",
+        step3: "3. मालाची स्थिती",
+        guaranteedPayout: "हमी रक्कम",
+        estimatedTotal: "एकूण अंदाजे रक्कम",
+        noDeductions: "दलालांची कोणतीही कपात नाही",
+        btnLockPickup: "भाव लॉक करा आणि पिकअप मागवा",
+        rateGuarantee: "पिकअप निश्चितीनंतर 48 तासांसाठी दर सुरक्षित",
+        recyclerBadge: "शासकीय मान्यताप्राप्त केंद्र सूची",
+        recyclerTitle: "तुमच्या जवळचे अधिकृत CPCB रिसायकलर",
+        recyclerSub: "पडताळणी झालेले परवाने, दाराशी डिजिटल वजनकाटा आणि डिजिटल पावती.",
+        searchBtn: "शोधा",
+        traceBadge: "सुरक्षित हस्तांतरण साखळी",
+        traceTitle: "पुनःसेतूसोबत कचरा वेचकांचा फायदा",
+        traceSub: "रोख चोरी, मनमानी वजन कपात आणि विषारी जाळपोळीपासून मुक्ती देणारे 4 टप्पे.",
+        modalTitle: "नवीन ई-कचरा लॉट तयार करा",
+        modalSub: "अधिकृत रिसायकलरकडे तुमचा भाव निश्चित करा",
+        modalBtn: "डिजिटल लॉट आणि QR कोड मिळवा",
+        loginTitle: "पुनःसेतूमध्ये लॉगिन करा",
+        loginSub: "डॅशबोर्ड उघडण्यासाठी आपली भूमिका निवडा",
+        roleCollector: "कबाडीवाला",
+        roleRecycler: "रिसायकलर",
+        roleAdmin: "अ‍ॅडमिन",
+        phoneLabel: "मोबाईल क्रमांक",
+        phoneHint: "पासवर्डची गरज नाही. कबाडीवाल्यांसाठी थेट OTP लॉगिन.",
+        emailLabel: "अधिकृत ईमेल",
+        passLabel: "पासवर्ड",
+        demoHint: "डेमो खाते:",
+        fillCredentials: "डेमो माहिती भरा",
+        signInBtn: "डॅशबोर्डमध्ये लॉगिन करा"
+      }
+    };
+
+    let currentLang = 'en';
+
+    function changeLanguage(lang) {
+      currentLang = lang;
+      document.documentElement.lang = lang;
+      const dict = translations[lang] || translations.en;
+
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (dict[key]) {
+          if (dict[key].includes('<')) {
+            el.innerHTML = dict[key];
+          } else {
+            el.textContent = dict[key];
+          }
+        }
+      });
+
+      const select = document.getElementById('langSelect');
+      if (select && select.value !== lang) {
+        select.value = lang;
+      }
+
+      updateCalculation();
+      lucide.createIcons();
+    }
+
+    // Calculator State
+    let currentCategory = 'PCB';
+    let currentBaseRate = 185;
+    let currentConditionMultiplier = 1.05;
+
+    function setCalcCategory(cat, rate, btn) {
+      currentCategory = cat;
+      currentBaseRate = rate;
+      document.querySelectorAll('.cat-chip').forEach(b => {
+        b.classList.remove('border-brand-600', 'bg-brand-50');
+        b.classList.add('border-slate-200', 'bg-white');
+      });
+      btn.classList.remove('border-slate-200', 'bg-white');
+      btn.classList.add('border-brand-600', 'bg-brand-50');
+      updateCalculation();
+    }
+
+    function setCondition(mult, btn) {
+      currentConditionMultiplier = mult;
+      document.querySelectorAll('.cond-btn').forEach(b => {
+        b.classList.remove('border-brand-600', 'bg-brand-50', 'text-brand-800');
+        b.classList.add('border-slate-200', 'bg-white', 'text-slate-700');
+      });
+      btn.classList.remove('border-slate-200', 'bg-white', 'text-slate-700');
+      btn.classList.add('border-brand-600', 'bg-brand-50', 'text-brand-800');
+      updateCalculation();
+    }
+
+    function updateCalculation() {
+      const weightEl = document.getElementById('weightSlider');
+      if (!weightEl) return;
+      const weight = parseInt(weightEl.value);
+      document.getElementById('weightDisplay').textContent = weight + ' kg';
+      
+      const subtotal = weight * currentBaseRate * currentConditionMultiplier;
+      const total = Math.round(subtotal + 50); // with green ESG bonus
+      
+      document.getElementById('totalPayout').textContent = '₹' + total.toLocaleString('en-IN');
+      document.getElementById('breakdownBase').textContent = '₹' + currentBaseRate + ' / kg';
+      document.getElementById('breakdownWeight').textContent = weight + ' kg';
+      
+      let condText = 'Base';
+      if (currentConditionMultiplier > 1) {
+        condText = currentLang === 'hi' ? '+5% साफ़' : currentLang === 'mr' ? '+5% स्वच्छ' : '+5% Clean';
+      } else if (currentConditionMultiplier < 1) {
+        condText = currentLang === 'hi' ? '-8% टूटा हुआ' : currentLang === 'mr' ? '-8% खराब' : '-8% Damaged';
+      } else {
+        condText = currentLang === 'hi' ? 'सामान्य' : currentLang === 'mr' ? 'सामान्य' : 'Base';
+      }
+      document.getElementById('breakdownCond').textContent = condText;
+    }
+
+    function selectQuickMaterial(cat, rate) {
+      document.getElementById('calculator').scrollIntoView({behavior:'smooth'});
+      currentCategory = cat;
+      currentBaseRate = rate;
+      updateCalculation();
+    }
+
+    // Audio Broadcast Toggle (Play / Pause / Stop)
+    let isAudioPlaying = false;
+
+    function toggleAudio() {
+      const status = document.getElementById('audioStatus');
+      const btn = document.getElementById('audioToggleBtn');
+
+      if (isAudioPlaying || window.speechSynthesis.speaking) {
+        window.speechSynthesis.cancel();
+        isAudioPlaying = false;
+        btn.classList.remove('bg-rose-600', 'hover:bg-rose-700');
+        btn.classList.add('bg-emerald-600', 'hover:bg-emerald-700');
+        btn.innerHTML = '<i data-lucide="volume-2" class="w-4 h-4"></i>';
+        status.textContent = currentLang === 'hi' 
+          ? 'ऑडियो रोका गया। दोबारा सुनने के लिए क्लिक करें।' 
+          : currentLang === 'mr' 
+          ? 'ऑडिओ थांबवला. पुन्हा ऐकण्यासाठी क्लिक करा.' 
+          : 'Audio stopped. Click to listen again.';
+        lucide.createIcons();
+        return;
+      }
+
+      if (!('speechSynthesis' in window)) {
+        alert("Audio playback not supported on this browser.");
+        return;
+      }
+
+      window.speechSynthesis.cancel();
+
+      let speechText = "Namaste! Today's PunahSetu verified rates: Printed Circuit Boards are 185 rupees per kilo. Stripped copper wire is 585 rupees per kilo. Clean batteries are 135 rupees per kilo.";
+      let speechLang = 'en-IN';
+
+      if (currentLang === 'hi') {
+        speechText = "नमस्ते! आज के पुनःसेतु सत्यापित रेट: सर्किट बोर्ड 185 रुपये प्रति किलो, कॉपर तार 585 रुपये प्रति किलो, और बैटरी 135 रुपये प्रति किलो हैं।";
+        speechLang = 'hi-IN';
+      } else if (currentLang === 'mr') {
+        speechText = "नमस्कार! आजचे पुनःसेतू सत्यापित भाव: सर्किट बोर्ड 185 रुपये प्रति किलो, तांब्याची वायर 585 रुपये प्रति किलो, आणि बॅटरी 135 रुपये प्रति किलो आहे.";
+        speechLang = 'mr-IN';
+      }
+
+      const msg = new SpeechSynthesisUtterance(speechText);
+      msg.lang = speechLang;
+      msg.rate = 0.95;
+
+      msg.onstart = function() {
+        isAudioPlaying = true;
+        btn.classList.remove('bg-emerald-600', 'hover:bg-emerald-700');
+        btn.classList.add('bg-rose-600', 'hover:bg-rose-700');
+        btn.innerHTML = '<i data-lucide="square" class="w-4 h-4"></i>';
+        status.textContent = currentLang === 'hi' 
+          ? 'प्रसारण चालू है... रोकने के लिए क्लिक करें।' 
+          : currentLang === 'mr' 
+          ? 'प्रसारण सुरू आहे... थांबवण्यासाठी क्लिक करा.' 
+          : 'Playing broadcast... Click button to stop.';
+        lucide.createIcons();
+      };
+
+      msg.onend = function() {
+        isAudioPlaying = false;
+        btn.classList.remove('bg-rose-600', 'hover:bg-rose-700');
+        btn.classList.add('bg-emerald-600', 'hover:bg-emerald-700');
+        btn.innerHTML = '<i data-lucide="volume-2" class="w-4 h-4"></i>';
+        status.textContent = currentLang === 'hi' 
+          ? 'रेट सुनने के लिए क्लिक करें' 
+          : currentLang === 'mr' 
+          ? 'भाव ऐकण्यासाठी क्लिक करा' 
+          : 'Click to hear rates in Hindi / English / Marathi';
+        lucide.createIcons();
+      };
+
+      msg.onerror = function() {
+        isAudioPlaying = false;
+        btn.classList.remove('bg-rose-600', 'hover:bg-rose-700');
+        btn.classList.add('bg-emerald-600', 'hover:bg-emerald-700');
+        btn.innerHTML = '<i data-lucide="volume-2" class="w-4 h-4"></i>';
+        lucide.createIcons();
+      };
+
+      window.speechSynthesis.speak(msg);
+    }
+
+    // Modal controls - Lot creation
+    function openLotModal() {
+      document.getElementById('lotModal').classList.remove('hidden');
+    }
+    function closeLotModal() {
+      document.getElementById('lotModal').classList.add('hidden');
+    }
+    function openLotModalWithVal() {
+      const weight = document.getElementById('weightSlider').value;
+      document.getElementById('modalWeight').value = weight;
+      document.getElementById('modalCategory').value = currentCategory;
+      openLotModal();
+    }
+    function handleLotSubmit(e) {
+      e.preventDefault();
+      const msg = currentLang === 'hi'
+        ? "✅ स्क्रैप लॉट सफलतापूर्वक बनाया गया! सत्यापन के लिए रीसाइक्लर भेजा जा रहा है।"
+        : currentLang === 'mr'
+        ? "✅ स्क्रॅप लॉट यशस्वीरीत्या तयार केला! पडताळणीसाठी रिसायकलर रवाना केला आहे."
+        : "✅ Scrap Lot created successfully! Recycler dispatched for verification. Tamper-proof QR token generated.";
+      alert(msg);
+      closeLotModal();
+    }
+
+    // Modal controls - Login
+    let currentLoginRole = 'collector';
+
+    function openLoginModal() {
+      document.getElementById('loginModal').classList.remove('hidden');
+    }
+    function closeLoginModal() {
+      document.getElementById('loginModal').classList.add('hidden');
+    }
+    function setLoginRole(role) {
+      currentLoginRole = role;
+      const colBtn = document.getElementById('roleBtnCollector');
+      const recBtn = document.getElementById('roleBtnRecycler');
+      const admBtn = document.getElementById('roleBtnAdmin');
+      const phoneGrp = document.getElementById('phoneGroup');
+      const emailGrp = document.getElementById('emailGroup');
+
+      [colBtn, recBtn, admBtn].forEach(b => {
+        b.classList.remove('border-brand-600', 'bg-brand-50', 'text-brand-800');
+        b.classList.add('border-slate-200', 'bg-white', 'text-slate-600');
+      });
+
+      if (role === 'collector') {
+        colBtn.classList.remove('border-slate-200', 'bg-white', 'text-slate-600');
+        colBtn.classList.add('border-brand-600', 'bg-brand-50', 'text-brand-800');
+        phoneGrp.classList.remove('hidden');
+        emailGrp.classList.add('hidden');
+      } else if (role === 'recycler') {
+        recBtn.classList.remove('border-slate-200', 'bg-white', 'text-slate-600');
+        recBtn.classList.add('border-brand-600', 'bg-brand-50', 'text-brand-800');
+        phoneGrp.classList.add('hidden');
+        emailGrp.classList.remove('hidden');
+        document.getElementById('loginEmail').value = 'recycler@demo.com';
+      } else if (role === 'admin') {
+        admBtn.classList.remove('border-slate-200', 'bg-white', 'text-slate-600');
+        admBtn.classList.add('border-brand-600', 'bg-brand-50', 'text-brand-800');
+        phoneGrp.classList.add('hidden');
+        emailGrp.classList.remove('hidden');
+        document.getElementById('loginEmail').value = 'admin@demo.com';
+      }
+    }
+
+    function fillDemoCredentials() {
+      if (currentLoginRole === 'collector') {
+        document.getElementById('loginPhone').value = '+91 98100 00001';
+      } else if (currentLoginRole === 'recycler') {
+        document.getElementById('loginEmail').value = 'recycler@demo.com';
+        document.getElementById('loginPassword').value = 'password123';
+      } else {
+        document.getElementById('loginEmail').value = 'admin@demo.com';
+        document.getElementById('loginPassword').value = 'password123';
+      }
+    }
+
+    function handleLoginSubmit(e) {
+      e.preventDefault();
+      const identifier = currentLoginRole === 'collector'
+        ? document.getElementById('loginPhone').value
+        : document.getElementById('loginEmail').value;
+      
+      const successMsg = currentLang === 'hi'
+        ? `✅ सफलतापूर्वक लॉगिन हुआ: ${currentLoginRole.toUpperCase()} (${identifier})`
+        : currentLang === 'mr'
+        ? `✅ यशस्वीरीत्या लॉगिन झाले: ${currentLoginRole.toUpperCase()} (${identifier})`
+        : `✅ Signed in successfully as ${currentLoginRole.toUpperCase()} (${identifier})!`;
+      alert(successMsg);
+
+      const navBtn = document.getElementById('navLoginBtn');
+      if (navBtn) {
+        navBtn.innerHTML = `<i data-lucide="user-check" class="w-4 h-4 text-emerald-600"></i><span class="text-xs text-emerald-800 font-bold">${currentLoginRole.toUpperCase()}</span>`;
+        lucide.createIcons();
+      }
+      closeLoginModal();
+    }
+  </script>
+</body>
 </html>
