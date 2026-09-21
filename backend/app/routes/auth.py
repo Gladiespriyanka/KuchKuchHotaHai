@@ -2,6 +2,7 @@ import secrets
 
 from fastapi import APIRouter, Depends, HTTPException, status
 from sqlalchemy.orm import Session
+from sqlalchemy import func
 
 from ..database import get_db
 from ..models import Collector, Recycler, User
@@ -74,7 +75,12 @@ def verify_otp(payload: OtpVerifyIn, db: Session = Depends(get_db)):
     if not otp.verify_otp(phone, payload.otp):
         raise HTTPException(status.HTTP_400_BAD_REQUEST, "Incorrect or expired OTP")
 
-    user = db.query(User).filter(User.phone == phone, User.role == "collector").first()
+    requested_role = (payload.role or "collector").strip().lower()
+
+    user = db.query(User).filter(
+        func.replace(User.phone, " ", "") == func.replace(phone, " ", ""),
+        User.role == requested_role,
+    ).first()
     if not user:
         name = (payload.name or f"Collector {phone[-4:]}").strip()
         user = User(
@@ -82,7 +88,7 @@ def verify_otp(payload: OtpVerifyIn, db: Session = Depends(get_db)):
             # synthetic, unguessable one that is never used to sign in.
             email=f"phone-{phone.lstrip('+')}@collector.local",
             password_hash=hash_password(secrets.token_hex(16)),
-            role="collector", name=name, language="hi", phone=phone,
+            role=requested_role, name=name, language="hi", phone=phone,
         )
         db.add(user)
         db.flush()

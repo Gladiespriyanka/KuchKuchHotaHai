@@ -1,0 +1,74 @@
+INFO:     Started server process [19360]
+INFO:     Waiting for application startup.
+INFO:     Application startup complete.
+INFO:     Uvicorn running on http://127.0.0.1:8001 (Press CTRL+C to quit)
+INFO:     127.0.0.1:49402 - "GET /api/health HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49406 - "POST /api/auth/otp/request HTTP/1.1" 200 OK
+INFO:     127.0.0.1:50133 - "POST /api/auth/otp/verify HTTP/1.1" 500 Internal Server Error
+ERROR:    Exception in ASGI application
+Traceback (most recent call last):
+  File "C:\Users\Sam\OneDrive\Desktop\KuchKuchHotaHai\backend\.venv\Lib\site-packages\sqlalchemy\engine\base.py", line 1967, in _exec_single_context
+    self.dialect.do_execute(
+  File "C:\Users\Sam\OneDrive\Desktop\KuchKuchHotaHai\backend\.venv\Lib\site-packages\sqlalchemy\engine\default.py", line 941, in do_execute
+    cursor.execute(statement, parameters)
+sqlite3.IntegrityError: UNIQUE constraint failed: users.email
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\Sam\OneDrive\Desktop\KuchKuchHotaHai\backend\.venv\Lib\site-packages\uvicorn\protocols\http\httptools_impl.py", line 401, in run_asgi
+    result = await app(  # type: ignore[func-returns-value]
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sam\OneDrive\Desktop\KuchKuchHotaHai\backend\.venv\Lib\site-packages\uvicorn\middleware\proxy_headers.py", line 70, in __call__
+    return await self.app(scope, receive, send)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Sam\OneDrive\Desktop\KuchKuchHotaHai\backend\.venv\Lib\site-packages\fastapi\applications.py", line 1054, in __call__
+    await super().__call__(scope, receive, send)
+  File "C:\Users\Sam\OneDrive\Desktop\KuchKuchHotaHai\backend\.venv\Lib\site-packages\starlette\applications.py", line 113, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\Sam\OneDrive\Desktop\KuchKuchHotaHai\backend\.venv\Lib\site-packages\starlette\middleware\errors.py", line 187, in __call__
+    raise exc
+  File "C:\Users\Sam\OneDrive\Desktop\KuchKuchHotaHai\backend\.venv\Lib\site-packages\starlette\middleware\errors.py", line 165, in __call__
+    await self.app(scope, receive, _send)
+  File "C:\Users\Sam\OneDrive\Desktop\KuchKuchHotaHai\backend\.venv\Lib\site-packages\starlette\middleware\cors.py", line 85, in __call__
+    await self.app(scope, receive, send)
+  File "C:\Users\Sam\OneDrive\Desktop\KuchKuchHotaHai\backend\.venv\Lib\site-packages\starlette\middleware\exceptions.py", line 62, in __call__
+    await wrap_app_handling_exceptions(self.app, conn)(scope, receive, send)
+  File "C:\Users\Sam\OneDrive\Desktop\KuchKuchHotaHai\backend\.venv\Lib\site-packages\starlette\_exception_handler.py", line 62, in wrapped_app
+    raise exc
+  File "C:\Users\Sam\OneDrive\Desktop\KuchKuchHotaHai\backend\.venv\Lib\site-packages\starlette\_exception_handler.py", line 51, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\Sam\OneDrive\Desktop\KuchKuchHotaHai\backend\.venv\Lib\site-packages\starlette\routing.py", line 715, in __call__
+    await self.middleware_stack(scope, receive, send)
+  File "C:\Users\Sam\OneDrive\Desktop\KuchKuchHotaHai\backend\.venv\Lib\site-packages\starlette\routing.py", line 735, in app
+    await route.handle(scope, receive, send)
+  File "C:\Users\Sam\OneDrive\Desktop\KuchKuchHotaHai\backend\.venv\Lib\site-packages\starlette\routing.py", line 288, in handle
+    await self.app(scope, receive, send)
+  File "C:\Users\Sam\OneDrive\Desktop\KuchKuchHotaHai\backend\.venv\Lib\site-packages\starlette\routing.py", line 76, in app
+    await wrap_app_handling_exceptions(app, request)(scope, receive, send)
+  File "C:\Users\Sam\OneDrive\Desktop\KuchKuchHotaHai\backend\.venv\Lib\site-packages\starlette\_exception_handler.py", line 62, in wrapped_app
+    raise exc
+  File "C:\Users\Sam\OneDrive\Desktop\KuchKuchHotaHai\backend\.venv\Lib\site-packages\starlette\_exception_handler.py", line 51, in wrapped_app
+    await app(scope, receive, sender)
+  File "C:\Users\Sam\OneDrive\Desktop\KuchKuchHotaHai\backend\.venv\Lib\site-packages\starlette\routing.py", line 73, in app
+    response = await f(request)
+               ^^^^^^^^^^^^^^^^
+  File "C:\Users\Sam\AppData\Local\Programs\Python\Python311\Lib\contextlib.py", line 222, in __aexit__
+    await self.gen.athrow(typ, value, traceback)
+  File "C:\Users\Sam\OneDrive\Desktop\KuchKuchHotaHai\backend\.venv\Lib\site-packages\fastapi\concurrency.py", line 35, in contextmanager_in_threadpool
+    raise e
+sqlalchemy.exc.IntegrityError: (sqlite3.IntegrityError) UNIQUE constraint failed: users.email
+[SQL: INSERT INTO users (email, password_hash, role, name, language, phone, created_at) VALUES (?, ?, ?, ?, ?, ?, ?)]
+[parameters: ('phone-919810000001@collector.local', 'pbkdf2$120000$cdb476d4ff4030c17ab928ef781de573$a721708095bba3de3eff3579a6768e8affe2b34d76f6af7fb9a72ffaf21a0943', 'collector', 'Collector 0001', 'hi', '+919810000001', '2026-09-20 16:26:54.175877')]
+(Background on this error at: https://sqlalche.me/e/20/gkpj)
+INFO:     127.0.0.1:50145 - "POST /api/auth/otp/request HTTP/1.1" 200 OK
+INFO:     127.0.0.1:59268 - "POST /api/auth/otp/verify HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:59273 - "POST /api/auth/otp/verify HTTP/1.1" 400 Bad Request
+INFO:     127.0.0.1:64052 - "POST /api/auth/otp/request HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64056 - "POST /api/auth/otp/verify HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64061 - "POST /api/auth/otp/verify HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64065 - "POST /api/auth/otp/request HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64070 - "POST /api/auth/otp/verify HTTP/1.1" 200 OK
+INFO:     127.0.0.1:64074 - "POST /api/auth/otp/verify HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60975 - "POST /api/auth/otp/request HTTP/1.1" 200 OK
+INFO:     127.0.0.1:60979 - "POST /api/auth/otp/verify HTTP/1.1" 200 OK

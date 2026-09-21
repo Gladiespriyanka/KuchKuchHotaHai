@@ -22,7 +22,7 @@ export const DEMO_MODE = String(ENV.VITE_DEMO_MODE ?? '').toLowerCase() === 'tru
 
 // In live mode the API base must be configured. Dev falls back to the usual
 // local FastAPI port so `npm run dev` works even with no .env file.
-const BASE = (ENV.VITE_API_URL ?? (ENV.DEV ? 'http://localhost:8000' : '')).replace(/\/$/, '')
+const BASE = (ENV.VITE_API_URL ?? (ENV.DEV ? 'http://localhost:8001' : '')).replace(/\/$/, '')
 const DEV = Boolean(ENV.DEV)
 
 export class BackendError extends Error {

@@ -16,18 +16,26 @@ export default function Profile() {
   const user = useCurrentUser()
   const navigate = useNavigate()
   const [name, setName] = useState(user?.name ?? '')
+  const [phone, setPhone] = useState(user?.phone ?? '')
   const [busy, setBusy] = useState(false)
   const [saved, setSaved] = useState(false)
   const [error, setError] = useState('')
 
-  useEffect(() => { setName(user?.name ?? '') }, [user?.name])
+  useEffect(() => {
+    setName(user?.name ?? '')
+    setPhone(user?.phone ?? '')
+  }, [user?.name, user?.phone])
 
   async function save() {
     setBusy(true)
     setError('')
     setSaved(false)
     try {
-      await auth.updateMe({ name: name.trim(), language: lang })
+      await auth.updateMe({
+        name: name.trim(),
+        language: lang,
+        phone: phone.trim()
+      })
       setSaved(true)
       setTimeout(() => setSaved(false), 4000)
     } catch (err) {
@@ -49,6 +57,14 @@ export default function Profile() {
         <input
           id="pname" className="field mt-1" value={name}
           onChange={(e) => setName(e.target.value)} maxLength={120}
+        />
+
+        <label className="eyebrow mt-4" htmlFor="pphone">
+          {t('phoneNumber')}
+        </label>
+        <input
+          id="pphone" className="field mt-1" value={phone}
+          onChange={(e) => setPhone(e.target.value)} maxLength={20}
         />
 
         <div className="eyebrow mt-4">{t('language')}</div>
@@ -74,7 +90,9 @@ export default function Profile() {
 
       <div className="plate p-3 text-sm">
         <dl className="space-y-1">
-          <Row label={t('email')} value={user?.email} />
+          {user?.role !== 'collector' && (
+            <Row label={t('email')} value={user?.email} />
+          )}
           <Row label="Role" value={user?.role} />
           <Row label={t('yourArea')} value={user?.location} />
           <Row label="Collector ID" value={user?.profile_id} />

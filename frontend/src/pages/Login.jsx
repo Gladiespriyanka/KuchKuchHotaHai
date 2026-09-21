@@ -7,38 +7,42 @@ import { LanguageSwitcher } from '../components/Shell'
 import { DesktopDecor } from '../components/DesktopDecor'
 import { AuthGrid, AuthHeader, AuthSideDecor } from '../components/AuthLayout'
 
-const DEMO_PHONE = '+91 98100 00001'
-
 const DEMO = [
-  { role: 'collector', icon: <UserRound size={18} />, home: '/app' },
-  { role: 'recycler', email: 'recycler@demo.com', icon: <Truck size={18} />, home: '/recycler' },
-  { role: 'admin', email: 'admin@demo.com', icon: <ShieldCheck size={18} />, home: '/admin' },
+  { role: 'collector', icon: <UserRound size={18} />, home: '/app', phone: '+91 98100 00001', email: 'collector@demo.com' },
+  { role: 'recycler', icon: <Truck size={18} />, home: '/recycler', phone: '+91 98290 10001', email: 'recycler@demo.com' },
+  { role: 'admin', icon: <ShieldCheck size={18} />, home: '/admin', phone: '+91 99100 0004', email: 'admin@demo.com' },
 ]
 
 export default function Login() {
   const { t } = useI18n()
   const navigate = useNavigate()
 
-  // Recycler / admin: email + password.
-  const [email, setEmail] = useState('recycler@demo.com')
-  const [password, setPassword] = useState('password123')
-  const [mode, setMode] = useState('login')
-  const [name, setName] = useState('')
-  const [area, setArea] = useState('Pune')
-  const [cities, setCities] = useState([])
+  // Initialize role state FIRST to prevent "Cannot access 'role' before initialization" error
+  const [role, setRole] = useState('collector')
 
-  // Collector: phone + OTP.
+  // Determine login method based on whether the selected role has a phone number
   const [phone, setPhone] = useState('')
+
+  // Initialize form values based on selected role
+  useEffect(() => {
+    const demoAccount = DEMO.find(d => d.role === role)
+    if (demoAccount) {
+      if (demoAccount.phone) {
+        // Role uses phone + OTP
+        setPhone(demoAccount.phone || '')
+      }
+    }
+  }, [role])
   const [otpStage, setOtpStage] = useState('phone') // 'phone' | 'otp'
   const [otpCode, setOtpCode] = useState('')
   const [demoOtp, setDemoOtp] = useState('')
+  const [name, setName] = useState('') // For new collector registrations
   const [collectorName, setCollectorName] = useState('')
+  const [area, setArea] = useState('Pune')
+  const [cities, setCities] = useState([])
 
   const [busy, setBusy] = useState(false)
   const [error, setError] = useState('')
-  // The account type the user selected. It drives the sign-up copy and is
-  // checked against the role the backend actually returns.
-  const [role, setRole] = useState('collector')
 
   const routeFor = (r) => (r === 'admin' ? '/admin' : r === 'recycler' ? '/recycler' : '/app')
 
@@ -61,23 +65,6 @@ export default function Login() {
       return
     }
     navigate(routeFor(actual))
-  }
-
-  async function submit(e) {
-    e?.preventDefault()
-    setBusy(true)
-    setError('')
-    try {
-      const result =
-        mode === 'login'
-          ? await auth.login(email, password)
-          : await auth.register({ name, email, password, language: 'hi', role, operating_location: area })
-      afterAuth(result, role)
-    } catch (err) {
-      setError(err.message || t('wrongLogin'))
-    } finally {
-      setBusy(false)
-    }
   }
 
   async function sendOtp(e) {
@@ -104,10 +91,13 @@ export default function Login() {
     setError('')
     try {
       const result = await auth.verifyOtp(phone.trim(), otpCode.trim(), {
-        name: collectorName.trim() || undefined,
-        operating_location: area,
+        // Only collectors need to provide name during OTP verification for registration
+        ...(role === 'collector' && name.trim() ? { name: collectorName.trim() || undefined } : {}),
+        ...(role !== 'collector' ? { operating_location: area } : {}),
+        // Send role for backend to properly handle all three roles
+        role: role
       })
-      afterAuth(result, 'collector')
+      afterAuth(result, role)
     } catch (err) {
       setError(err.message || t('wrongLogin'))
     } finally {
@@ -120,6 +110,13 @@ export default function Login() {
     setOtpCode('')
     setDemoOtp('')
     setError('')
+    // Reset role-specific fields when changing phone
+    if (role === 'collector') {
+      setCollectorName('')
+      setName('')
+    } else {
+      setArea('Pune')
+    }
   }
 
   return (
@@ -183,8 +180,7 @@ export default function Login() {
                   key={r} type="button"
                   onClick={() => {
                     setRole(r); setError('')
-                    if (r === 'admin') setMode('login')
-                    if (r !== 'collector') resetOtpFlow()
+                    resetOtpFlow() // Reset form when switching roles
                   }}
                   className={`btn py-2 text-sm lg:py-3.5 lg:text-base ${role === r ? 'bg-board text-white' : 'bg-white'}`}
                 >
@@ -194,124 +190,96 @@ export default function Login() {
             </div>
           </div>
 
-          {role === 'collector' ? (
-            <div className="plate-lg mt-3 p-4 lg:p-6">
-              <div className="mb-3 flex items-center gap-2 text-slate2">
-                <Smartphone size={16} />
-                <span className="text-sm">{t('collectorLoginIntro')}</span>
-              </div>
-
-              {otpStage === 'phone' ? (
-                <form onSubmit={sendOtp}>
-                  <label className="eyebrow" htmlFor="phone">{t('phoneNumber')}</label>
-                  <input
-                    id="phone" type="tel" inputMode="tel" placeholder="+91 98100 00001"
-                    className="field num mt-1 lg:h-14 lg:px-4 lg:text-lg" value={phone} required
-                    onChange={(e) => setPhone(e.target.value)}
-                  />
-                  <label className="eyebrow mt-3 block" htmlFor="collectorName">
-                    {t('yourName')} <span className="font-normal normal-case text-slate2">({t('firstTimeOnly')})</span>
-                  </label>
-                  <input
-                    id="collectorName" className="field mt-1 lg:h-14 lg:px-4 lg:text-lg"
-                    value={collectorName} onChange={(e) => setCollectorName(e.target.value)}
-                  />
-                  <label className="eyebrow mt-3 block" htmlFor="area">{t('yourArea')}</label>
-                  {cities.length ? (
-                    <select id="area" className="field mt-1 lg:h-14 lg:px-4 lg:text-lg" value={area}
-                            onChange={(e) => setArea(e.target.value)}>
-                      {cities.map((c) => <option key={c} value={c}>{c}</option>)}
-                    </select>
-                  ) : (
-                    <input id="area" className="field mt-1 lg:h-14 lg:px-4 lg:text-lg" value={area}
-                           onChange={(e) => setArea(e.target.value)} />
-                  )}
-                  {error && <p className="mt-3 border-2 border-copper bg-brass/15 p-2 text-sm">{error}</p>}
-                  <button type="submit" className="btn-primary mt-4 w-full text-lg lg:h-14 lg:text-xl" disabled={busy}>
-                    {busy ? '…' : t('sendOtp')}
-                  </button>
-                </form>
-              ) : (
-                <form onSubmit={verifyOtp}>
-                  <p className="text-sm text-slate2">
-                    {t('otpSentTo')} <span className="num font-semibold text-ink">{phone}</span>
-                  </p>
-                  {demoOtp && (
-                    <p className="num mt-1 border-2 border-brass bg-brass/15 p-2 text-sm">
-                      {t('demoOtpLabel')}: <span className="font-bold">{demoOtp}</span>
-                    </p>
-                  )}
-                  <label className="eyebrow mt-3 block" htmlFor="otp">{t('enterOtp')}</label>
-                  <input
-                    id="otp" type="text" inputMode="numeric" maxLength={8} autoFocus
-                    className="field num mt-1 tracking-[0.3em] lg:h-14 lg:px-4 lg:text-lg" value={otpCode} required
-                    onChange={(e) => setOtpCode(e.target.value)}
-                  />
-                  {error && <p className="mt-3 border-2 border-copper bg-brass/15 p-2 text-sm">{error}</p>}
-                  <button type="submit" className="btn-primary mt-4 w-full text-lg lg:h-14 lg:text-xl" disabled={busy}>
-                    {busy ? '…' : t('verifyOtp')}
-                  </button>
-                  <div className="mt-3 flex justify-between text-sm font-semibold">
-                    <button type="button" className="underline" onClick={resetOtpFlow}>
-                      {t('changePhoneNumber')}
-                    </button>
-                    <button type="button" className="underline" onClick={sendOtp} disabled={busy}>
-                      {t('resendOtp')}
-                    </button>
-                  </div>
-                </form>
-              )}
+          <div className="plate-lg mt-3 p-4 lg:p-6">
+            <div className="mb-3 flex items-center gap-2 text-slate2">
+              <Smartphone size={16} />
+              <span className="text-sm">{t('loginInstructions')}</span>
             </div>
-          ) : (
-            <form onSubmit={submit} className="plate-lg mt-3 p-4 lg:p-6">
-              {mode === 'register' && (
-                <>
-                  <label className="eyebrow" htmlFor="name">{t('yourName')}</label>
-                  <input id="name" className="field mt-1 mb-3 lg:h-14 lg:px-4 lg:text-lg" value={name} required
-                         onChange={(e) => setName(e.target.value)} />
-                  <label className="eyebrow" htmlFor="area">{t('yourArea')}</label>
-                  {cities.length ? (
-                    <select id="area" className="field mt-1 mb-3 lg:h-14 lg:px-4 lg:text-lg" value={area}
-                            onChange={(e) => setArea(e.target.value)}>
-                      {cities.map((c) => <option key={c} value={c}>{c}</option>)}
-                    </select>
-                  ) : (
-                    <input id="area" className="field mt-1 mb-3 lg:h-14 lg:px-4 lg:text-lg" value={area}
-                           onChange={(e) => setArea(e.target.value)} />
-                  )}
-                </>
-              )}
-              <label className="eyebrow" htmlFor="email">{t('email')}</label>
-              <input id="email" type="email" className="field mt-1 lg:h-14 lg:px-4 lg:text-lg" value={email} required
-                     onChange={(e) => setEmail(e.target.value)} />
-              <label className="eyebrow mt-3 block" htmlFor="password">{t('password')}</label>
-              <input id="password" type="password" className="field mt-1 lg:h-14 lg:px-4 lg:text-lg" value={password} required
-                     onChange={(e) => setPassword(e.target.value)} />
-              {error && <p className="mt-3 border-2 border-copper bg-brass/15 p-2 text-sm">{error}</p>}
-              <button type="submit" className="btn-primary mt-4 w-full text-lg lg:h-14 lg:text-xl" disabled={busy}>
-                {busy ? '…' : mode === 'login' ? t('signIn') : t('register')}
-              </button>
-              {/* Admin accounts are provisioned, not self-registered. */}
-              {role === 'admin' ? (
-                mode === 'register' ? (
-                  <button type="button" className="mt-3 w-full text-sm font-semibold underline"
-                          onClick={() => { setMode('login'); setError('') }}>
-                    {t('backToSignIn')}
-                  </button>
-                ) : (
-                  <p className="mt-3 text-center text-xs text-slate2">{t('adminNoSignup')}</p>
-                )
-              ) : (
-                <button
-                  type="button"
-                  className="mt-3 w-full text-sm font-semibold underline"
-                  onClick={() => { setMode(mode === 'login' ? 'register' : 'login'); setError('') }}
-                >
-                  {mode === 'login' ? t('createRecyclerAccount') : t('backToSignIn')}
+
+            {otpStage === 'phone' ? (
+              <form onSubmit={sendOtp}>
+                <label className="eyebrow" htmlFor="phone">{t('phoneNumber')}</label>
+                <input
+                  id="phone" type="tel" inputMode="tel" placeholder={role === 'admin' ? 'email@demo.com' : '+91 98100 00001'}
+                  className="field num mt-1 lg:h-14 lg:px-4 lg:text-lg" value={phone} required
+                  onChange={(e) => setPhone(e.target.value)}
+                />
+
+                {/* Collector-specific fields for registration */}
+                {role === 'collector' && (
+                  <>
+                    <label className="eyebrow mt-3 block" htmlFor="collectorName">
+                      {t('yourName')} <span className="font-normal normal-case text-slate2">({t('firstTimeOnly')})</span>
+                    </label>
+                    <input
+                      id="collectorName" className="field mt-1 lg:h-14 lg:px-4 lg:text-lg"
+                      value={collectorName} onChange={(e) => setCollectorName(e.target.value)}
+                    />
+                    <label className="eyebrow mt-3 block" htmlFor="area">{t('yourArea')}</label>
+                    {cities.length ? (
+                      <select id="area" className="field mt-1 lg:h-14 lg:px-4 lg:text-lg" value={area}
+                              onChange={(e) => setArea(e.target.value)}>
+                        {cities.map((c) => <option key={c} value={c}>{c}</option>)}
+                      </select>
+                    ) : (
+                      <input id="area" className="field mt-1 lg:h-14 lg:px-4 lg:text-lg" value={area}
+                             onChange={(e) => setArea(e.target.value)} />
+                    )}
+                  </>
+                )}
+
+                {/* Recycler/Admin location field */}
+                {role !== 'collector' && (
+                  <>
+                    <label className="eyebrow mt-3 block" htmlFor="area">{t('yourArea')}</label>
+                    {cities.length ? (
+                      <select id="area" className="field mt-1 lg:h-14 lg:px-4 lg:text-lg" value={area}
+                              onChange={(e) => setArea(e.target.value)}>
+                        {cities.map((c) => <option key={c} value={c}>{c}</option>)}
+                      </select>
+                    ) : (
+                      <input id="area" className="field mt-1 lg:h-14 lg:px-4 lg:text-lg" value={area}
+                             onChange={(e) => setArea(e.target.value)} />
+                    )}
+                  </>
+                )}
+
+                {error && <p className="mt-3 border-2 border-copper bg-brass/15 p-2 text-sm">{error}</p>}
+                <button type="submit" className="btn-primary mt-4 w-full text-lg lg:h-14 lg:text-xl" disabled={busy}>
+                  {busy ? '…' : t('sendOtp')}
                 </button>
-              )}
-            </form>
-          )}
+              </form>
+            ) : (
+              <form onSubmit={verifyOtp}>
+                <p className="text-sm text-slate2">
+                  {t('otpSentTo')} <span className="num font-semibold text-ink">{phone}</span>
+                </p>
+                {demoOtp && (
+                  <p className="num mt-1 border-2 border-brass bg-brass/15 p-2 text-sm">
+                    {t('demoOtpLabel')}: <span className="font-bold">{demoOtp}</span>
+                  </p>
+                )}
+                <label className="eyebrow mt-3 block" htmlFor="otp">{t('enterOtp')}</label>
+                <input
+                  id="otp" type="text" inputMode="numeric" maxLength={8} autoFocus
+                  className="field num mt-1 tracking-[0.3em] lg:h-14 lg:px-4 lg:text-lg" value={otpCode} required
+                  onChange={(e) => setOtpCode(e.target.value)}
+                />
+                {error && <p className="mt-3 border-2 border-copper bg-brass/15 p-2 text-sm">{error}</p>}
+                <button type="submit" className="btn-primary mt-4 w-full text-lg lg:h-14 lg:text-xl" disabled={busy}>
+                  {busy ? '…' : t('verifyOtp')}
+                </button>
+                <div className="mt-3 flex justify-between text-sm font-semibold">
+                  <button type="button" className="underline" onClick={resetOtpFlow}>
+                    {t('changePhoneNumber')}
+                  </button>
+                  <button type="button" className="underline" onClick={sendOtp} disabled={busy}>
+                    {t('resendOtp')}
+                  </button>
+                </div>
+              </form>
+            )}
+          </div>
 
           <div className="mt-5">
             <div className="eyebrow mb-2">{t('demoAccounts')}</div>
@@ -324,13 +292,16 @@ export default function Login() {
                   onClick={() => {
                     setError('')
                     setRole(d.role)
+                    setPhone(d.phone || '')
+                    setOtpStage('phone')
+                    setDemoOtp('')
+                    // Reset role-specific fields
                     if (d.role === 'collector') {
-                      setMode('login')
-                      setPhone(DEMO_PHONE)
-                      setOtpStage('phone')
-                      setDemoOtp('')
+                      setCollectorName('')
+                      setName('')
+                      setArea('Pune')
                     } else {
-                      setMode('login'); setEmail(d.email); setPassword('password123')
+                      setArea('Pune')
                     }
                   }}
                 >
@@ -338,7 +309,8 @@ export default function Login() {
                   <span>
                     <span className="block font-semibold">{t(d.role)}</span>
                     <span className="num block text-xs text-slate2">
-                      {d.role === 'collector' ? DEMO_PHONE : d.email}
+                      {d.phone ||
+                        (d.role === 'admin' ? 'email/password login' : '—')}
                     </span>
                   </span>
                   <span className="ml-auto text-xs font-semibold underline lg:ml-0">{t('useAccount')}</span>

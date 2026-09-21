@@ -44,7 +44,7 @@ class OtpVerifyIn(BaseModel):
     """Step 2 of collector phone login: check the code.
 
     If no collector account exists yet for this phone number, one is
-    created automatically — name/operating_location are only used then.
+    created automatically - name/operating_location are only used then.
     """
     phone: str = Field(min_length=6, max_length=15)
     otp: str = Field(min_length=4, max_length=8)
@@ -52,6 +52,7 @@ class OtpVerifyIn(BaseModel):
     operating_location: str | None = None
     latitude: float | None = None
     longitude: float | None = None
+    role: str | None = None  # Role being authenticated/registered for
 
 
 # class RegisterIn(BaseModel):
@@ -86,6 +87,7 @@ class UpdateMeIn(BaseModel):
     """The signed-in user editing their own display name / language."""
     name: str | None = Field(default=None, min_length=2, max_length=120)
     language: str | None = None
+    phone: str | None = None
 
     @field_validator("language")
     @classmethod
@@ -93,6 +95,27 @@ class UpdateMeIn(BaseModel):
         if v not in ("en", "hi", "mr"):
             raise ValueError("language must be en, hi or mr")
         return v
+
+    @field_validator("phone")
+    @classmethod
+    def _validate_phone(cls, v: str | None) -> str | None:
+        if v is None:
+            return v
+        # Normalize the phone number (remove spaces, keep + and digits)
+        import re
+        normalized = re.sub(r'[^\d+]', '', v)
+
+        # Check if it's a valid Indian mobile number
+        # Should be either:
+        # 1. 10 digits starting with 6,7,8,9
+        # 2. +91 followed by 10 digits starting with 6,7,8,9
+        if re.match(r'^[6789]\d{9}$', normalized):
+            # Convert to +91 format for consistency
+            return f"+91{normalized}"
+        elif re.match(r'^\+91[6789]\d{9}$', normalized):
+            return normalized
+        else:
+            raise ValueError("Please enter a valid Indian mobile number (10 digits starting with 6,7,8,9)")
 
 
 class UserOut(BaseModel):
@@ -124,7 +147,7 @@ class PriceBoardItem(BaseModel):
     icon: str = ""
 
 
-class PricePoint(BaseModel):
+class PointOut(BaseModel):
     date: str
     price: float
 
@@ -161,10 +184,10 @@ class LotCreateIn(BaseModel):
     location: str = ""
     latitude: float = 0.0
     longitude: float = 0.0
-    ai_prediction: dict[str, Any] = Field(default_factory=dict)
+    ai_prediction: dict[str, Any]
     client_ref: str = ""
     # Reverse-auction bidding: when set, the lot opens for a timed round of
-    # competitive recycler bids instead of a plain first-come offer.
+    # recycler bids instead of a plain first-come offer.
     auction_minutes: int | None = Field(default=None, ge=1, le=180)
 
     @field_validator("material_category")
@@ -234,7 +257,6 @@ class MatchOut(RecyclerOut):
     distance_km: float
     rate_for_material: float
     offer_value: float
-    match_score: float
     breakdown: dict[str, float]
 
 
@@ -249,13 +271,9 @@ class OfferOut(BaseModel):
     lot_id: str
     recycler_id: int
     recycler_name: str | None = None
-    recycler_location: str | None = None
-    authorization_id: str | None = None
-    pickup_offered: bool = False
-    distance_km: float | None = None
-    rate_per_kg: float
-    amount: float
-    note: str = ""
+    lot_location: str
+    quoted_price: float
+    ai_prediction: dict[str, Any]
     status: str
     created_at: datetime
 
